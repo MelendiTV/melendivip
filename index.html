@@ -330,7 +330,10 @@ overflow:hidden;
   </footer>
 
   <script>
-function setLanguage(lang){
+<div class="lang-switch">
+  <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+  <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+</div>
 
   document.documentElement.lang = lang;
 
