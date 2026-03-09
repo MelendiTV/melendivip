@@ -133,6 +133,20 @@ color:#111;
 font-weight:bold;
 cursor:pointer;
 }
+  .call-now{
+  font-size:22px;
+  font-weight:bold;
+  color:#ffd700;
+  margin-top:20px;
+  animation:pulse 1.2s infinite;
+  cursor:pointer;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.15);}
+  100%{transform:scale(1);}
+}
 .popup{
 display:none;
 position:fixed;
@@ -436,10 +450,19 @@ VIP INFO
     <h2 id="popup-title"></h2>
 
     <p id="popup-text"></p>
-
+<a class="call-now" href="tel:+17025424935">📞 CALL NOW: 702-542-4935</a>
   </div>
 </div>
   <script>
+  function openPopup(title,text){
+  document.getElementById("popup-title").innerText = title;
+  document.getElementById("popup-text").innerText = text;
+  document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup(){
+  document.getElementById("popup").style.display = "none";
+}
     function setLanguage(lang){
       document.documentElement.lang = lang;
 
