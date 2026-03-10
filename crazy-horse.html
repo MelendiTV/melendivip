@@ -229,7 +229,10 @@ border:2px solid #d4af37;
 <body>
 
   <a class="back-btn" href="index.html">⬅ BACK</a>
-
+<div class="lang-switch">
+<button onclick="setLanguage('en')">EN</button>
+<button onclick="setLanguage('es')">ES</button>
+</div>
   <div class="page">
 
     <section class="hero">
@@ -307,23 +310,24 @@ Crazy Horse delivers a true Las Vegas nightlife experience.
     </section>
 
   </div>
-<div id="google_translate_element"></div>
 
 <script>
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement(
-  {pageLanguage: 'en', includedLanguages: 'en,es'},
-  'google_translate_element'
-  );
+function setLanguage(lang){
+
+if(lang === 'es'){
+document.querySelectorAll("[data-es]").forEach(el=>{
+el.innerText = el.getAttribute("data-es")
+})
+}
+
+if(lang === 'en'){
+document.querySelectorAll("[data-en]").forEach(el=>{
+el.innerText = el.getAttribute("data-en")
+})
+}
+
 }
 </script>
-
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  
-
-</script>
-
-
 
 </body>
 </html>
