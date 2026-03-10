@@ -252,8 +252,8 @@ color:#fff;
 
   <a class="back-btn" href="index.html">⬅ BACK</a>
 <div class="lang-switch">
-<button onclick="translatePage('en')">EN</button>
-<button onclick="translatePage('es')">ES</button> 
+<button onclick="setLanguage('en')">EN</button>
+<button onclick="setLanguage('es')">ES</button>
 </div> 
 
   <div class="page">
@@ -278,8 +278,8 @@ color:#fff;
       </ul>
     </section>
 
-    <h2 class="section-title">CLUB GALLERY</h2>
- <section class="gallery">
+ <h2 class="section-title">CLUB GALLERY</h2>
+<section class="gallery">
 <img src="IMG_1146.png">
 <img src="IMG_1143.webp">
 <img src="IMG_1145.jpeg">
@@ -331,7 +331,13 @@ Crazy Horse delivers a true Las Vegas nightlife experience.
 
   </div>
 
-
+<script>
+function setLanguage(lang){
+  document.querySelectorAll("[data-" + lang + "]").forEach(el=>{
+    el.innerText = el.getAttribute("data-" + lang);
+  });
+}
+</script>
 
 </body>
 </html>
