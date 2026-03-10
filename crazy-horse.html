@@ -44,7 +44,29 @@ border:2px solid #d4af37;
       z-index:1000;
       box-shadow:0 4px 12px rgba(0,0,0,0.35);
     }
+.lang-switch{
+position:fixed;
+top:16px;
+right:16px;
+display:flex;
+gap:10px;
+z-index:9999;
+}
 
+.lang-switch button{
+background:#d4af37;
+color:#000;
+border:none;
+padding:8px 16px;
+border-radius:20px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.lang-switch button:last-child{
+background:#222;
+color:#fff;
+}
     .page{
       max-width:1000px;
       margin:0 auto;
