@@ -1,1 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Larry Flynt's Hustler Club VIP</title>
 
+<style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+background:#000;
+color:#fff;
+font-family:Arial, Helvetica, sans-serif;
+line-height:1.5;
+}
+
+a{
+text-decoration:none;
+}
+
+.back-btn{
+position:fixed;
+top:16px;
+left:16px;
+background:#d4af37;
+color:#000;
+padding:10px 16px;
+border-radius:12px;
+font-weight:700;
+z-index:1000;
+}
+
+.lang-switch{
+position:fixed;
+top:16px;
+right:16px;
+display:flex;
+gap:10px;
+z-index:1000;
+}
+
+.lang-switch button{
+background:#d4af37;
+color:#000;
+border:none;
+padding:8px 16px;
+border-radius:20px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.page{
+max-width:1000px;
+margin:auto;
+padding:70px 16px 40px;
+}
+
+.hero{
+border:2px solid #d4af37;
+border-radius:24px;
+overflow:hidden;
+}
+
+.hero img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.hero-content{
+padding:22px;
+text-align:center;
+}
+
+.hero-content h1{
+color:#d4af37;
+font-size:30px;
+margin-bottom:10px;
+}
+
+.vip-box{
+margin-top:20px;
+border:2px solid #d4af37;
+border-radius:20px;
+padding:20px;
+text-align:center;
+}
+
+.vip-list{
+list-style:none;
+display:grid;
+gap:10px;
+font-weight:bold;
+}
+
+.section-title{
+margin:28px 0 14px;
+text-align:center;
+color:#d4af37;
+font-size:24px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.gallery img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:18px;
+border:2px solid #d4af37;
+}
+
+.info-box{
+margin-top:22px;
+border:2px solid #d4af37;
+border-radius:20px;
+padding:20px;
+text-align:center;
+}
+
+.cta-group{
+display:grid;
+gap:12px;
+margin-top:20px;
+}
+
+.call-btn,
+.menu-btn{
+display:block;
+padding:16px;
+border-radius:16px;
+font-weight:800;
+text-align:center;
+}
+
+.call-btn{
+background:#d4af37;
+color:#000;
+}
+
+.menu-btn{
+background:#fff;
+color:#000;
+}
+
+</style>
+</head>
+
+<body>
+
+<a class="back-btn" href="index.html">⬅ BACK</a>
+
+<div class="lang-switch">
+<button onclick="setLanguage('en')">EN</button>
+<button onclick="setLanguage('es')">ES</button>
+</div>
+
+<div class="page">
+
+<section class="hero">
+
+<img src="hustler-main.jpg" alt="Hustler Club Las Vegas">
+
+<div class="hero-content">
+
+<h1
+data-en="LARRY FLYNT'S HUSTLER CLUB"
+data-es="LARRY FLYNT'S HUSTLER CLUB">
+LARRY FLYNT'S HUSTLER CLUB
+</h1>
+
+<p
+data-en="One of the most famous gentlemen's clubs in Las Vegas with VIP hosting, private dances, and free pickup."
+data-es="Uno de los clubes para caballeros más famosos de Las Vegas con anfitrión VIP, bailes privados y recogida gratis.">
+
+One of the most famous gentlemen's clubs in Las Vegas with VIP hosting, private dances, and free pickup.
+
+</p>
+
+</div>
+</section>
+
+<section class="vip-box">
+
+<h2
+data-en="VIP INFO"
+data-es="INFORMACIÓN VIP">
+VIP INFO
+</h2>
+
+<ul class="vip-list">
+
+<li
+data-en="FREE RIDE AVAILABLE"
+data-es="TRANSPORTE GRATIS DISPONIBLE">
+FREE RIDE AVAILABLE
+</li>
+
+<li
+data-en="FREE ENTRY AVAILABLE"
+data-es="ENTRADA GRATIS DISPONIBLE">
+FREE ENTRY AVAILABLE
+</li>
+
+<li
+data-en="VIP HOST SERVICE"
+data-es="SERVICIO DE ANFITRIÓN VIP">
+VIP HOST SERVICE
+</li>
+
+<li
+data-en="PRIVATE DANCES AVAILABLE INSIDE"
+data-es="BAILES PRIVADOS DISPONIBLES DENTRO DEL CLUB">
+PRIVATE DANCES AVAILABLE INSIDE
+</li>
+
+</ul>
+
+</section>
+
+<h2 class="section-title"
+data-en="CLUB GALLERY"
+data-es="GALERÍA DEL CLUB">
+CLUB GALLERY
+</h2>
+
+<section class="gallery">
+
+<img src="hustler1.jpg">
+<img src="hustler2.jpg">
+<img src="hustler3.jpg">
+<img src="hustler4.jpg">
+
+</section>
+
+<h2 class="section-title"
+data-en="ABOUT HUSTLER CLUB"
+data-es="SOBRE HUSTLER CLUB">
+ABOUT HUSTLER CLUB
+</h2>
+
+<section class="info-box">
+
+<p
+data-en="Located near the Las Vegas Strip, Hustler Club offers a luxurious nightlife experience with beautiful dancers, VIP tables, and exclusive private dances."
+data-es="Ubicado cerca del Strip de Las Vegas, Hustler Club ofrece una experiencia nocturna de lujo con hermosas bailarinas, mesas VIP y bailes privados exclusivos.">
+
+Located near the Las Vegas Strip, Hustler Club offers a luxurious nightlife experience with beautiful dancers, VIP tables, and exclusive private dances.
+
+</p>
+
+</section>
+
+<section class="info-box">
+
+<h2 class="section-title"
+data-en="LIMO & PICKUP"
+data-es="TRANSPORTE Y RECOGIDA">
+LIMO & PICKUP
+</h2>
+
+<p
+data-en="Ask for free pickup availability, VIP entry details, and special offers for the night."
+data-es="Pregunta por la disponibilidad de recogida gratis, detalles de entrada VIP y ofertas especiales de la noche.">
+
+Ask for free pickup availability, VIP entry details, and special offers for the night.
+
+</p>
+
+<div class="cta-group">
+
+<a class="call-btn"
+href="tel:+17025424935"
+data-en="CALL FOR FREE PICKUP"
+data-es="LLAMAR PARA RECOGIDA GRATIS">
+
+CALL FOR FREE PICKUP
+
+</a>
+
+<a class="menu-btn"
+href="index.html"
+data-en="RETURN TO MAIN MENU"
+data-es="VOLVER AL MENÚ PRINCIPAL">
+
+RETURN TO MAIN MENU
+
+</a>
+
+</div>
+
+</section>
+
+</div>
+
+<script>
+
+function setLanguage(lang){
+
+localStorage.setItem("siteLanguage", lang);
+
+document.querySelectorAll("[data-" + lang + "]").forEach(el=>{
+el.innerText = el.getAttribute("data-" + lang);
+});
+
+}
+
+window.addEventListener("load", function(){
+
+const savedLang = localStorage.getItem("siteLanguage");
+
+if(savedLang){
+
+document.querySelectorAll("[data-" + savedLang + "]").forEach(el=>{
+el.innerText = el.getAttribute("data-" + savedLang);
+});
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
