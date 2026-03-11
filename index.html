@@ -432,7 +432,20 @@ color:black;
 </head>
 <body>
 <div class="menu-icon" onclick="toggleMenu()">☰</div>
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+display:none;
+z-index:9000;
+}
 
+.overlay.active{
+display:block;
+}
 <div id="sideMenu" class="side-menu">
   <a href="#home" data-en="Home" data-es="Inicio">Home</a>
   <a href="#about" data-en="About Us" data-es="Sobre Nosotros">About Us</a>
