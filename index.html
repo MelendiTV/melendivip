@@ -647,6 +647,24 @@ function closePopup(){
 <a href="tel:+17025424935" class="call-floating">
   📞 CALL FOR PICK UP 
 </a>
+<script>
+function toggleMenu(){
 
+var menu = document.getElementById("sideMenu");
+var overlay = document.getElementById("overlay");
+var icon = document.querySelector(".menu-icon");
+
+if(menu.style.left === "0px"){
+menu.style.left = "-260px";
+overlay.classList.remove("active");
+icon.innerHTML = "☰";
+}else{
+menu.style.left = "0px";
+overlay.classList.add("active");
+icon.innerHTML = "✕";
+}
+
+}
+</script>
 </body>
 </html>
