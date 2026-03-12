@@ -1,1 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Strip Clubs | Melendi VIP Promotion</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#07070b;
+color:white;
+}
+
+/* HEADER */
+
+.page-header{
+text-align:center;
+padding:40px 20px 20px;
+}
+
+.page-header h1{
+font-size:34px;
+margin:0;
+color:white;
+text-shadow:0 0 12px rgba(255,215,0,.4);
+}
+
+.page-header p{
+margin-top:12px;
+color:#d9d9d9;
+font-size:16px;
+}
+
+/* BOTON BACK */
+
+.back-btn{
+display:inline-block;
+margin-top:18px;
+background:#d4af37;
+color:#111;
+padding:10px 20px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* CLUBS CONTAINER */
+
+.clubs-container{
+padding:20px;
+display:flex;
+flex-direction:column;
+gap:18px;
+max-width:700px;
+margin:auto;
+}
+
+/* CLUB CARD */
+
+.club-card{
+background:rgba(0,0,0,.75);
+border:2px solid #d4af37;
+border-radius:16px;
+padding:22px;
+text-align:center;
+box-shadow:0 0 18px rgba(212,175,55,.25);
+}
+
+/* CLUB TITLE */
+
+.club-card h3{
+margin:0 0 14px;
+font-size:26px;
+color:white;
+}
+
+/* VIEW BUTTON */
+
+.club-btn{
+display:inline-block;
+background:linear-gradient(135deg,#d4af37,#b8962e);
+color:#111;
+padding:10px 20px;
+border-radius:12px;
+text-decoration:none;
+font-weight:800;
+box-shadow:0 0 12px rgba(212,175,55,.4);
+}
+
+/* LANGUAGE BUTTONS */
+
+.lang-switch{
+position:fixed;
+top:20px;
+right:20px;
+display:flex;
+gap:8px;
+}
+
+.lang-btn{
+background:#1a1a1a;
+color:white;
+border:none;
+padding:8px 14px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.lang-btn.active{
+background:#d4af37;
+color:#111;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- LANGUAGE SWITCH -->
+
+<div class="lang-switch">
+
+<button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+
+<button class="lang-btn" onclick="setLanguage('es')">ES</button>
+
+</div>
+
+<!-- HEADER -->
+
+<div class="page-header">
+
+<h1 
+data-en="Las Vegas Strip Clubs"
+data-es="Clubes de Strip en Las Vegas">
+
+Las Vegas Strip Clubs
+
+</h1>
+
+<p 
+data-en="Choose your club and view VIP information."
+data-es="Elige tu club y mira la información VIP.">
+
+Choose your club and view VIP information.
+
+</p>
+
+<a href="index.html" class="back-btn"
+data-en="Back to Home"
+data-es="Regresar al Inicio">
+
+Back to Home
+
+</a>
+
+</div>
+
+<!-- CLUBS -->
+
+<div class="clubs-container">
+
+<div class="club-card">
+<h3>Scores</h3>
+<a href="scores.html" class="club-btn"
+data-en="View Club"
+data-es="Ver Club">View Club</a>
+</div>
+
+<div class="club-card">
+<h3>Treasure</h3>
+<a href="treasure.html" class="club-btn"
+data-en="View Club"
+data-es="Ver Club">View Club</a>
+</div>
+
+<div class="club-card">
+<h3>Peppermint Hippo</h3>
+<a href="pepperminthippo.html" class="club-btn"
+data-en="View Club"
+data-es="Ver Club">View Club</a>
+</div>
+
+<div class="club-card">
+<h3>Hustler Club</h3>
+<a href="hustler.html" class="club-btn"
+data-en="View Club"
+data-es="Ver Club">View Club</a>
+</div>
+
+<div class="club-card">
+<h3>Honey's</h3>
+<a href="honeys.html" class="club-btn"
+data-en="View Club"
+data-es="Ver Club">View Club</a>
+</div>
+
+<div class="club-card">
+<h3>Crazy Horse III</h3>
+<a href="crazyhorse.html" class="club-btn"
+data-en="View Club"
+data-es="Ver Club">View Club</a>
+</div>
+
+<div class="club-card">
+<h3>Sapphire</h3>
+<a href="sapphire.html" class="club-btn"
+data-en="View Club"
+data-es="Ver Club">View Club</a>
+</div>
+
+<div class="club-card">
+<h3>Diamond Cabaret</h3>
+<a href="diamondcabaret.html" class="club-btn"
+data-en="View Club"
+data-es="Ver Club">View Club</a>
+</div>
+
+</div>
+
+<!-- LANGUAGE SCRIPT -->
+
+<script>
+
+function setLanguage(lang){
+
+document.querySelectorAll('[data-en]').forEach(el=>{
+
+el.textContent = el.getAttribute('data-'+lang)
+
+})
+
+document.querySelectorAll('.lang-btn').forEach(btn=>btn.classList.remove('active'))
+
+document.querySelector('[onclick="setLanguage(\''+lang+'\')"]').classList.add('active')
+
+}
+
+</script>
+
+</body>
+</html>
