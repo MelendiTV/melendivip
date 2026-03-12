@@ -708,7 +708,25 @@ icon.innerHTML = "✕";
 
 }
 </script>
- 
+ <script>
+document.addEventListener("click", function(e){
+
+  var menu = document.getElementById("sideMenu");
+  var overlay = document.getElementById("overlay");
+  var icon = document.querySelector(".menu-icon");
+
+  if (
+    menu.style.left === "0px" &&
+    !menu.contains(e.target) &&
+    !icon.contains(e.target)
+  ) {
+    menu.style.left = "-260px";
+    overlay.classList.remove("active");
+    icon.innerHTML = "☰";
+  }
+
+});
+</script>
 
 
 </body>
