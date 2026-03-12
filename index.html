@@ -708,6 +708,19 @@ icon.innerHTML = "✕";
 
 }
 </script>
- 
+ <script>
+
+document.addEventListener("click", function(event) {
+
+  const menu = document.querySelector(".menu");
+  const menuButton = document.querySelector(".menu-button");
+
+  if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
+    menu.classList.remove("active");
+  }
+
+});
+
+</script>
 </body>
 </html>
