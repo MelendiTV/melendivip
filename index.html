@@ -407,7 +407,21 @@ background:rgba(0,0,0,0.7);
 cursor:pointer;
 z-index:1000;
 transform: translateY(96px);
-}   
+}
+.menu-logo{
+width:40px;
+height:auto;
+animation: glow 1.5s infinite alternate;
+}
+@keyframes glow{
+0%{
+filter: drop-shadow(0 0 2px #FFD770);
+opacity:1;
+}
+100%{
+filter: drop-shadow(0 0 12px #FFD770);
+opacity:0.8;
+}
 .side-menu{
   position:fixed;
   top:0;
