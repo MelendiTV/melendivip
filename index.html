@@ -706,9 +706,19 @@ overlay.classList.add("active");
 icon.innerHTML = "✕";
 }
 
-}
 </script>
  <script>
+function closeMenu(){
+  var menu = document.getElementById("sideMenu");
+  var overlay = document.getElementById("overlay");
+  var icon = document.querySelector(".menu-icon");
+
+  menu.style.left = "-260px";
+  overlay.classList.remove("active");
+  icon.innerHTML = "☰";
+}
+</script>
+  <script>
 document.addEventListener("click", function(e){
 
   var menu = document.getElementById("sideMenu");
