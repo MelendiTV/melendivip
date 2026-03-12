@@ -696,12 +696,12 @@ var menu = document.getElementById("sideMenu");
 var overlay = document.getElementById("overlay");
 var icon = document.querySelector(".menu-icon");
 
-if(menu.style.left === "0px"){
-menu.style.left = "-262px";
+if(menu.style.transform === "translateX(0px)"){
+menu.style.transform = "translateX(-262px)";
 overlay.classList.remove("active");
 icon.innerHTML = "☰";
 }else{
-menu.style.left = "0px";
+menu.style.transform = "translateX(0px)";
 overlay.classList.add("active");
 icon.innerHTML = "✕";
 }
@@ -720,7 +720,7 @@ document.addEventListener("click", function(e){
     !menu.contains(e.target) &&
     !icon.contains(e.target)
   ) {
-    menu.style.left = "-262px";
+   menu.style.transform = "translateX(-262px)"; 
     overlay.classList.remove("active");
     icon.innerHTML = "☰";
   }
