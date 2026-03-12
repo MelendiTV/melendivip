@@ -467,6 +467,80 @@ animation: menuGlow 1.2s infinite alternate;
 .overlay.active{
   display:block;
 }
+/* HERO POSITION */
+
+.hero{
+position:relative;
+}
+
+/* POSICION DEL BOTON */
+
+.hero-reserve{
+position:absolute;
+left:18px;
+top:45px;
+z-index:10;
+}
+
+/* ESTILO DEL BOTON */
+
+.reserve-btn{
+display:inline-block;
+background:linear-gradient(135deg,#d4af37,#b8962e);
+color:#fff;
+padding:10px 16px;
+border-radius:14px;
+text-decoration:none;
+text-align:center;
+font-weight:700;
+line-height:1.1;
+box-shadow:
+0 0 12px rgba(212,175,55,.7),
+0 0 25px rgba(255,215,0,.6);
+animation:vipPulse 1.6s infinite;
+}
+
+/* TEXTO INGLES */
+
+.reserve-en{
+display:block;
+font-size:12px;
+font-weight:800;
+}
+
+/* TEXTO ESPAÑOL */
+
+.reserve-es{
+display:block;
+font-size:10px;
+opacity:.9;
+margin-top:3px;
+}
+
+/* ANIMACION LATIDO + BRILLO */
+
+@keyframes vipPulse{
+
+0%{
+transform:scale(1);
+box-shadow:
+0 0 10px rgba(212,175,55,.6),
+0 0 20px rgba(255,215,0,.4);
+}
+
+50%{
+transform:scale(1.12);
+box-shadow:
+0 0 20px rgba(255,215,0,1),
+0 0 40px rgba(255,215,0,.8);
+}
+
+100%{
+transform:scale(1);
+box-shadow:
+0 0 10px rgba(212,175,55,.6),
+0 0 20px rgba(255,215,0,.4);
+}
 
 }
 </style>
