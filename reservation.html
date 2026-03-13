@@ -42,16 +42,59 @@ color:white;
 
 button{
 width:100%;
-padding:14px;
-background:#d4af37;
+padding:16px;
+background:linear-gradient(135deg,#d4af37,#b8962e);
 border:none;
-border-radius:10px;
+border-radius:14px;
 font-weight:bold;
+font-size:17px;
 cursor:pointer;
+color:#111;
+box-shadow:0 0 12px rgba(212,175,55,.5);
+animation:vipGlow 2s infinite;
+}
+
+@keyframes vipGlow{
+
+0%{
+transform:scale(1);
+box-shadow:0 0 10px rgba(212,175,55,.5);
+}
+
+50%{
+transform:scale(1.05);
+box-shadow:0 0 25px rgba(255,215,0,.9);
+}
+
+100%{
+transform:scale(1);
+box-shadow:0 0 10px rgba(212,175,55,.5);
+}
+
 }
 
 </style>
+.reservation-success{
+display:none;
+margin-top:20px;
+padding:16px;
+border-radius:12px;
+background:rgba(212,175,55,.15);
+border:1px solid rgba(212,175,55,.6);
+color:white;
+text-align:center;
+box-shadow:0 0 12px rgba(212,175,55,.3);
+}
 
+.reservation-success.show{
+display:block;
+animation:fadeIn .4s ease;
+}
+
+@keyframes fadeIn{
+0%{opacity:0; transform:translateY(10px);}
+100%{opacity:1; transform:translateY(0);}
+}
 </head>
 
 <body>
@@ -84,9 +127,48 @@ cursor:pointer;
 <textarea placeholder="Extra details"></textarea>
 
 <button>Send Reservation</button>
-
+<div id="reservation-success" class="reservation-success">
+  <strong>Reservation sent / Reserva enviada</strong><br>
+  Your VIP host will contact you shortly.<br>
+  Tu host se pondrá en contacto contigo en breve.
+</div>
 </form>
+<script>
 
+document.querySelector("form").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+const name = document.querySelector('input[placeholder="Full Name"]').value
+const phone = document.querySelector('input[placeholder="Phone / WhatsApp"]').value
+const date = document.querySelector('input[type="date"]').value
+const guests = document.querySelector('input[type="number"]').value
+const club = document.querySelector("select").value
+const details = document.querySelector("textarea").value
+
+const whatsappNumber = "17025424935";
+
+const message =
+`VIP Reservation / Reserva VIP
+
+Name / Nombre: ${name}
+Phone / WhatsApp: ${phone}
+Date / Fecha: ${date}
+Guests / Invitados: ${guests}
+Club: ${club}
+Details / Detalles: ${details}`;
+
+
+
+document.getElementById("reservation-success").classList.add("show");
+
+const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+
+window.open(url, "_blank");
+
+});
+
+</script>
 </div>
 
 </body>
