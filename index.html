@@ -93,7 +93,36 @@ z-index:10;
       margin-bottom:20px;
     }
 
+.hero h1{
+font-size:42px;
+font-weight:800;
+line-height:1.1;
+animation: glowPulse 3s ease-in-out infinite;
+}
 
+@keyframes glowPulse{
+0%{
+text-shadow:
+0 0 5px #FFD700,
+0 0 10px #FFD700,
+0 0 18px rgba(255,215,0,0.45);
+}
+
+50%{
+text-shadow:
+0 0 8px #FFD700,
+0 0 16px #FFD700,
+0 0 28px #FFC94D,
+0 0 40px rgba(255,215,0,0.75);
+}
+
+100%{
+text-shadow:
+0 0 5px #FFD700,
+0 0 10px #FFD700,
+0 0 18px rgba(255,215,0,0.45);
+}
+}
     
 
    .hero p{
