@@ -1,1 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Honey’s Las Vegas Guide | Guía de Honey’s Las Vegas</title>
+
+  <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "Guide",
+   "name": "Honey’s Las Vegas Guide",
+   "description": "A guide helping visitors explore Honey’s in Las Vegas and understand its nightlife atmosphere, VIP possibilities, and planning options.",
+   "inLanguage": ["en","es"],
+   "about": {
+     "@type": "Place",
+     "name": "Las Vegas",
+     "address": {
+       "@type": "PostalAddress",
+       "addressLocality": "Las Vegas",
+       "addressRegion": "NV",
+       "addressCountry": "US"
+     }
+   },
+   "publisher": {
+     "@type": "Organization",
+     "name": "Melendi VIP Promotion"
+   }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "BreadcrumbList",
+   "itemListElement": [
+    {
+     "@type": "ListItem",
+     "position": 1,
+     "name": "Home",
+     "item": "https://melendivip.com"
+    },
+    {
+     "@type": "ListItem",
+     "position": 2,
+     "name": "Guides",
+     "item": "https://melendivip.com/guides.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 3,
+     "name": "Best Strip Clubs Las Vegas",
+     "item": "https://melendivip.com/best-strip-clubs-las-vegas.html"
+    },
+    {
+     "@type": "ListItem",
+     "position": 4,
+     "name": "Honey’s Guide",
+     "item": "https://melendivip.com/honeys-guide.html"
+    }
+   ]
+  }
+  </script>
+
+  <meta name="description" content="Explore this Honey’s Las Vegas guide and learn about its atmosphere, nightlife style, and why visitors consider it when exploring Las Vegas strip clubs. Explora esta guía de Honey’s en Las Vegas y conoce su ambiente, estilo nocturno y por qué los visitantes lo consideran al explorar strip clubs en Las Vegas." />
+  <meta name="keywords" content="honeys las vegas guide, honeys vip las vegas, honeys nightlife las vegas, guía honeys las vegas, vip nightlife las vegas" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English, Spanish" />
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:linear-gradient(180deg,#050505,#101010,#1a1a1a);
+      color:white;
+      line-height:1.7;
+    }
+
+    .lang-buttons{
+      position:fixed;
+      top:20px;
+      right:20px;
+      z-index:9999;
+      display:flex;
+      gap:8px;
+    }
+
+    .lang-buttons button{
+      background:#333;
+      color:#fff;
+      border:none;
+      padding:10px 14px;
+      font-weight:bold;
+      cursor:pointer;
+      border-radius:8px;
+      transition:0.3s ease;
+      font-size:14px;
+    }
+
+    .lang-buttons button.active{
+      background:#FFD700;
+      color:#000;
+      box-shadow:0 0 12px rgba(255,215,0,0.45);
+    }
+
+    .lang-buttons button:hover{
+      transform:scale(1.05);
+    }
+
+    .top-links{
+      max-width:1200px;
+      margin:0 auto;
+      padding:25px 20px 0;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .top-btn{
+      display:inline-block;
+      text-decoration:none;
+      background:linear-gradient(135deg,#d4af37,#b8860b);
+      color:#000;
+      font-weight:bold;
+      padding:12px 20px;
+      border-radius:999px;
+      transition:0.25s ease;
+    }
+
+    .top-btn:hover{
+      transform:scale(1.04);
+      box-shadow:0 0 14px rgba(212,175,55,0.35);
+    }
+
+    header{
+      max-width:1200px;
+      margin:25px auto 0;
+      padding:0 20px;
+    }
+
+    .hero{
+      position:relative;
+      min-height:420px;
+      border-radius:24px;
+      overflow:hidden;
+      border:1px solid rgba(212,175,55,0.45);
+      box-shadow:0 0 22px rgba(212,175,55,0.10);
+      background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)),
+        url("IMG_1317.png") center center / cover no-repeat;
+      display:flex;
+      align-items:flex-end;
+    }
+
+    .hero-content{
+      width:100%;
+      padding:40px 30px;
+      background:linear-gradient(to top, rgba(0,0,0,0.82), rgba(0,0,0,0.20));
+    }
+
+    .hero h1{
+      font-size:2.4rem;
+      color:#FFD700;
+      margin-bottom:10px;
+      text-shadow:0 0 10px rgba(255,215,0,0.22);
+    }
+
+    .hero p{
+      max-width:900px;
+      color:#f5f5f5;
+      font-size:1.04rem;
+    }
+
+    .section{
+      max-width:1200px;
+      margin:35px auto;
+      padding:0 20px;
+    }
+
+    .box{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(212,175,55,0.42);
+      border-radius:20px;
+      padding:28px;
+      margin-bottom:28px;
+      box-shadow:0 0 18px rgba(212,175,55,0.08);
+    }
+
+    .box h2{
+      color:#FFD700;
+      margin-bottom:14px;
+      font-size:1.5rem;
+    }
+
+    .box p{
+      color:#f1f1f1;
+      margin-bottom:12px;
+      font-size:1rem;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .cta-btn{
+      display:inline-block;
+      text-decoration:none;
+      background:linear-gradient(135deg,#d4af37,#b8860b);
+      color:#000;
+      font-weight:bold;
+      padding:12px 22px;
+      border-radius:999px;
+      transition:0.25s ease;
+    }
+
+    .cta-btn:hover{
+      transform:scale(1.04);
+      box-shadow:0 0 14px rgba(212,175,55,0.35);
+    }
+
+    footer{
+      text-align:center;
+      padding:20px 20px 50px;
+      color:#d0d0d0;
+      font-size:0.95rem;
+    }
+
+    @media (max-width:768px){
+      .lang-buttons{
+        top:12px;
+        right:12px;
+      }
+
+      .lang-buttons button{
+        padding:8px 12px;
+        font-size:13px;
+      }
+
+      .top-links{
+        padding-top:72px;
+      }
+
+      .hero{
+        min-height:340px;
+      }
+
+      .hero-content{
+        padding:28px 20px;
+      }
+
+      .hero h1{
+        font-size:1.9rem;
+      }
+
+      .hero p{
+        font-size:0.96rem;
+      }
+
+      .box{
+        padding:22px;
+      }
+
+      .box h2{
+        font-size:1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-buttons">
+    <button id="btn-en" onclick="setLanguage('en')">EN</button>
+    <button id="btn-es" onclick="setLanguage('es')">ES</button>
+  </div>
+
+  <div class="top-links">
+    <a href="best-strip-clubs-las-vegas.html" class="top-btn en">← Back to Guide</a>
+    <a href="best-strip-clubs-las-vegas.html" class="top-btn es">← Volver a la Guía</a>
+
+    <a href="contact.html" class="top-btn en">Contact Us</a>
+    <a href="contact.html" class="top-btn es">Contáctanos</a>
+  </div>
+
+  <header>
+    <div class="hero">
+      <div class="hero-content">
+        <h1 class="en">Honey’s Las Vegas Guide</h1>
+        <h1 class="es">Guía de Honey’s Las Vegas</h1>
+
+        <p class="en">
+          Explore this guide to Honey’s in Las Vegas and learn why some visitors consider it when looking for a more personal nightlife atmosphere and a different kind of club experience.
+        </p>
+
+        <p class="es">
+          Explora esta guía de Honey’s en Las Vegas y descubre por qué algunos visitantes lo consideran al buscar un ambiente nocturno más personal y una experiencia de club diferente.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+
+    <div class="box">
+      <h2 class="en">Overview</h2>
+      <h2 class="es">Resumen</h2>
+
+      <p class="en">
+        Honey’s is one of the nightlife options visitors may review when comparing strip clubs in Las Vegas. It can appeal to guests who are interested in a setting that feels a bit more personal or distinct from some of the larger and more mainstream venues in the city.
+      </p>
+
+      <p class="es">
+        Honey’s es una de las opciones nocturnas que los visitantes pueden revisar cuando comparan strip clubs en Las Vegas. Puede atraer a clientes interesados en un ambiente que se sienta un poco más personal o distinto de algunos de los lugares más grandes y más conocidos de la ciudad.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2 class="en">Atmosphere and Experience</h2>
+      <h2 class="es">Ambiente y Experiencia</h2>
+
+      <p class="en">
+        Visitors exploring Honey’s are often looking for a club experience that feels more specific in style and atmosphere. For some guests, that difference is exactly what makes it worth considering while comparing nightlife options in Las Vegas.
+      </p>
+
+      <p class="es">
+        Los visitantes que exploran Honey’s suelen buscar una experiencia de club que se sienta más específica en estilo y ambiente. Para algunos clientes, esa diferencia es precisamente lo que hace que valga la pena considerarlo mientras comparan opciones nocturnas en Las Vegas.
+      </p>
+
+      <p class="en">
+        Depending on the kind of night they want, guests may look into Honey’s as an alternative to other clubs when deciding which venue best matches their preferences.
+      </p>
+
+      <p class="es">
+        Dependiendo del tipo de noche que deseen, los clientes pueden revisar Honey’s como una alternativa a otros clubes al decidir qué lugar se ajusta mejor a sus preferencias.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2 class="en">Why Visitors Consider Honey’s</h2>
+      <h2 class="es">Por Qué los Visitantes Consideran Honey’s</h2>
+
+      <p class="en">
+        When people search for strip clubs in Las Vegas, not everyone is looking for the exact same experience. Some visitors want to compare a wider variety of venues, and Honey’s may stand out for guests who want to explore something with a different feel from the biggest club names.
+      </p>
+
+      <p class="es">
+        Cuando las personas buscan strip clubs en Las Vegas, no todos están buscando exactamente la misma experiencia. Algunos visitantes quieren comparar una variedad más amplia de lugares, y Honey’s puede destacar para clientes que desean explorar algo con una vibra diferente a los nombres más grandes.
+      </p>
+
+      <p class="en">
+        That is why a guide like this is useful. It gives visitors a clearer idea of what type of venue they may be considering before moving deeper into their nightlife planning.
+      </p>
+
+      <p class="es">
+        Por eso una guía como esta es útil. Les da a los visitantes una idea más clara del tipo de lugar que pueden estar considerando antes de seguir avanzando en la planificación de su noche.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2 class="en">Need Help Planning Your Night?</h2>
+      <h2 class="es">¿Necesitas Ayuda para Planificar Tu Noche?</h2>
+
+      <p class="en">
+        Visitors reviewing Honey’s and other nightlife options can contact us through this website for help choosing the right club, understanding VIP possibilities, and planning a better Las Vegas nightlife experience.
+      </p>
+
+      <p class="es">
+        Los visitantes que están revisando Honey’s y otras opciones nocturnas pueden contactarnos a través de este sitio web para recibir ayuda al elegir el club correcto, entender las posibilidades VIP y planificar una mejor experiencia nocturna en Las Vegas.
+      </p>
+
+      <div class="cta-row">
+        <a href="contact.html" class="cta-btn en">Contact Us</a>
+        <a href="contact.html" class="cta-btn es">Contáctanos</a>
+
+        <a href="honeys.html" class="cta-btn en">View Main Club Page</a>
+        <a href="honeys.html" class="cta-btn es">Ver Página del Club</a>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <p class="en">Honey’s Las Vegas Guide | Melendi VIP Promotion</p>
+    <p class="es">Guía de Honey’s Las Vegas | Melendi VIP Promotion</p>
+  </footer>
+
+  <script>
+    function setLanguage(lang){
+      localStorage.setItem("siteLanguage", lang);
+
+      document.querySelectorAll('.en').forEach(function(el){
+        el.style.display = (lang === 'en') ? 'block' : 'none';
+      });
+
+      document.querySelectorAll('.es').forEach(function(el){
+        el.style.display = (lang === 'es') ? 'block' : 'none';
+      });
+
+      document.getElementById("btn-en").classList.remove("active");
+      document.getElementById("btn-es").classList.remove("active");
+
+      if(lang === "en"){
+        document.getElementById("btn-en").classList.add("active");
+      } else {
+        document.getElementById("btn-es").classList.add("active");
+      }
+    }
+
+    const savedLang = localStorage.getItem("siteLanguage") || "en";
+    setLanguage(savedLang);
+  </script>
+
+</body>
+</html>
