@@ -75,6 +75,7 @@ if ("serviceWorker" in navigator) {
   });
 }
 </script>
+    
     body{
 margin:0;
 font-family:Arial,Helvetica,sans-serif;
@@ -910,5 +911,11 @@ document.addEventListener("click", function(e){
 <a href="terms.html">Terms & Conditions</a>
 <a href="privacy.html">Privacy Policy</a>
 </div> 
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/service-worker.js")
+  .then(() => console.log("Service Worker registrado"));
+}
+</script>
 </body>
 </html>
