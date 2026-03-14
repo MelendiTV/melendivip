@@ -1,1 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Scores Las Vegas Guide | Guía de Scores Las Vegas</title>
+  <meta name="description" content="Explore this Scores Las Vegas guide with nightlife information, VIP atmosphere details, and tips for visitors planning a night out in Las Vegas. Explora esta guía de Scores Las Vegas con información nocturna, detalles del ambiente VIP y consejos para visitantes." />
+  <meta name="keywords" content="scores las vegas guide, scores las vegas vip, scores las vegas nightlife, guía scores las vegas, scores club las vegas, vip nightlife las vegas" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English, Spanish" />
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:linear-gradient(180deg,#050505,#101010,#1a1a1a);
+      color:white;
+      line-height:1.7;
+    }
+
+    .lang-buttons{
+      position:fixed;
+      top:20px;
+      right:20px;
+      z-index:9999;
+      display:flex;
+      gap:8px;
+    }
+
+    .lang-buttons button{
+      background:#333;
+      color:#fff;
+      border:none;
+      padding:10px 14px;
+      font-weight:bold;
+      cursor:pointer;
+      border-radius:8px;
+      transition:0.3s ease;
+      font-size:14px;
+    }
+
+    .lang-buttons button.active{
+      background:#FFD700;
+      color:#000;
+      box-shadow:0 0 12px rgba(255,215,0,0.45);
+    }
+
+    .lang-buttons button:hover{
+      transform:scale(1.05);
+    }
+
+    .top-links{
+      max-width:1200px;
+      margin:0 auto;
+      padding:25px 20px 0;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .top-btn{
+      display:inline-block;
+      text-decoration:none;
+      background:linear-gradient(135deg,#d4af37,#b8860b);
+      color:#000;
+      font-weight:bold;
+      padding:12px 20px;
+      border-radius:999px;
+      transition:0.25s ease;
+    }
+
+    .top-btn:hover{
+      transform:scale(1.04);
+      box-shadow:0 0 14px rgba(212,175,55,0.35);
+    }
+
+    header{
+      max-width:1200px;
+      margin:25px auto 0;
+      padding:0 20px;
+    }
+
+    .hero{
+      position:relative;
+      min-height:420px;
+      border-radius:24px;
+      overflow:hidden;
+      border:1px solid rgba(212,175,55,0.45);
+      box-shadow:0 0 22px rgba(212,175,55,0.10);
+      background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)),
+        url("IMG_1406.jpeg") center center / cover no-repeat;
+      display:flex;
+      align-items:flex-end;
+    }
+
+    .hero-content{
+      width:100%;
+      padding:40px 30px;
+      background:linear-gradient(to top, rgba(0,0,0,0.82), rgba(0,0,0,0.20));
+    }
+
+    .hero h1{
+      font-size:2.4rem;
+      color:#FFD700;
+      margin-bottom:10px;
+      text-shadow:0 0 10px rgba(255,215,0,0.22);
+    }
+
+    .hero p{
+      max-width:900px;
+      color:#f5f5f5;
+      font-size:1.04rem;
+    }
+
+    .section{
+      max-width:1200px;
+      margin:35px auto;
+      padding:0 20px;
+    }
+
+    .box{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(212,175,55,0.42);
+      border-radius:20px;
+      padding:28px;
+      margin-bottom:28px;
+      box-shadow:0 0 18px rgba(212,175,55,0.08);
+    }
+
+    .box h2{
+      color:#FFD700;
+      margin-bottom:14px;
+      font-size:1.5rem;
+    }
+
+    .box p{
+      color:#f1f1f1;
+      margin-bottom:12px;
+      font-size:1rem;
+    }
+
+    .highlight{
+      color:#FFD700;
+      font-weight:bold;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .cta-btn{
+      display:inline-block;
+      text-decoration:none;
+      background:linear-gradient(135deg,#d4af37,#b8860b);
+      color:#000;
+      font-weight:bold;
+      padding:12px 22px;
+      border-radius:999px;
+      transition:0.25s ease;
+    }
+
+    .cta-btn:hover{
+      transform:scale(1.04);
+      box-shadow:0 0 14px rgba(212,175,55,0.35);
+    }
+
+    footer{
+      text-align:center;
+      padding:20px 20px 50px;
+      color:#d0d0d0;
+      font-size:0.95rem;
+    }
+
+    @media (max-width:768px){
+      .lang-buttons{
+        top:12px;
+        right:12px;
+      }
+
+      .lang-buttons button{
+        padding:8px 12px;
+        font-size:13px;
+      }
+
+      .top-links{
+        padding-top:72px;
+      }
+
+      .hero{
+        min-height:340px;
+      }
+
+      .hero-content{
+        padding:28px 20px;
+      }
+
+      .hero h1{
+        font-size:1.9rem;
+      }
+
+      .hero p{
+        font-size:0.96rem;
+      }
+
+      .box{
+        padding:22px;
+      }
+
+      .box h2{
+        font-size:1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-buttons">
+    <button id="btn-en" onclick="setLanguage('en')">EN</button>
+    <button id="btn-es" onclick="setLanguage('es')">ES</button>
+  </div>
+
+  <div class="top-links">
+    <a href="best-strip-clubs-las-vegas.html" class="top-btn en">← Back to Guide</a>
+    <a href="best-strip-clubs-las-vegas.html" class="top-btn es">← Volver a la Guía</a>
+
+    <a href="contact.html" class="top-btn en">Contact Us</a>
+    <a href="contact.html" class="top-btn es">Contáctanos</a>
+  </div>
+
+  <header>
+    <div class="hero">
+      <div class="hero-content">
+        <h1 class="en">Scores Las Vegas Guide</h1>
+        <h1 class="es">Guía de Scores Las Vegas</h1>
+
+        <p class="en">
+          Explore this guide to Scores in Las Vegas and learn why many visitors consider it when looking for nightlife, VIP experiences, and a memorable night out.
+        </p>
+
+        <p class="es">
+          Explora esta guía de Scores en Las Vegas y descubre por qué muchos visitantes lo consideran al buscar vida nocturna, experiencias VIP y una noche memorable.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+
+    <div class="box">
+      <h2 class="en">Overview</h2>
+      <h2 class="es">Resumen</h2>
+
+      <p class="en">
+        Scores is one of the nightlife options that visitors often review when exploring the Las Vegas adult entertainment scene. It is known for offering a bold atmosphere, VIP possibilities, and a setting that appeals to guests looking for a more energetic nightlife experience.
+      </p>
+
+      <p class="es">
+        Scores es una de las opciones nocturnas que los visitantes suelen revisar cuando exploran la escena de entretenimiento adulto en Las Vegas. Es conocido por ofrecer un ambiente intenso, posibilidades VIP y un entorno que atrae a quienes buscan una experiencia nocturna con más energía.
+      </p>
+
+      <p class="en">
+        This guide is designed to give visitors a simple but useful introduction to the club before they continue planning their night through this website.
+      </p>
+
+      <p class="es">
+        Esta guía está diseñada para dar a los visitantes una introducción simple pero útil al club antes de continuar planificando su noche a través de este sitio web.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2 class="en">Atmosphere and Experience</h2>
+      <h2 class="es">Ambiente y Experiencia</h2>
+
+      <p class="en">
+        Many guests looking into Scores are usually interested in a place with a <span class="highlight">lively nightlife vibe</span>, entertainment, and access to a more premium evening. For visitors who want an active setting and a club that feels part of the Las Vegas nightlife energy, Scores can stand out as an option worth considering.
+      </p>
+
+      <p class="es">
+        Muchos clientes que revisan Scores normalmente están interesados en un lugar con un <span class="highlight">ambiente nocturno animado</span>, entretenimiento y acceso a una noche más premium. Para los visitantes que desean un entorno activo y un club que se sienta parte de la energía nocturna de Las Vegas, Scores puede destacar como una opción que vale la pena considerar.
+      </p>
+
+      <p class="en">
+        The experience visitors look for can vary, but common interests usually include VIP access, comfort, nightlife coordination, and the ability to choose a venue that matches the style of night they want.
+      </p>
+
+      <p class="es">
+        La experiencia que buscan los visitantes puede variar, pero los intereses más comunes suelen incluir acceso VIP, comodidad, coordinación nocturna y la posibilidad de elegir un lugar que combine con el estilo de noche que desean.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2 class="en">Why Visitors Consider Scores</h2>
+      <h2 class="es">Por Qué los Visitantes Consideran Scores</h2>
+
+      <p class="en">
+        When people search for the best strip clubs in Las Vegas, they are usually not just looking for any club. They often want a place that feels organized, exciting, and easy to include in their plans. Scores is often reviewed by visitors who want to compare nightlife options before deciding where to go.
+      </p>
+
+      <p class="es">
+        Cuando las personas buscan los mejores strip clubs de Las Vegas, normalmente no están buscando cualquier club. Muchas veces quieren un lugar que se sienta organizado, emocionante y fácil de incluir en sus planes. Scores suele ser revisado por visitantes que desean comparar opciones nocturnas antes de decidir a dónde ir.
+      </p>
+
+      <p class="en">
+        Through this website, visitors can use guides like this one to better understand their options and then contact us for help with nightlife planning, VIP coordination, and transportation-related questions.
+      </p>
+
+      <p class="es">
+        A través de este sitio web, los visitantes pueden usar guías como esta para entender mejor sus opciones y luego contactarnos para recibir ayuda con planificación nocturna, coordinación VIP y preguntas relacionadas con transporte.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2 class="en">How This Guide Helps</h2>
+      <h2 class="es">Cómo Ayuda Esta Guía</h2>
+
+      <p class="en">
+        This is not meant to replace the full club page. Instead, this guide gives a more guided and descriptive view for visitors who are still comparing clubs and deciding what kind of Las Vegas experience fits them best.
+      </p>
+
+      <p class="es">
+        Esto no está pensado para reemplazar la página completa del club. En cambio, esta guía ofrece una visión más guiada y descriptiva para los visitantes que todavía están comparando clubes y decidiendo qué tipo de experiencia en Las Vegas se ajusta mejor a ellos.
+      </p>
+
+      <p class="en">
+        If visitors want more direct club-specific information after reading this guide, they can continue through the website and contact us for the next step.
+      </p>
+
+      <p class="es">
+        Si los visitantes quieren información más directa y específica del club después de leer esta guía, pueden continuar dentro del sitio web y contactarnos para el siguiente paso.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2 class="en">Need Help Planning Your Night?</h2>
+      <h2 class="es">¿Necesitas Ayuda para Planificar Tu Noche?</h2>
+
+      <p class="en">
+        Visitors who are reviewing Scores and other nightlife options can contact us through this website for help with choosing the right club, understanding VIP possibilities, and getting better guidance for a Las Vegas night out.
+      </p>
+
+      <p class="es">
+        Los visitantes que están revisando Scores y otras opciones nocturnas pueden contactarnos a través de este sitio web para recibir ayuda al elegir el club correcto, entender las posibilidades VIP y obtener una mejor orientación para una noche en Las Vegas.
+      </p>
+
+      <div class="cta-row">
+        <a href="contact.html" class="cta-btn en">Contact Us</a>
+        <a href="contact.html" class="cta-btn es">Contáctanos</a>
+
+        <a href="scores.html" class="cta-btn en">View Main Scores Page</a>
+        <a href="scores.html" class="cta-btn es">Ver Página Principal de Scores</a>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <p class="en">Scores Las Vegas Guide | Melendi VIP Promotion</p>
+    <p class="es">Guía de Scores Las Vegas | Melendi VIP Promotion</p>
+  </footer>
+
+  <script>
+    function setLanguage(lang){
+      localStorage.setItem("siteLanguage", lang);
+
+      document.querySelectorAll('.en').forEach(function(el){
+        el.style.display = (lang === 'en') ? 'block' : 'none';
+      });
+
+      document.querySelectorAll('.es').forEach(function(el){
+        el.style.display = (lang === 'es') ? 'block' : 'none';
+      });
+
+      document.getElementById("btn-en").classList.remove("active");
+      document.getElementById("btn-es").classList.remove("active");
+
+      if(lang === "en"){
+        document.getElementById("btn-en").classList.add("active");
+      } else {
+        document.getElementById("btn-es").classList.add("active");
+      }
+    }
+
+    const savedLang = localStorage.getItem("siteLanguage") || "en";
+    setLanguage(savedLang);
+  </script>
+
+</body>
+</html>
