@@ -1,1 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Best Strip Clubs in Las Vegas | Los Mejores Strip Clubs de Las Vegas</title>
+  <meta name="description" content="Discover the best strip clubs in Las Vegas with VIP information, nightlife guidance, transportation options, and direct contact through our website. Descubre los mejores strip clubs de Las Vegas con información VIP, guía de vida nocturna, opciones de transporte y contacto directo a través de nuestro sitio web." />
+  <meta name="keywords" content="best strip clubs in las vegas, los mejores strip clubs de las vegas, las vegas nightlife, vida nocturna en las vegas, vip host las vegas, free limo las vegas, limo gratis las vegas, las vegas vip guide, strip clubs las vegas vip" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English, Spanish" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #050505, #101010, #1a1a1a);
+      color: white;
+      line-height: 1.6;
+    }
+
+    .lang-buttons{
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+      display: flex;
+      gap: 8px;
+    }
+
+    .lang-buttons button{
+      background: #333;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: 0.3s ease;
+      font-size: 14px;
+    }
+
+    .lang-buttons button.active{
+      background: #FFD700;
+      color: black;
+      box-shadow: 0 0 12px rgba(255,215,0,0.5);
+    }
+
+    .lang-buttons button:hover{
+      transform: scale(1.05);
+    }
+
+    .top-link-wrap{
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 25px 20px 0;
+    }
+
+    .back-link{
+      display: inline-block;
+      text-decoration: none;
+      background: linear-gradient(135deg, #d4af37, #b8860b);
+      color: black;
+      font-weight: bold;
+      padding: 12px 20px;
+      border-radius: 999px;
+    }
+
+    header {
+      text-align: center;
+      padding: 45px 20px 40px;
+      background: linear-gradient(135deg, rgba(0,0,0,0.92), rgba(30,30,30,0.82));
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      color: #d4af37;
+      text-shadow: 0 0 10px rgba(212,175,55,0.25);
+      margin-bottom: 12px;
+    }
+
+    header p {
+      max-width: 1000px;
+      margin: 0 auto 18px auto;
+      font-size: 1.02rem;
+      color: #f3f3f3;
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .intro-box,
+    .seo-text,
+    .contact-box {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(212,175,55,0.45);
+      border-radius: 18px;
+      padding: 25px;
+      margin-bottom: 35px;
+      box-shadow: 0 0 18px rgba(212,175,55,0.08);
+    }
+
+    .intro-box h2,
+    .seo-text h2,
+    .contact-box h2 {
+      color: #d4af37;
+      margin-bottom: 14px;
+      font-size: 1.5rem;
+    }
+
+    .intro-box p,
+    .seo-text p,
+    .contact-box p {
+      margin-bottom: 12px;
+      color: #f1f1f1;
+    }
+
+    .clubs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      margin-bottom: 35px;
+    }
+
+    .club-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(212,175,55,0.45);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 0 20px rgba(212,175,55,0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .club-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 24px rgba(212,175,55,0.18);
+    }
+
+    .club-card h3 {
+      color: #d4af37;
+      margin-bottom: 10px;
+      font-size: 1.35rem;
+    }
+
+    .club-card p {
+      color: #f2f2f2;
+      font-size: 0.98rem;
+      margin-bottom: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      background: linear-gradient(135deg, #d4af37, #b8860b);
+      color: black;
+      font-weight: bold;
+      padding: 12px 22px;
+      border-radius: 999px;
+      margin-top: 8px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(212,175,55,0.35);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px 50px;
+      color: #cfcfcf;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 90px 15px 35px;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      header p {
+        font-size: 0.96rem;
+      }
+
+      .lang-buttons{
+        top: 12px;
+        right: 12px;
+      }
+
+      .lang-buttons button{
+        padding: 8px 12px;
+        font-size: 13px;
+      }
+
+      .top-link-wrap{
+        padding-top: 72px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-buttons">
+    <button id="btn-en" onclick="setLanguage('en')">EN</button>
+    <button id="btn-es" onclick="setLanguage('es')">ES</button>
+  </div>
+
+  <div class="top-link-wrap">
+    <a href="guides.html" class="back-link en">← Back to Guides</a>
+    <a href="guides.html" class="back-link es">← Volver a Guías</a>
+  </div>
+
+  <header>
+    <h1 class="en">Best Strip Clubs in Las Vegas</h1>
+    <h1 class="es">Los Mejores Strip Clubs de Las Vegas</h1>
+
+    <p class="en">
+      Discover the best strip clubs in Las Vegas with VIP guidance, premium nightlife information,
+      transportation options, and direct access to club details through our website.
+    </p>
+
+    <p class="es">
+      Descubre los mejores strip clubs de Las Vegas con guía VIP, información premium de vida nocturna,
+      opciones de transporte y acceso directo a los detalles de cada club a través de nuestro sitio web.
+    </p>
+  </header>
+
+  <section class="section">
+    <div class="intro-box">
+      <h2 class="en">Las Vegas VIP Guide</h2>
+      <h2 class="es">Guía VIP de Las Vegas</h2>
+
+      <p class="en">
+        Las Vegas is known around the world for its nightlife, luxury entertainment, and VIP experiences.
+        This website helps visitors explore some of the most recognized strip clubs in Las Vegas and find
+        the information they need to plan a better night out.
+      </p>
+
+      <p class="es">
+        Las Vegas es conocida en todo el mundo por su vida nocturna, entretenimiento de lujo y experiencias VIP.
+        Este sitio web ayuda a los visitantes a explorar algunos de los strip clubs más reconocidos de Las Vegas
+        y a encontrar la información que necesitan para planear una mejor salida nocturna.
+      </p>
+
+      <p class="en">
+        Instead of searching in different places, visitors can review club options here, compare locations,
+        and connect directly through our website for VIP information, nightlife coordination, and transportation guidance.
+      </p>
+
+      <p class="es">
+        En lugar de buscar en diferentes lugares, los visitantes pueden revisar aquí las opciones de clubes,
+        comparar ubicaciones y conectarse directamente a través de nuestro sitio web para información VIP,
+        coordinación nocturna y orientación de transporte.
+      </p>
+    </div>
+
+    <div class="seo-text">
+      <h2 class="en">Why Visitors Search for the Best Strip Clubs in Las Vegas</h2>
+      <h2 class="es">Por Qué los Visitantes Buscan los Mejores Strip Clubs en Las Vegas</h2>
+
+      <p class="en">
+        People visiting Las Vegas often want more than just a random club recommendation. They usually look for
+        a place with a strong atmosphere, good location, VIP options, bottle service, and a smoother overall experience.
+      </p>
+
+      <p class="es">
+        Las personas que visitan Las Vegas muchas veces quieren más que una recomendación al azar. Normalmente buscan
+        un lugar con buen ambiente, buena ubicación, opciones VIP, servicio de botellas y una experiencia general más cómoda.
+      </p>
+
+      <p class="en">
+        That is why this guide is useful. It gives visitors a simple way to review well-known clubs and continue directly
+        to each club page on this website for more details.
+      </p>
+
+      <p class="es">
+        Por eso esta guía es útil. Les da a los visitantes una forma simple de revisar clubes conocidos y continuar
+        directamente a la página de cada club dentro de este sitio web para ver más detalles.
+      </p>
+    </div>
+
+    <div class="clubs-grid">
+
+      <div class="club-card">
+        <h3>Crazy Horse 3</h3>
+
+        <p class="en">
+          A well-known Las Vegas club offering VIP service, premium entertainment, and a strong nightlife atmosphere near the Strip.
+        </p>
+
+        <p class="es">
+          Un club muy conocido de Las Vegas que ofrece servicio VIP, entretenimiento premium y un gran ambiente nocturno cerca del Strip.
+        </p>
+
+        <a href="crazyhorse.html" class="btn en">VIP INFO</a>
+        <a href="crazyhorse.html" class="btn es">INFO VIP</a>
+      </div>
+
+      <div class="club-card">
+        <h3>Sapphire</h3>
+
+        <p class="en">
+          One of the most recognized gentlemen’s clubs in Las Vegas, known for luxury, premium service, and a memorable nightlife experience.
+        </p>
+
+        <p class="es">
+          Uno de los clubes más reconocidos de Las Vegas, conocido por su lujo, servicio premium y una experiencia nocturna memorable.
+        </p>
+
+        <a href="sapphire.html" class="btn en">VIP INFO</a>
+        <a href="sapphire.html" class="btn es">INFO VIP</a>
+      </div>
+
+      <div class="club-card">
+        <h3>Peppermint Hippo</h3>
+
+        <p class="en">
+          A modern club experience with stylish design, premium entertainment, and a strong party vibe for visitors looking for a lively night.
+        </p>
+
+        <p class="es">
+          Una experiencia moderna de club con diseño elegante, entretenimiento premium y un ambiente fuerte de fiesta para quienes buscan una noche animada.
+        </p>
+
+        <a href="pepperminthippo.html" class="btn en">VIP INFO</a>
+        <a href="pepperminthippo.html" class="btn es">INFO VIP</a>
+      </div>
+
+      <div class="club-card">
+        <h3>Hustler Club</h3>
+
+        <p class="en">
+          An iconic nightlife destination in Las Vegas with multiple entertainment areas, VIP opportunities, and a high-energy atmosphere.
+        </p>
+
+        <p class="es">
+          Un destino icónico de vida nocturna en Las Vegas con múltiples áreas de entretenimiento, oportunidades VIP y un ambiente de mucha energía.
+        </p>
+
+        <a href="hustler.html" class="btn en">VIP INFO</a>
+        <a href="hustler.html" class="btn es">INFO VIP</a>
+      </div>
+
+      <div class="club-card">
+        <h3>Scores</h3>
+
+        <p class="en">
+          Scores offers a bold nightlife experience with premium service, VIP options, and a convenient location for many visitors.
+        </p>
+
+        <p class="es">
+          Scores ofrece una experiencia nocturna intensa con servicio premium, opciones VIP y una ubicación conveniente para muchos visitantes.
+        </p>
+
+        <a href="scores.html" class="btn en">VIP INFO</a>
+        <a href="scores.html" class="btn es">INFO VIP</a>
+      </div>
+
+      <div class="club-card">
+        <h3>Honey’s</h3>
+
+        <p class="en">
+          A unique option for guests who want a more personal nightlife experience with VIP access and entertainment.
+        </p>
+
+        <p class="es">
+          Una opción única para los invitados que desean una experiencia más personal de vida nocturna con acceso VIP y entretenimiento.
+        </p>
+
+        <a href="honeys.html" class="btn en">VIP INFO</a>
+        <a href="honeys.html" class="btn es">INFO VIP</a>
+      </div>
+
+      <div class="club-card">
+        <h3>Diamond Cabaret</h3>
+
+        <p class="en">
+          Diamond Cabaret combines nightlife, entertainment, and VIP service for visitors looking for a memorable Las Vegas night out.
+        </p>
+
+        <p class="es">
+          Diamond Cabaret combina vida nocturna, entretenimiento y servicio VIP para visitantes que buscan una noche memorable en Las Vegas.
+        </p>
+
+        <a href="diamondcabaret.html" class="btn en">VIP INFO</a>
+        <a href="diamondcabaret.html" class="btn es">INFO VIP</a>
+      </div>
+
+    </div>
+
+    <div class="seo-text">
+      <h2 class="en">How This Website Helps Visitors</h2>
+      <h2 class="es">Cómo Ayuda Este Sitio Web a los Visitantes</h2>
+
+      <p class="en">
+        This website is not just a general nightlife page. It is designed to help visitors quickly review trusted club options,
+        access VIP information, and move directly to the pages that matter most.
+      </p>
+
+      <p class="es">
+        Este sitio web no es solo una página general de vida nocturna. Está diseñado para ayudar a los visitantes a revisar rápidamente
+        opciones confiables de clubes, acceder a información VIP y pasar directamente a las páginas que más importan.
+      </p>
+
+      <p class="en">
+        Visitors can use this site to compare clubs, read nightlife information, and contact us for assistance with VIP coordination,
+        transportation options, and planning a better Las Vegas nightlife experience.
+      </p>
+
+      <p class="es">
+        Los visitantes pueden usar este sitio para comparar clubes, leer información de vida nocturna y contactarnos para recibir ayuda con
+        coordinación VIP, opciones de transporte y la planificación de una mejor experiencia nocturna en Las Vegas.
+      </p>
+    </div>
+
+    <div class="contact-box">
+      <h2 class="en">Need VIP Help or Nightlife Information?</h2>
+      <h2 class="es">¿Necesitas Ayuda VIP o Información Nocturna?</h2>
+
+      <p class="en">
+        If you are planning a night out in Las Vegas and want help choosing the right club, reviewing VIP options,
+        or understanding transportation possibilities, you can contact us directly through this website.
+      </p>
+
+      <p class="es">
+        Si estás planeando una salida nocturna en Las Vegas y quieres ayuda para elegir el club correcto, revisar opciones VIP
+        o entender las posibilidades de transporte, puedes contactarnos directamente a través de este sitio web.
+      </p>
+
+      <p class="en">
+        Our website is here to make the experience easier, clearer, and more organized for visitors looking for nightlife guidance in Las Vegas.
+      </p>
+
+      <p class="es">
+        Nuestro sitio web está aquí para hacer la experiencia más fácil, clara y organizada para los visitantes que buscan orientación
+        sobre la vida nocturna en Las Vegas.
+      </p>
+
+      <a href="contact.html" class="btn en">Contact Us</a>
+      <a href="contact.html" class="btn es">Contáctanos</a>
+    </div>
+  </section>
+
+  <footer>
+    <p class="en">Las Vegas VIP Guide</p>
+    <p class="es">Guía VIP de Las Vegas</p>
+  </footer>
+
+  <script>
+    function setLanguage(lang){
+      localStorage.setItem("siteLanguage", lang);
+
+      document.querySelectorAll('.en').forEach(function(el){
+        el.style.display = (lang === 'en') ? 'block' : 'none';
+      });
+
+      document.querySelectorAll('.es').forEach(function(el){
+        el.style.display = (lang === 'es') ? 'block' : 'none';
+      });
+
+      document.getElementById("btn-en").classList.remove("active");
+      document.getElementById("btn-es").classList.remove("active");
+
+      if(lang === "en"){
+        document.getElementById("btn-en").classList.add("active");
+      } else {
+        document.getElementById("btn-es").classList.add("active");
+      }
+    }
+
+    const savedLang = localStorage.getItem("siteLanguage") || "en";
+    setLanguage(savedLang);
+  </script>
+
+</body>
+</html>
