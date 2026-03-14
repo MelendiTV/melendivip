@@ -62,7 +62,20 @@
 <meta name="apple-mobile-web-app-title" content="Melendi VIP">
 <link rel="apple-touch-icon" href="icon-192.png">
   <style>
-body{
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("/service-worker.js")
+      .then(function (registration) {
+        console.log("Service Worker registrado:", registration.scope);
+      })
+      .catch(function (error) {
+        console.log("Error registrando Service Worker:", error);
+      });
+  });
+}
+</script>
+    body{
 margin:0;
 font-family:Arial,Helvetica,sans-serif;
 background:#07070b;
