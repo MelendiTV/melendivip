@@ -1,4 +1,4 @@
-const CACHE_NAME = "melendi-vip-v2";
+const CACHE_NAME = "melendi-vip-v3";
 
 const urlsToCache = [
   "/",
