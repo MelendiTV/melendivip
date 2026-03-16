@@ -976,9 +976,63 @@ if ("serviceWorker" in navigator) {
 <button id="continueBtn">Continue to Website</button>
 
 </div>
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+const popup = document.getElementById("installPopup");
+const installBtn = document.getElementById("installBtn");
+const continueBtn = document.getElementById("continueBtn");
+
+if(!popup || !installBtn || !continueBtn) return;
+
+/* Mostrar popup después de 2 segundos */
+setTimeout(function(){
+popup.style.display = "flex";
+},2000);
+
+
+/* Botón instalar */
+
+installBtn.addEventListener("click", function(){
+
+const ua = navigator.userAgent.toLowerCase();
+
+if(/iphone|ipad|ipod/.test(ua)){
+
+alert("To install the app on iPhone:\nTap the Share button and choose 'Add to Home Screen'.");
+
+}
+
+else if(/android/.test(ua)){
+
+alert("To install the app on Android:\nOpen the browser menu and tap 'Install App' or 'Add to Home Screen'.");
+
+}
+
+else{
+
+alert("To install the app:\nOpen your browser menu and select 'Install App' or 'Add to Home Screen'.");
+
+}
+
+popup.style.display = "none";
+
+});
+
+
+/* Botón continuar */
+
+continueBtn.addEventListener("click", function(){
+popup.style.display = "none";
+});
+
+});
+
+</script>
 </div>
 
 
-<
+
 </body>
 </html>
