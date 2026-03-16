@@ -1016,7 +1016,51 @@ document.addEventListener("DOMContentLoaded", function () {
   
 });
 </script>
+<script>
+const popup = document.getElementById("installPopup");
+const installBtn = document.getElementById("installBtn");
+const continueBtn = document.getElementById("continueBtn");
+const installTitle = document.getElementById("installTitle");
+const installText = document.getElementById("installText");
+const installGuide = document.getElementById("installGuide");
 
+if (popup && installBtn && continueBtn && installTitle && installText && installGuide) {
+  setTimeout(() => {
+    popup.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  }, 800);
+
+  installBtn.addEventListener("click", () => {
+    const ua = navigator.userAgent.toLowerCase();
+
+    if (/iphone|ipad|ipod/.test(ua)) {
+      installTitle.textContent = "Install on iPhone";
+      installText.textContent = "Follow these quick steps:";
+      installGuide.style.display = "block";
+      installBtn.style.display = "none";
+      return;
+    }
+
+    if (/android/.test(ua)) {
+      installTitle.textContent = "Install on Android";
+      installText.textContent = "Open the browser menu and tap Install App or Add to Home Screen.";
+      installGuide.style.display = "none";
+      installBtn.style.display = "none";
+      return;
+    }
+
+    installTitle.textContent = "Install the App";
+    installText.textContent = "Open your browser menu and select Install App or Add to Home Screen.";
+    installGuide.style.display = "none";
+    installBtn.style.display = "none";
+  });
+
+  continueBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+    document.body.style.overflow = "";
+  });
+}
+</script>
 
 <div id="installPopup" class="install-popup">
   <div class="install-box">
