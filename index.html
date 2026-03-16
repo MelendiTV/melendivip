@@ -991,24 +991,6 @@ const continueBtn = document.getElementById("continueBtn");
 
 installPopup.style.display = "none";
 
-window.addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  installPopup.style.display = "flex";
-});
 
-installBtn.addEventListener("click", async () => {
-  if (!deferredPrompt) return;
-  installPopup.style.display = "none";
-  deferredPrompt.prompt();
-  await deferredPrompt.userChoice;
-  deferredPrompt = null;
-});
-
-continueBtn.addEventListener("click", () => {
-  installPopup.style.display = "none";
-});
-
-</script>
 </body>
 </html>
