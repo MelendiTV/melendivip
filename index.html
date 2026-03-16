@@ -1013,33 +1013,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.style.overflow = "hidden";
   }, 800);
 
-  installBtn.addEventListener("click", function () {
-    if (isIos) {
-      installTitle.textContent = "Install on iPhone";
-      installText.textContent = "Follow these quick steps:";
-      installGuide.style.display = "block";
-      installBtn.style.display = "none";
-      return;
-    }
-
-    if (isAndroid) {
-      installTitle.textContent = "Install on Android";
-      installText.textContent = "Open the browser menu and tap Install App or Add to Home Screen.";
-      installGuide.style.display = "none";
-      installBtn.style.display = "none";
-      return;
-    }
-
-    installTitle.textContent = "Install the App";
-    installText.textContent = "Open your browser menu and select Install App or Add to Home Screen.";
-    installGuide.style.display = "none";
-    installBtn.style.display = "none";
-  });
-
-  continueBtn.addEventListener("click", function () {
-    popup.style.display = "none";
-    document.body.style.overflow = "";
-  });
+  
 });
 </script>
 
