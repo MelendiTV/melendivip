@@ -541,7 +541,8 @@ background:rgba(0,0,0,0.7);
 cursor:pointer;
 z-index:1000;
 transform: translateY(96px);
-animation: menuGlow 1.2s infinite alternate;
+}
+  animation: menuGlow 1.2s infinite alternate;
 }
 .side-menu{
   position:fixed;
@@ -667,9 +668,7 @@ box-shadow:
   <div class="nav">
     <div class="brand">
     <img src="76640EE8-0B43-4816-A9B2-6C0C09488648.png" alt="Melendi VIP"› 
-      
-</span>
-    </div>
+    <div>
     <div class="lang-switch">
       <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
       <button class="lang-btn" onclick="setLanguage('es')">ES</button>
@@ -904,13 +903,13 @@ document.addEventListener("click", function(e){
   ){
     menu.style.left = "-262px";
     overlay.classList.remove("active");
-    icon.innerHTML = "☰";
+    icon.innerHTML = 	"≡" 
   }
-}
 });
 </script>
-<div id="overlay" class="overlay" onclick="toggleMenu()"></div>
-
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
+  <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
+ 
 <div id="sideMenu" class="side-menu">
 <a href="index.html">Home</a>
 <a href="about.html">About Us</a>
@@ -921,11 +920,39 @@ document.addEventListener("click", function(e){
 <a href="contact.html">Contact</a>
 <a href="terms.html">Terms & Conditions</a>
 <a href="privacy.html">Privacy Policy</a>
-</div> 
+</div>
+<script>
+function toggleMenu(){
+  var menu = document.getElementById("sideMenu");
+  var overlay = document.getElementById("overlay");
+  var icon = document.querySelector(".menu-icon");
+      
+  if(menu.style.left === "0px"){
+    menu.style.left = "-262px";
+    overlay.classList.remove("active");
+    icon.innerHTML = "☰";
+  } else {
+    menu.style.left = "0px";
+    overlay.classList.add("active");
+    icon.innerHTML = "×";
+  }
+}
+ document.addEventListener("click", function(e){
+  var menu = document.getElementById("sideMenu");
+  var overlay = document.getElementById("overlay");
+  var icon = document.querySelector(".menu-icon");
+
+  if(
+    menu.style.left === "0px" &&
+    !menu.contains(e.target) &&
+    !icon.contains(e.target)
+  ){
+    menu.style.left = "-262px";
+    overlay.classList.remove("active");
+    icon.innerHTML = "☰";
+  }
+});
 </script>
-<div id="installPopup" class="install-popup">
-  <div class="install-box">
-  
     <h2 id="installTitle">Download the App</h2>
     <p id="installText">Install the Melendi VIP app for faster access</p>
 
