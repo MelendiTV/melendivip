@@ -921,38 +921,7 @@ document.addEventListener("click", function(e){
 <a href="terms.html">Terms & Conditions</a>
 <a href="privacy.html">Privacy Policy</a>
 </div>
-<script>
-function toggleMenu(){
-  var menu = document.getElementById("sideMenu");
-  var overlay = document.getElementById("overlay");
-  var icon = document.querySelector(".menu-icon");
-      
-  if(menu.style.left === "0px"){
-    menu.style.left = "-262px";
-    overlay.classList.remove("active");
-    icon.innerHTML = "☰";
-  } else {
-    menu.style.left = "0px";
-    overlay.classList.add("active");
-    icon.innerHTML = "×";
-  }
-}
- document.addEventListener("click", function(e){
-  var menu = document.getElementById("sideMenu");
-  var overlay = document.getElementById("overlay");
-  var icon = document.querySelector(".menu-icon");
 
-  if(
-    menu.style.left === "0px" &&
-    !menu.contains(e.target) &&
-    !icon.contains(e.target)
-  ){
-    menu.style.left = "-262px";
-    overlay.classList.remove("active");
-    icon.innerHTML = "☰";
-  }
-});
-</script>
     <h2 id="installTitle">Download the App</h2>
     <p id="installText">Install the Melendi VIP app for faster access</p>
 
