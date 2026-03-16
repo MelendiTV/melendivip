@@ -203,7 +203,6 @@ font-weight:800;
 line-height:1.1;
 animation: glowPulse 3s ease-in-out infinite;
 }
-  }
 @keyframes glowPulse{
 0%{
 text-shadow:
@@ -224,6 +223,7 @@ text-shadow:
 0 0 10px #FFD700,
 0 0 18px rgba(255,215,0,0.45);
 }    
+}
    .hero p{
       font-size:20px;
       line-height:1.5;
@@ -377,7 +377,7 @@ letter-spacing:.5px;
 }
 .club-grid{
 display:grid;
-grid-template-columns:repeat:1fr;
+grid-template-columns:1fr;
 gap:18px;
 max-width:500px;
 margin:auto;
@@ -429,7 +429,7 @@ text-align:center;
   }
   .club p{
     font-size:12px;
-   }
+    }
   }
 .clubs{
 padding:60px 20px;
@@ -662,7 +662,6 @@ box-shadow:
     </div>
   <div class="menu-icon" onclick="toggleMenu()">≡</div>
 </div>
-  </div>
 <div style="text-align:center; color:#FFD700; font-weight:900; font-size:20px; letter-spacing:3px; text-shadow:0 0 10px gold;">
 ⭐ 10 YEARS OF VIP EXPERIENCE IN LAS VEGAS ⭐
 </div>
@@ -681,9 +680,6 @@ Free limo pick-up • VIP host • Fast entry
         data-es="LA MEJOR EXPERIENCIA NOCTURNA EN LAS VEGAS">
         THE BEST NIGHTLIFE EXPERIENCE IN LAS VEGAS
       </h1>
-   
-
-
       <p
         data-en="Discover top gentlemen’s clubs in Las Vegas with direct phone and WhatsApp contact."
         data-es="Descubre los mejores gentlemen’s clubs en Las Vegas con contacto directo por teléfono y WhatsApp.">
@@ -766,7 +762,7 @@ data-es="Entrada rápida a los mejores clubes de Las Vegas"
 >
 Fast entry to the best clubs in Las Vegas
 </li>
-</div>
+</ul>
 </section>
 
 <div style="text-align:center; margin:30px 0;">
@@ -892,6 +888,7 @@ document.addEventListener("click", function(e){
     overlay.classList.remove("active");
     icon.innerHTML = "☰";
   }
+}
 });
 </script>
 <div id="overlay" class="overlay" onclick="toggleMenu()"></div>
@@ -908,27 +905,6 @@ document.addEventListener("click", function(e){
 <a href="privacy.html">Privacy Policy</a>
 </div> 
 <script>
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const popup = document.getElementById("installPopup");
-  const installBtn = document.getElementById("installBtn");
-  const continueBtn = document.getElementById("continueBtn");
-  const installTitle = document.getElementById("installTitle");
-  const installText = document.getElementById("installText");
-  const installGuide = document.getElementById("installGuide");
-
-  if (!popup || !installBtn || !continueBtn) return;
-
-  const ua = navigator.userAgent.toLowerCase();
-  const isIos = /iphone|ipad|ipod/.test(ua);
-  const isAndroid = /android/.test(ua);
-
-  setTimeout(function () {
-    popup.style.display = "flex";
-    document.body.style.overflow = "hidden";
-  }, 800);
-});
 </script>
 <div id="installPopup" class="install-popup">
   <div class="install-box">
@@ -990,6 +966,5 @@ if (popup && installBtn && continueBtn && installTitle && installText && install
   });
 }
 </script>
-</div>
 </body>
 </html>
