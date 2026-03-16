@@ -415,7 +415,7 @@ line-height:1.25;
 color:#f3f3f6;
 text-align:center;
 }
-@media (max-width:768px)
+@media (max-width:768px){
   .club-grid{
    grid-template-columns:1fr;
     gap:14px;
@@ -873,6 +873,7 @@ function toggleMenu(){
     menu.style.left = "0px";
     overlay.classList.add("active");
     icon.innerHTML = "×";
+   }
   }
 document.addEventListener("click", function(e){
   var menu = document.getElementById("sideMenu");
@@ -904,7 +905,6 @@ document.addEventListener("click", function(e){
 <a href="terms.html">Terms & Conditions</a>
 <a href="privacy.html">Privacy Policy</a>
 </div> 
-<script>
 </script>
 <div id="installPopup" class="install-popup">
   <div class="install-box">
