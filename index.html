@@ -993,37 +993,57 @@ if ("serviceWorker" in navigator) {
 </div>
 <script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const popup = document.getElementById("installPopup");
+  const installBtn = document.getElementById("installBtn");
+  const continueBtn = document.getElementById("continueBtn");
+  const installTitle = document.getElementById("installTitle");
+  const installText = document.getElementById("installText");
+  const installGuide = document.getElementById("installGuide");
 
+  if (!popup || !installBtn || !continueBtn) return;
 
-alert("To install the app on iPhone:\nTap the Share button and choose 'Add to Home Screen'.");
+  const ua = navigator.userAgent.toLowerCase();
+  const isIos = /iphone|ipad|ipod/.test(ua);
+  const isAndroid = /android/.test(ua);
 
-}
+  setTimeout(function () {
+    popup.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  }, 800);
 
-else if(/android/.test(ua)){
+  installBtn.addEventListener("click", function () {
+    if (isIos) {
+      installTitle.textContent = "Install on iPhone";
+      installText.textContent = "Follow these quick steps:";
+      installGuide.style.display = "block";
+      installBtn.style.display = "none";
+      return;
+    }
 
-alert("To install the app on Android:\nOpen the browser menu and tap 'Install App' or 'Add to Home Screen'.");
+    if (isAndroid) {
+      installTitle.textContent = "Install on Android";
+      installText.textContent = "Open the browser menu and tap Install App or Add to Home Screen.";
+      installGuide.style.display = "none";
+      installBtn.style.display = "none";
+      return;
+    }
 
-}
+    installTitle.textContent = "Install the App";
+    installText.textContent = "Open your browser menu and select Install App or Add to Home Screen.";
+    installGuide.style.display = "none";
+    installBtn.style.display = "none";
+  });
 
-else{
-
-alert("To install the app:\nOpen your browser menu and select 'Install App' or 'Add to Home Screen'.");
-
-}
-
-popup.style.display = "none";
-
-});
-
-
-/* Botón continuar */
-
-continueBtn.addEventListener("click", function(){
-popup.style.display = "none";
-});
-
+  continueBtn.addEventListener("click", function () {
+    popup.style.display = "none";
+    document.body.style.overflow = "";
+  });
 });
 </script>
+
+
 <div id="installPopup" class="install-popup">
   <div class="install-box">
     <h2>Download the App</h2>
