@@ -979,57 +979,6 @@ if ("serviceWorker" in navigator) {
 </div>
 
 
-<script>
-let deferredPrompt = null;
-
-const installPopup = document.getElementById("installPopup");
-const installBtn = document.getElementById("installBtn");
-const continueBtn = document.getElementById("continueBtn");
-
-const isIos = /iphone|ipad|ipod/i.test(window.navigator.userAgent);
-const isStandalone =
-  window.matchMedia("(display-mode: standalone)").matches ||
-  window.navigator.standalone === true;
-
-// Ocultar al cargar
-installPopup.style.display = "none";
-
-// Mostrar popup en todos los dispositivos si NO está instalada
-if (!isStandalone) {
-  installPopup.style.display = "flex";
-}
-
-// Si el navegador soporta install prompt nativo
-window.addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-
-  installBtn.textContent = "Download App";
-  installBtn.onclick = async () => {
-    installPopup.style.display = "none";
-    deferredPrompt.prompt();
-    await deferredPrompt.userChoice;
-    deferredPrompt = null;
-  };
-});
-
-// iPhone / iPad: mostrar instrucciones manuales
-if (isIos) {
-  installBtn.textContent = "How to Install";
-  installBtn.onclick = () => {
-    alert("On iPhone: tap Share, then Add to Home Screen.");
-  };
-}
-
-// Cerrar popup
-continueBtn.addEventListener("click", () => {
-  installPopup.style.display = "none";
-});
-
-// Si ya está instalada, no mostrar popup
-window.addEventListener("appinstalled", () => {
-  installPopup.style.display = "none";
-});
-</script>
+<
 </body>
 </html>
