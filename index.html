@@ -1102,17 +1102,6 @@ filter:brightness(1.2) contrast(1.2);
   transition:all 0.3s ease;
 }
 
-/* glow alrededor */
-.club::after{
-  content:"";
-  position:absolute;
-  inset:-6px;
-  border-radius:20px;
-  background:radial-gradient(circle, rgba(255,215,0,0.4), transparent 70%);
-  filter:blur(10px);
-  z-index:-1;
-}
-
 /* efecto hover */
 .club:hover{
   transform:translateY(-5px) scale(1.02);
