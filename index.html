@@ -1100,7 +1100,22 @@ const installTitle = document.getElementById("installTitle");
 const installText = document.getElementById("installText");
 const installGuide = document.getElementById("installGuide");
 
+function isRunningAsApp() {
+  return window.matchMedia("(display-mode: standalone)").matches ||
+         window.navigator.standalone === true;
+}
 
+if (popup && installBtn && continueBtn && installTitle && installText && installGuide) {
+
+  if (isRunningAsApp()) {
+    return; // ⛔ NO mostrar popup si ya está instalada
+  }
+
+  setTimeout(() => {
+    popup.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  }, 800);
+}
 
   installBtn.addEventListener("click", () => {
     const ua = navigator.userAgent.toLowerCase();
