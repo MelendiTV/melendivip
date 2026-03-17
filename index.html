@@ -219,22 +219,21 @@ margin-bottom:20px;
 }
 .hero h1{
 font-size:34px;
-text-align:center;
-color:#fff;
+line-height:1.12;
+margin-top:8px;
 
-/* SIN fondo */
+/* ❌ ELIMINAR TODO ESTO SI EXISTE */
 background:none;
-box-shadow:none;
 padding:0;
+border-radius:0;
+box-shadow:none;
 
-/* 🔥 SHADOW DORADO */
-text-shadow:
-0 0 8px #ffd700,
-0 0 18px #ffd700,
-0 0 35px rgba(255,215,0,0.9);
+/* ✅ ESTO ES LO QUE QUIERES */
+color:var(--gold);
+text-align:center;
 
-/* 🔥 ANIMACIÓN */
-animation: glowPulseText 1.8s ease-in-out infinite;
+/* 🔥 GLOW ANIMADO */
+animation:glow 2s infinite alternate;
 }
 
 @keyframes glowPulseText{
