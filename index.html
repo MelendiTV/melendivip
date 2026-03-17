@@ -1033,9 +1033,106 @@ z-index:1;
 filter:brightness(1.2) contrast(1.2);
 } 
  </style>
+.install-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.45);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:99999;
+  padding:20px;
+}
+
+.install-overlay.show{
+  display:flex;
+}
+
+.install-modal{
+  width:min(92vw, 420px);
+  background:#ffffff;
+  border:2px solid rgba(212,175,55,0.65);
+  border-radius:22px;
+  box-shadow:0 18px 50px rgba(0,0,0,0.28);
+  padding:22px 18px 18px;
+  text-align:center;
+}
+
+.install-modal h3{
+  margin:0 0 10px;
+  font-size:26px;
+  line-height:1.1;
+  color:#111;
+}
+
+.install-modal p{
+  margin:0 0 16px;
+  font-size:15px;
+  line-height:1.45;
+  color:#333;
+}
+
+.install-actions{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.install-btn,
+.web-btn{
+  width:100%;
+  border:none;
+  border-radius:14px;
+  padding:14px 16px;
+  font-size:17px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.install-btn{
+  background:linear-gradient(180deg, #ffd700, #d4af37);
+  color:#111;
+  box-shadow:0 6px 16px rgba(212,175,55,0.35);
+}
+
+.web-btn{
+  background:#111;
+  color:#fff;
+}
+
+.install-help{
+  display:none;
+  margin-top:12px;
+  font-size:14px;
+  line-height:1.45;
+  color:#444;
+}
+
+.install-help.show{
+  display:block;
+}
+
 </head>
+ <body>
 <body>
-  
+
+<div id="installOverlay" class="install-overlay" aria-hidden="true">
+  <div class="install-modal">
+    <h3>Install App?</h3>
+    <p>Install the app for a better experience, or continue using the website.</p>
+
+    <div class="install-actions">
+      <button id="installAppBtn" class="install-btn">Install App</button>
+      <button id="continueWebBtn" class="web-btn">Continue on Web</button>
+    </div>
+
+    <div id="installHelp" class="install-help"></div>
+  </div>
+</div>
+
+<div class="nav">
  <div class="nav">
  <div class="brand">
  <img src="76640EE8-0B43-4816-A9B2-6C0C09488648.png" alt="Melendi VIP">
@@ -1366,7 +1463,60 @@ function isRunningAsApp() {
 }
 </script>
 <script>
-(function () {
+<script>
+let deferredPrompt;
+
+const overlay = document.getElementById("installOverlay");
+const installBtn = document.getElementById("installAppBtn");
+const continueBtn = document.getElementById("continueWebBtn");
+const installHelp = document.getElementById("installHelp");
+
+function isStandalone() {
+  return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+}
+
+function isIOS() {
+  return /iphone|ipad|ipod/i.test(navigator.userAgent);
+}
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  if (!isStandalone()) {
+    overlay.classList.add("show");
+  }
+});
+
+window.addEventListener("load", () => {
+  if (!isStandalone() && isIOS()) {
+    overlay.classList.add("show");
+  }
+});
+
+installBtn.addEventListener("click", async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    const choice = await deferredPrompt.userChoice;
+
+    if (choice.outcome === "accepted") {
+      overlay.classList.remove("show");
+    }
+  } else if (isIOS()) {
+    installHelp.textContent = "Tap Share → Add to Home Screen";
+    installHelp.classList.add("show");
+  }
+});
+
+continueBtn.addEventListener("click", () => {
+  overlay.classList.remove("show");
+});
+
+window.addEventListener("appinstalled", () => {
+  overlay.classList.remove("show");
+});
+</script>
+ (function () {
   const isStandalone =
     window.navigator.standalone === true ||
     window.matchMedia("(display-mode: standalone)").matches;
@@ -1381,5 +1531,6 @@ function isRunningAsApp() {
   }
 })();
 </script>
-  </body>
-</html>
+ </body>
+
+ </html>
