@@ -626,25 +626,7 @@ z-index:10;
 
 /* ESTILO DEL BOTON */
 
-.reserve-btn{
-position:absolute;
-top:110px;
-left:20px;
-z-index:6;
-display:inline-block;
-padding:10px 18px;
-border-radius:22px;
-background:#d4af37;
-color:#111;
-font-weight:700;
-font-size:13px;
-text-align:center;
-text-decoration:none;
-line-height:1.2;
-animation:pulseGlow 1.4s infinite ease-in-out;
-box-shadow:0 0 10px rgba(212,175,55,.4);
-transform-origin:center;
-}
+
 @keyframes pulseGlow{
   0%{
     transform:scale(1);
@@ -975,19 +957,19 @@ position:relative;
 z-index:1;
 filter:brightness(1.2) contrast(1.2);
 } 
- </style>
+</style>
 </head>
 <body>
   
-  <div class="nav">
-    <div class="brand">
-    <img src="76640EE8-0B43-4816-A9B2-6C0C09488648.png" alt="Melendi VIP">
-    </div>
-    <div class="lang-switch">
-      <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
-      <button class="lang-btn" onclick="setLanguage('es')">ES</button>
-    </div>
-  <div class="menu-icon" onclick="toggleMenu()">≡</div>
+ <div class="nav">
+ <div class="brand">
+ <img src="76640EE8-0B43-4816-A9B2-6C0C09488648.png" alt="Melendi VIP">
+ </div>
+ <div class="lang-switch">
+ <button class="lang-btn active" onclick="setLanguage('en')">EN</button>
+ <button class="lang-btn" onclick="setLanguage('es')">ES</button>
+ </div>
+ <div class="menu-icon" onclick="toggleMenu()">≡</div>
 </div>
 <div style="text-align:center; color:#FFD700; font-weight:900; font-size:20px; letter-spacing:3px; text-shadow:0 0 10px gold;">
 ⭐ 10 YEARS OF VIP EXPERIENCE IN LAS VEGAS ⭐
@@ -997,30 +979,37 @@ filter:brightness(1.2) contrast(1.2);
 Free limo pick-up • VIP host • Fast entry
 </div>
  <section id="home" class="hero"> 
-    <div class="hero-inner">
+ <div class="hero-inner">
   <a href="reservation.html" class="reserve-btn hero-reserve">
 <span class="reserve-en">RESERVE HERE</span>
 <span class="reserve-es">RESERVA AQUÍ</span>
 </a>    
      <h1
-      data-en="THE BEST NIGHTLIFE EXPERIENCE IN LAS VEGAS"
-        data-es="LA MEJOR EXPERIENCIA NOCTURNA EN LAS VEGAS">
-        THE BEST NIGHTLIFE EXPERIENCE IN LAS VEGAS
-      </h1>
-      <p
-        data-en="Discover top gentlemen’s clubs in Las Vegas with direct phone and WhatsApp contact."
-        data-es="Descubre los mejores gentlemen’s clubs en Las Vegas con contacto directo por teléfono y WhatsApp.">
-        Discover top gentlemen’s clubs in Las Vegas with direct phone and WhatsApp contact.
-      </p>
-      <div class="buttons">
-  <a class="btn btn-primary" href="tel:+17025424900">
-    📞 CALL
+  data-en="THE BEST NIGHTLIFE EXPERIENCE IN LAS VEGAS"
+  data-es="LA MEJOR EXPERIENCIA NOCTURNA EN LAS VEGAS">
+  THE BEST NIGHTLIFE EXPERIENCE IN LAS VEGAS
+  </h1>
+  <p
+  data-en="Discover top gentlemen’s clubs in Las Vegas with direct phone and WhatsApp contact."
+  data-es="Descubre los mejores gentlemen’s clubs en Las Vegas con contacto directo por teléfono y WhatsApp.">
+  Discover top gentlemen’s clubs in Las Vegas with direct phone and WhatsApp contact.
+ </p>
+ <div class="cta-main">
+  <a href="tel:+17025424900" class="reserve-btn">
+    RESERVE HERE<br><span>RESERVA AQUÍ</span>
+  </a>
+</div>
+
+<div class="buttons">
+ <a class="btn btn-primary" href="tel:+17025424900">
+    <span class="icon">📞</span>
+    CALL
   </a>
 
   <a class="btn btn-whatsapp" href="https://wa.me/17025424900">
-    💬 WHATSAPP
+    <span class="icon">💬</span>
+    WHATSAPP
   </a>
-</div>
    </div>
    <section class="seo-section" id="about">
   <h2 class="seo-title"
