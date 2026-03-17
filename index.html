@@ -212,31 +212,48 @@ color:#d0d0d8;
 margin-bottom:20px;
 }
 .hero h1{
-color:#fff;
+font-size:34px;
 text-align:center;
-}
+color:#fff;
+
+/* SIN fondo */
+background:none;
+box-shadow:none;
+padding:0;
+
+/* 🔥 SHADOW DORADO */
 text-shadow:
-0 0 10px #ffd700,
-0 0 20px #ffd700,
-0 0 30px #d4af37;
+0 0 8px #ffd700,
+0 0 18px #ffd700,
+0 0 35px rgba(255,215,0,0.9);
 
-animation: glowText 2s ease-in-out infinite alternate;
+/* 🔥 ANIMACIÓN */
+animation: glowPulseText 1.8s ease-in-out infinite;
 }
 
-@keyframes glowText{
+@keyframes glowPulseText{
+
 0%{
 text-shadow:
 0 0 5px #ffd700,
-0 0 10px #ffd700,
-0 0 15px #d4af37;
+0 0 12px #ffd700,
+0 0 20px rgba(255,215,0,0.6);
+}
+
+50%{
+text-shadow:
+0 0 12px #ffd700,
+0 0 28px #ffd700,
+0 0 45px rgba(255,215,0,1);
 }
 
 100%{
 text-shadow:
-0 0 15px #ffd700,
-0 0 30px #ffd700,
-0 0 45px #d4af37;
+0 0 5px #ffd700,
+0 0 12px #ffd700,
+0 0 20px rgba(255,215,0,0.6);
 }
+
 }
  .hero p{
  font-size:20px;
