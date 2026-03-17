@@ -1062,24 +1062,6 @@ position:relative;
 z-index:1;
 filter:brightness(1.2) contrast(1.2);
 } 
-
-/* glow suave del centro */
-.clubs::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at center,
-      rgba(255,215,0,0.15),
-      transparent 60%);
-  animation:goldBreath 6s ease-in-out infinite;
-  pointer-events:none;
-}
-
-@keyframes goldMove{
-  0%{transform:translateY(0);}
-  100%{transform:translateY(-40px);}
-}
  </style>
 </head>
 <body>
