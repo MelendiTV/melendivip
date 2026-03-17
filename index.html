@@ -1100,7 +1100,7 @@ const installTitle = document.getElementById("installTitle");
 const installText = document.getElementById("installText");
 const installGuide = document.getElementById("installGuide");
 
-  function isRunningAsApp() {
+ function isRunningAsApp() {
   return window.navigator.standalone === true;
 }
 
@@ -1149,9 +1149,8 @@ if (popup && installBtn && continueBtn && installTitle && installText && install
 </script>
 <script>
 (function () {
-  const isStandalone =
-    window.matchMedia('(display-mode: standalone)').matches ||
-    window.navigator.standalone === true;
+ const isStandalone = window.navigator.standalone === true;
+    
 
   if (isStandalone) {
     document.body.classList.add('pwa-mode');
