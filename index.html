@@ -1471,7 +1471,8 @@ window.addEventListener("appinstalled", () => {
   overlay.classList.remove("show");
 });
 </script>
- <script>
+ 
+<script>
  (function () {
   const isStandalone =
     window.navigator.standalone === true ||
@@ -1483,11 +1484,11 @@ window.addEventListener("appinstalled", () => {
     const popup = document.getElementById("installPopup");
     if (popup) popup.style.display = "none";
 
-    document.body.style.overflow = "";
-  }
+ document.body.style.overflow = "";
+}
 })();
 </script>
-  </script  src="/footer.js"></script>
-
-   </body> 
-   </html>
+ 
+</script src="/footer.js"></script>
+</body> 
+</html>
