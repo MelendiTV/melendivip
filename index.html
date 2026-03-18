@@ -766,7 +766,8 @@ box-shadow:
 0 0 10px rgba(212,175,55,.6),
 0 0 20px rgba(255,215,0,.4);
 }
-.vegas-title{
+}
+ .vegas-title{
 font-family:'Cinzel',serif !important;
 font-size:42px !important;
 text-align:center !important;
@@ -1032,7 +1033,6 @@ position:relative;
 z-index:1;
 filter:brightness(1.2) contrast(1.2);
 } 
- <style>
 .install-overlay{
   position:fixed;
   inset:0;
@@ -1132,7 +1132,6 @@ filter:brightness(1.2) contrast(1.2);
 </div>
 
 <div class="nav">
- <div class="nav">
  <div class="brand">
  <img src="76640EE8-0B43-4816-A9B2-6C0C09488648.png" alt="Melendi VIP">
  </div>
@@ -1416,7 +1415,6 @@ const installGuide = document.getElementById("installGuide");
  function isRunningAsApp() {
   return window.navigator.standalone === true || window.matchMedia("(display-mode: standalone)").matches;
 }
-}
 if (popup && installBtn && continueBtn && installTitle && installText && installGuide) {
 
   if (!isRunningAsApp()) {
@@ -1513,7 +1511,8 @@ continueBtn.addEventListener("click", () => {
 window.addEventListener("appinstalled", () => {
   overlay.classList.remove("show");
 });
-<script>
+</script>
+ <script>
  (function () {
   const isStandalone =
     window.navigator.standalone === true ||
