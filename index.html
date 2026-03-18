@@ -1185,6 +1185,164 @@ display:block;
       0 0 30px rgba(212,175,55,0.45);
   }
 }
+ .vegas-sign{
+  position:relative;
+  max-width:720px;
+  margin:22px auto 26px;
+  padding-top:18px;
+}
+
+.vegas-star{
+  position:absolute;
+  top:0;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:4;
+  font-size:42px;
+  line-height:1;
+  color:#ffb300;
+  text-shadow:
+    0 0 6px #ffd54a,
+    0 0 16px #ffb300,
+    0 0 28px rgba(255,179,0,.9);
+}
+
+.vegas-frame{
+  position:relative;
+  background:#fffdf8;
+  border:6px solid #d4af37;
+  border-radius:90px;
+  padding:28px 26px 30px;
+  overflow:hidden;
+  box-shadow:
+    0 0 10px rgba(255,215,0,.55),
+    0 0 24px rgba(255,215,0,.35);
+}
+
+.vegas-inner{
+  position:relative;
+  z-index:3;
+  text-align:center;
+}
+
+.vegas-line{
+  font-weight:900;
+  text-transform:uppercase;
+  line-height:1.05;
+  letter-spacing:.5px;
+}
+
+.vegas-blue{
+  color:#1f57a8;
+  font-size:38px;
+}
+
+.vegas-big{
+  font-size:54px;
+  margin:6px 0 4px;
+}
+
+.vegas-red{
+  color:#d92b1f;
+  font-size:62px;
+  margin-top:4px;
+}
+
+.vegas-lights{
+  position:absolute;
+  inset:0;
+  border-radius:90px;
+  pointer-events:none;
+  z-index:2;
+}
+
+.vegas-lights::before{
+  content:"";
+  position:absolute;
+  inset:8px;
+  border-radius:84px;
+  background:
+    radial-gradient(circle at 9px 9px, #fff8c9 0 28%, #ffcb45 29% 58%, #ff9400 59% 72%, transparent 73%) 0 0 / 26px 26px repeat;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask-composite:exclude;
+  padding:12px;
+  opacity:.95;
+}
+
+.vegas-lights-a::before{
+  animation:vegasBlinkA .9s linear infinite;
+}
+
+.vegas-lights-b::before{
+  transform:translate(13px,13px);
+  opacity:.45;
+  animation:vegasBlinkB .9s linear infinite;
+}
+
+@keyframes vegasBlinkA{
+  0%, 49%{
+    opacity:.98;
+    filter:drop-shadow(0 0 3px #ffd54a) drop-shadow(0 0 8px #ffb300);
+  }
+  50%, 100%{
+    opacity:.32;
+    filter:drop-shadow(0 0 1px #ffd54a) drop-shadow(0 0 3px #ffb300);
+  }
+}
+
+@keyframes vegasBlinkB{
+  0%, 49%{
+    opacity:.28;
+    filter:drop-shadow(0 0 1px #ffd54a) drop-shadow(0 0 3px #ffb300);
+  }
+  50%, 100%{
+    opacity:.96;
+    filter:drop-shadow(0 0 3px #ffd54a) drop-shadow(0 0 8px #ffb300);
+  }
+}
+
+@media (max-width:768px){
+  .vegas-sign{
+    margin:18px auto 22px;
+    padding-top:14px;
+  }
+
+  .vegas-star{
+    font-size:34px;
+  }
+
+  .vegas-frame{
+    border-width:4px;
+    border-radius:56px;
+    padding:22px 18px 24px;
+  }
+
+  .vegas-lights,
+  .vegas-lights::before{
+    border-radius:56px;
+  }
+
+  .vegas-lights::before{
+    inset:6px;
+    padding:10px;
+    background-size:20px 20px;
+  }
+
+  .vegas-blue{
+    font-size:24px;
+  }
+
+  .vegas-big{
+    font-size:36px;
+  }
+
+  .vegas-red{
+    font-size:42px;
+  }
+}
  </style>
 </head>
  <body>
@@ -1222,12 +1380,36 @@ Free limo pick-up • VIP host • Fast entry
 </div>
  <section id="home" class="hero"> 
  <div class="hero-inner">
-  
-  <h1 class="hero-title-glow"
-    data-en="THE BEST NIGHTLIFE EXPERIENCE IN LAS VEGAS"
-    data-es="LA MEJOR EXPERIENCIA NOCTURNA EN LAS VEGAS">
-  THE BEST NIGHTLIFE EXPERIENCE IN LAS VEGAS
-</h1>
+
+<div class="vegas-sign">
+
+  <div class="vegas-frame">
+    <div class="vegas-lights vegas-lights-a"></div>
+    <div class="vegas-lights vegas-lights-b"></div>
+
+    <div class="vegas-inner">
+      <div class="vegas-line vegas-blue"
+           data-en="THE BEST NIGHTLIFE"
+           data-es="LA MEJOR VIDA NOCTURNA">
+        THE BEST NIGHTLIFE
+      </div>
+
+      <div class="vegas-line vegas-blue vegas-big"
+           data-en="EXPERIENCE"
+           data-es="EXPERIENCIA">
+        EXPERIENCE
+      </div>
+
+      <div class="vegas-line vegas-red"
+           data-en="IN LAS VEGAS"
+           data-es="EN LAS VEGAS">
+        IN LAS VEGAS
+      </div>
+    </div>
+
+  </div>
+
+</div>  
   <p
   data-en="Discover top gentlemen’s clubs in Las Vegas with direct phone and WhatsApp contact."
   data-es="Descubre los mejores gentlemen’s clubs en Las Vegas con contacto directo por teléfono y WhatsApp.">
