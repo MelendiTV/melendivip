@@ -1147,6 +1147,44 @@ margin-top:100px;
 width:100%;
 display:block;
 }
+.hero-title-glow{
+  color:#ffffff;
+  text-align:center;
+  font-weight:900;
+  text-transform:uppercase;
+  line-height:1.08;
+  letter-spacing:1px;
+  text-shadow:
+    0 0 6px #d4af37,
+    0 0 14px #d4af37,
+    0 0 26px rgba(212,175,55,0.95),
+    0 0 42px rgba(212,175,55,0.65);
+  animation:heroGoldGlow 1.8s ease-in-out infinite;
+}
+
+@keyframes heroGoldGlow{
+  0%{
+    text-shadow:
+      0 0 4px #d4af37,
+      0 0 10px #d4af37,
+      0 0 18px rgba(212,175,55,0.75),
+      0 0 30px rgba(212,175,55,0.45);
+  }
+  50%{
+    text-shadow:
+      0 0 8px #ffd700,
+      0 0 18px #ffd700,
+      0 0 34px rgba(255,215,0,1),
+      0 0 54px rgba(255,215,0,0.8);
+  }
+  100%{
+    text-shadow:
+      0 0 4px #d4af37,
+      0 0 10px #d4af37,
+      0 0 18px rgba(212,175,55,0.75),
+      0 0 30px rgba(212,175,55,0.45);
+  }
+}
  </style>
 </head>
  <body>
@@ -1185,10 +1223,10 @@ Free limo pick-up • VIP host • Fast entry
  <section id="home" class="hero"> 
  <div class="hero-inner">
   <h1
-  <h1 style="color:#FFD700;" 
-data-en="THE BEST NIGHTLIFE EXPERIENCE IN LAS VEGAS" 
-data-es="LA MEJOR EXPERIENCIA NOCTURNA EN LAS VEGAS">
-THE BEST NIGHTLIFE EXPERIENCE IN LAS VEGAS
+  <h1 class="hero-title-glow"
+    data-en="THE BEST NIGHTLIFE EXPERIENCE IN LAS VEGAS"
+    data-es="LA MEJOR EXPERIENCIA NOCTURNA EN LAS VEGAS">
+  THE BEST NIGHTLIFE EXPERIENCE IN LAS VEGAS
 </h1>
   <p
   data-en="Discover top gentlemen’s clubs in Las Vegas with direct phone and WhatsApp contact."
