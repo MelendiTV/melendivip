@@ -61,24 +61,11 @@
 }
 </script>
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#07070b">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="apple-mobile-web-app-title" content="Melendi VIP">
 <link rel="apple-touch-icon" href="icon-192.png">
-<script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", function () {
-    navigator.serviceWorker.register("/service-worker.js")
-      .then(function (registration) {
-        console.log("Service Worker registrado:", registration.scope);
-      })
-      .catch(function (error) {
-        console.log("Error registrando Service Worker:", error);
-      });
-  });
-}
-</script>
+
  <style>  
   body{
 margin:0;
@@ -227,7 +214,7 @@ background:transparent !important;
 background-image:none !important;
 padding:0 !important;
 border-radius:0 !important;
-box-shadow:none !
+box-shadow:none !important;
 
 animation:glowPulseText 1.8s ease-in-out infinite;
 }
@@ -475,7 +462,7 @@ background: linear-gradient(to bottom, #ffffff 65%, #d9b3ff 100%);
 border-radius:16px;
 padding:10px;
 border:2px solid rgba(212,175,55,0.6);
-box-shadow:40px;
+box-shadow:
 0 0 10px rgba(212,175,55,0.3),
 0 6px 18px rgba(0,0,0,0.12);
 }
@@ -1151,7 +1138,7 @@ display:block;
       0 0 18px rgba(212,175,55,0.75),
       0 0 30px rgba(212,175,55,0.45);
   }
-
+}
  </style>
 </head>
  <body>
@@ -1189,7 +1176,8 @@ Free limo pick-up • VIP host • Fast entry
 </div>
  <section id="home" class="hero"> 
  <div class="hero-inner">
-
+ </div>
+ </section> 
   <h1 class="hero-title-glow"
 data-en="THE BEST NIGHTLIFE EXPERIENCE IN LAS VEGAS"
 data-es="LA MEJOR EXPERIENCIA NOCTURNA EN LAS VEGAS">
@@ -1224,7 +1212,7 @@ THE BEST NIGHTLIFE EXPERIENCE IN LAS VEGAS
       data-es="Recogida gratis en limosina a los mejores strip clubs de Las Vegas">
     Free Limo Pickup to the Best Strip Clubs in Las Vegas
   </h2>
-
+   </section>
   <p class="seo-text"
      data-en="Looking for free limo pickup and VIP fast entry to the best strip clubs in Las Vegas? Melendi VIP connects you with top nightlife experiences including Sapphire, Crazy Horse III, Peppermint Hippo and more."
      data-es="¿Buscas recogida gratis en limosina y entrada VIP rápida a los mejores strip clubs de Las Vegas? Melendi VIP te conecta con las mejores experiencias nocturnas, incluyendo Sapphire, Crazy Horse III, Peppermint Hippo
@@ -1237,9 +1225,9 @@ THE BEST NIGHTLIFE EXPERIENCE IN LAS VEGAS
      data-es="Disfruta contacto directo, coordinación rápida, asistencia de host VIP y una experiencia premium de la vida nocturna de Las Vegas diseñada para visitantes que quieren los mejores clubes sin complicaciones.">
     Enjoy direct contact, fast coordination, VIP host assistance, and a premium Las Vegas nightlife experience designed for visitors who want the best clubs without the hassle.
   </p>
-     <section id="how it works" style="padding:80px 20px; text-align:center;color:white; max-width:900px; margin:auto;">
-
-<h2 class="vegas-title" data-en="How It Works" data-es="Cómo funciona">How It Works</h2>
+     <section id="how-it-works" style="padding:80px 20px; text-align:center;color:white; max-width:900px; margin:auto;">
+     </section>
+<h2 class="vegas-title" data-en="How-It-Works" data-es="Cómo funciona">How It Works</h2>
 
 <p data-en="Getting VIP access in Las Vegas is simple. Contact us by phone or WhatsApp and we will arrange your free limo pick-up and VIP entry to the best gentlemen's clubs in the city."
 data-es="Obtener acceso VIP en Las Vegas es muy fácil. Contáctanos por teléfono o WhatsApp y organizaremos tu recogida gratuita en limusina y entrada VIP a los mejores clubes de la ciudad.">
@@ -1265,7 +1253,7 @@ Experience Las Vegas nightlife the VIP way. Melendi VIP Promotion connects you d
  data-en="Free limo pick-up service available"
 data-es="Servicio de recogida en limosina gratis disponible">
 Free limo pick-up service available
-</il>
+</li>
 
 <li
 data-en="VIP host assistance throughout the night"
@@ -1282,17 +1270,18 @@ Fast entry to the best clubs in Las Vegas
 </section>
 <div class="vip-image-box">
 <img src="108F7093-B81A-43D9-ACF2-A55D8672639A.png" style="width:100%; display:block;">
- 
-</div>
-<section class="clubs">
+ </div>
+
+  <section class="clubs">
 <h2 class="vegas-title" style="color:#CFA21A;">Top Las Vegas Clubs</h2>
 <div class="club-grid">
   <div class="club">
-    
+ 
   <img src="IMG_1028.png" alt="Crazy Horse III">
   <a class="info-btn" href="crazy-horse.html">VIP INFO</a>
 </div>
-<div class="club">
+
+ <div class="club">
   <img src="IMG_1032.png" alt="Scores">
   <a class="info-btn" href="scores.html">VIP INFO</a>
 </div>
@@ -1306,7 +1295,7 @@ Fast entry to the best clubs in Las Vegas
 </div>
 <div class="club">
 <img src="IMG_1029.png">
-<a class="info-btn" href="treasureS.html">VIP INFO</a>
+<a class="info-btn" href="treasures.html">VIP INFO</a>
 </div>
 <div class="club">
 <img src="IMG_1031.png">
@@ -1489,7 +1478,7 @@ window.addEventListener("appinstalled", () => {
 })();
 </script>
  
-</script src="/footer.js"></script>
+<script src="/footer.js"></script>
 <script>
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {
