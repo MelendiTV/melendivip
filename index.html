@@ -1490,5 +1490,14 @@ window.addEventListener("appinstalled", () => {
 </script>
  
 </script src="/footer.js"></script>
-</body> 
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(() => console.log("Service Worker registrado"))
+      .catch(err => console.log("Error:", err));
+  });
+}
+</script>
+   </body> 
 </html>
