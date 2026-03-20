@@ -1182,16 +1182,7 @@ display:block;
  </style>
 </head>
  <body>
-<script>
-let slides = document.querySelectorAll(".banner-slider img");
-let index = 0;
 
-setInterval(() => {
-  slides[index].classList.remove("active");
-  index = (index + 1) % slides.length;
-  slides[index].classList.add("active");
-}, 3000); // cambia cada 3 segundos
-</script>
 <div id="installOverlay" class="install-overlay" aria-hidden="true">
   <div class="install-modal">
     <h3>Install App?</h3>
