@@ -1179,6 +1179,44 @@ display:block;
 .banner-slider img.active {
   opacity: 1;
 }
+ .banner-pro{
+  position:relative;
+  width:100%;
+  height:230px;
+  overflow:hidden;
+  background:#000;
+  margin-top:-10px; /* 👈 pega el banner al texto */
+}
+
+/* IMÁGENES */
+.banner-pro-slider img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+
+  transform:scale(1.15) translateX(40px);
+  transition:
+    opacity 1.2s ease,
+    transform 5s ease;
+}
+
+.banner-pro-slider img.active{
+  opacity:1;
+  transform:scale(1) translateX(0);
+}
+
+/* OVERLAY PRO */
+.banner-pro-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(to bottom,
+      rgba(0,0,0,0.2),
+      rgba(0,0,0,0.6));
+}
  </style>
 </head>
  <body>
@@ -1236,15 +1274,18 @@ THE BEST NIGHTLIFE EXPERIENCE IN LAS VEGAS
 </h1>
 
   
-<div class="banner-slider">
-  <img src="images/banner/IMG_1421.jpeg" class="active">
-  <img src="images/banner/IMG_2481.jpeg">
-  <img src="images/banner/IMG_2482.jpeg">
-  <img src="images/banner/IMG_2483.jpeg">
-  <img src="images/banner/IMG_2484.jpeg">
-  <img src="images/banner/IMG_2485.jpeg">
-  <img src="images/banner/IMG_2487.jpeg">
+<div class="banner-pro">
+
+  <div class="banner-pro-slider">
+    <img src="images/banner/IMG_1421.jpeg" class="active">
+    <img src="images/banner/IMG_2481.jpeg">
+    <img src="images/banner/IMG_2482.jpeg">
+    <img src="images/banner/IMG_2483.jpeg">
   </div>
+
+  <div class="banner-pro-overlay"></div>
+
+</div>
   
 
   <p
@@ -1540,7 +1581,22 @@ window.addEventListener("appinstalled", () => {
 }
 })();
 </script>
- 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".banner-pro-slider img");
+  let index = 0;
+
+  if (!slides.length) return;
+
+  slides[0].classList.add("active");
+
+  setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 3500);
+});
+</script> 
 <script src="/footer.js"></script>
 <script>
 if ('serviceWorker' in navigator) {
@@ -1551,17 +1607,6 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
- <script>
-let slides = document.querySelectorAll('.vegas-banner img');
-let index = 0;
-
-slides[0].classList.add('active');
-
-setInterval(() => {
-  slides[index].classList.remove('active');
-  index = (index + 1) % slides.length;
-  slides[index].classList.add('active');
-}, 3000);
-</script> 
+ 
  </body> 
 </html>
