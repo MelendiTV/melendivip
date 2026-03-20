@@ -1168,10 +1168,38 @@ display:block;
 .vegas-banner + * {
   margin-top: 40!important;
 } 
+.banner-slider {
+  position: relative;
+  width: 100%;
+  height: 320px; /* ajusta aquí si quieres más grande */
+  overflow: hidden;
+}
+
+.banner-slider img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.banner-slider img.active {
+  opacity: 1;
+}
  </style>
 </head>
  <body>
+<script>
+let slides = document.querySelectorAll(".banner-slider img");
+let index = 0;
 
+setInterval(() => {
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+}, 3000); // cambia cada 3 segundos
+</script>
 <div id="installOverlay" class="install-overlay" aria-hidden="true">
   <div class="install-modal">
     <h3>Install App?</h3>
@@ -1212,7 +1240,12 @@ Free limo pick-up • VIP host • Fast entry
  <div class="hero-inner">
  </div>
  </section> 
-
+<div class="banner-slider">
+  <img src="images/banner/limo-las-vegas.jpg" class="active">
+  <img src="images/banner/vip-club-las-vegas.jpg">
+  <img src="images/banner/vip-table.jpg">
+  <img src="images/banner/vegas-night.jpg">
+</div>
   <h1 class="hero-title-glow"
 data-en="THE BEST NIGHTLIFE EXPERIENCE IN LAS VEGAS"
 data-es="LA MEJOR EXPERIENCIA NOCTURNA EN LAS VEGAS">
