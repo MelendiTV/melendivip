@@ -105,19 +105,21 @@ button{
 
     <input type="tel" name="phone" placeholder="Phone / WhatsApp" required>
 
-    <select name="club" required>
-      <option value="">Select Club</option>
-      <option value="Sapphire">Sapphire</option>
-      <option value="Crazy Horse 3">Crazy Horse 3</option>
-      <option value="Peppermint Hippo">Peppermint Hippo</option>
-      <option value="Spearmint Rhino">Spearmint Rhino</option>
-      <option value="Hustler Club">Hustler Club</option>
-      <option value="Treasures">Treasures</option>
-      <option value="Little Darlings">Little Darlings</option>
-      <option value="Deja Vu">Deja Vu</option>
-      <option value="Scores">Scores</option>
-      <option value="Diamond Cabaret">Diamond Cabaret</option>
-    </select>
+<select name="club" required>
+  <option value="">Select Club</option>
+  <option value="Sapphire">Sapphire</option>
+  <option value="Crazy Horse 3">Crazy Horse 3</option>
+  <option value="Spearmint Rhino">Spearmint Rhino</option>
+  <option value="Peppermint Hippo">Peppermint Hippo</option>
+  <option value="Treasures">Treasures</option>
+  <option value="Hustler Club">Hustler Club</option>
+  <option value="Scores">Scores</option>
+  <option value="Deja Vu">Deja Vu</option>
+  <option value="LVSC">LVSC</option>
+  <option value="Airstrip Club">Airstrip Club</option>
+  <option value="Diamond Cabaret">Diamond Cabaret</option>
+</select>
+    
 
     <input type="date" name="date" required>
 
@@ -172,6 +174,33 @@ document.getElementById("reservationForm").addEventListener("submit", async func
   document.getElementById("reservationForm").reset();
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+  const clubFromURL = params.get("club");
+  const select = document.querySelector('select[name="club"]');
 
+  if (!clubFromURL || !select) return;
+
+  const aliases = {
+    "crazy horse iii": "Crazy Horse 3",
+    "crazy horse": "Crazy Horse 3",
+    "déjà vu": "Deja Vu",
+    "deja vu": "Deja Vu",
+    "deja vu showgirls": "Deja Vu",
+    "airstrip": "Airstrip Club",
+    "diamond": "Diamond Cabaret"
+  };
+
+  const normalized = clubFromURL.trim().toLowerCase();
+  const targetValue = aliases[normalized] || clubFromURL;
+
+  Array.from(select.options).forEach(option => {
+    if (option.value.toLowerCase() === targetValue.toLowerCase()) {
+      select.value = option.value;
+    }
+  });
+});
+</script>
 </body>
 </html>
