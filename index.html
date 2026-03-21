@@ -1134,7 +1134,7 @@ display:block;
 }
 
 .vegas-banner + * {
-  margin-top:45px;
+  margin-top:30px;
 } 
 .banner-slider {
  position: relative;
@@ -1157,11 +1157,12 @@ display:block;
 }
  .banner-pro{
   position:relative;
-  width:100%;
+  width:100vw;
+  margin-left:calc(-50vw + 50%);
   height:230px;
   overflow:hidden;
   background:#000;
-  margin-top:-10px; /* 👈 pega el banner al texto */
+  margin-top:20px; /* 👈 pega el banner al texto */
 }
 
 /* IMÁGENES */
@@ -1172,11 +1173,10 @@ display:block;
   height:100%;
   object-fit:cover;
   opacity:0;
-
   transform:scale(1.15) translateX(40px);
   transition:
-    opacity 1.2s ease,
-    transform 5s ease;
+  opacity 1.2s ease,
+  transform 5s ease;
 }
 
 .banner-pro-slider img.active{
