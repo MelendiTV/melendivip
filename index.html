@@ -1507,12 +1507,20 @@ window.addEventListener("beforeinstallprompt", (e) => {
 });
 
 window.addEventListener("load", () => {
-  if (!isStandalone() && isIOS()) {
-    overlay.classList.add("show");
+  const alreadySeen = localStorage.getItem("installPromptShown");
+
+  if (!alreadySeen) {
+    if (!isStandalone() && isIOS()) {
+      overlay.classList.add("show");
+    }
   }
 });
 
-installBtn.addEventListener("click", async () => {
+continueBtn.addEventListener("click", () => {
+  localStorage.setItem("installPromptShown", "true");
+  overlay.classList.remove("show");
+});
+
   if (deferredPrompt) {
     deferredPrompt.prompt();
     const choice = await deferredPrompt.userChoice;
@@ -1524,10 +1532,6 @@ installBtn.addEventListener("click", async () => {
     installHelp.textContent = "Tap Share → Add to Home Screen";
     installHelp.classList.add("show");
   }
-});
-
-continueBtn.addEventListener("click", () => {
-  overlay.classList.remove("show");
 });
 
 window.addEventListener("appinstalled", () => {
