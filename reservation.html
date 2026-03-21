@@ -141,40 +141,9 @@ button{
 
 </div>
 
-<script>
-document.getElementById("reservationForm").addEventListener("submit", function(e){
-  e.preventDefault();
 
-  const name = document.querySelector('input[name="name"]').value;
-  const phone = document.querySelector('input[name="phone"]').value;
-  const date = document.querySelector('input[name="date"]').value;
-  const time = document.querySelector('input[name="time"]').value;
-  const guests = document.querySelector('input[name="guests"]').value;
-  const pickup = document.querySelector('input[name="pickup"]').value;
-  const club = document.querySelector('select[name="club"]').value;
-  const notes = document.querySelector('textarea[name="notes"]').value;
 
-  const whatsappNumber = "17025424935";
-
-  const message = `VIP Reservation / Reserva VIP
-
-Name / Nombre: ${name}
-Phone / WhatsApp: ${phone}
-Date / Fecha: ${date}
-Time / Hora: ${time}
-Guests / Invitados: ${guests}
-Club: ${club}
-Pickup / Recogida: ${pickup}
-Notes / Notas: ${notes}`;
-
-  document.getElementById("reservation-success").classList.add("show");
-
-  const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
-
-  window.open(url, "_blank");
-  document.getElementById("reservationForm").reset();
-});
-</script>
+  
 
 </body>
 </html>
