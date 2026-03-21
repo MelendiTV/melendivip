@@ -452,21 +452,6 @@
     }
   </script>
   <script src="/footer.js"></script>
-<script>
-  // Detectar club desde la URL
-  const params = new URLSearchParams(window.location.search);
-  const clubFromURL = params.get("club");
 
-  if(clubFromURL){
-    const select = document.querySelector('select[name="club"]');
-
-    // Buscar opción que coincida
-    Array.from(select.options).forEach(option => {
-      if(option.value.toLowerCase() === clubFromURL.toLowerCase()){
-        option.selected = true;
-      }
-    });
-  }
-</script>
 </body>
 </html>
