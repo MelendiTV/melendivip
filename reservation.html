@@ -141,7 +141,38 @@ button{
 
 </div>
 
+<script>
+document.getElementById("reservationForm").addEventListener("submit", async function(e){
+  e.preventDefault();
 
+  const data = {
+    name: document.querySelector('input[name="name"]').value,
+    phone: document.querySelector('input[name="phone"]').value,
+    date: document.querySelector('input[name="date"]').value,
+    time: document.querySelector('input[name="time"]').value,
+    guests: document.querySelector('input[name="guests"]').value,
+    pickup: document.querySelector('input[name="pickup"]').value,
+    club: document.querySelector('select[name="club"]').value,
+    notes: document.querySelector('textarea[name="notes"]').value
+  };
+
+  try {
+    await fetch("https://hook.us2.make.com/iy3l4sthq0wggcrpby9rntfbgflc9tt", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    document.getElementById("reservation-success").classList.add("show");
+    document.getElementById("reservationForm").reset();
+
+  } catch (error) {
+    alert("Error sending reservation.");
+  }
+});
+</script>
 
   
 
