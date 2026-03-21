@@ -395,17 +395,15 @@ background-size:cover, 470px, cover;
 font-size:34px;
 text-align:center;
 color:#fff;
-}
-/* brillo del texto */
 text-shadow:
 0 0 6px #ffd700,
 0 0 12px rgba(255,215,0,0.8);
-
 line-height:1.12;
 margin-top:0px;
 margin-bottom:0px;
+ }
 }
-.hero p{
+ .hero p{
 font-size:17px;
 line-height:1.45;
 }
@@ -427,21 +425,6 @@ grid-template-columns:1fr;
 gap:18px;
 max-width:400px;
 margin:auto;
-}
-@media (max-width:768px){
-.club-grid{
-grid-template-columns:1fr;
-gap:14px;
-}
-.club{
-min-height:auto;
-padding:16px 12px 14px;
-}
-.club img{
-height:260px;
-}
-.club p{
-font-size:12px;
 }
 .club-grid{
 display:grid;
@@ -998,7 +981,7 @@ position:relative;
 z-index:1;
 filter:brightness(1.2) contrast(1.2);
 } 
-}
+
  .install-overlay{
   position:fixed;
   inset:0;
@@ -1224,9 +1207,7 @@ display:block;
  </style>
 </head>
  <body>
-<script>
 
-</script>
 <div id="installOverlay" class="install-overlay" aria-hidden="true">
   <div class="install-modal">
     <h3>Install App?</h3>
@@ -1307,7 +1288,8 @@ THE BEST NIGHTLIFE EXPERIENCE IN LAS VEGAS
     WHATSAPP
   </a>
    </div>
-   <section class="seo-section" id="about">
+</section>
+ <section class="seo-section" id="about">
   <h2 class="seo-title"
       data-en="Free Limo Pickup to the Best Strip Clubs in Las Vegas"
       data-es="Recogida gratis en limosina a los mejores strip clubs de Las Vegas">
@@ -1327,7 +1309,6 @@ THE BEST NIGHTLIFE EXPERIENCE IN LAS VEGAS
     Enjoy direct contact, fast coordination, VIP host assistance, and a premium Las Vegas nightlife experience designed for visitors who want the best clubs without the hassle.
   </p>
  
- </section>
 <h2 class="vegas-title" data-en="How-It-Works" data-es="Cómo funciona">How It Works</h2>
 
 <p data-en="Getting VIP access in Las Vegas is simple. Contact us by phone or WhatsApp and we will arrange your free limo pick-up and VIP entry to the best gentlemen's clubs in the city."
@@ -1571,8 +1552,8 @@ window.addEventListener("appinstalled", () => {
   if (isStandalone) {
     document.body.classList.add("pwa-mode");
 
-    const popup = document.getElementById("installPopup");
-    if (popup) popup.style.display = "none";
+   const popup = document.getElementById("installOverlay");
+if (popup) popup.style.display = "none";
 
  document.body.style.overflow = "";
 }
