@@ -61,19 +61,10 @@
 }
 </script>
 <link rel="manifest" href="manifest.json">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="apple-mobile-web-app-title" content="Melendi VIP">
-<link rel="apple-touch-icon" href="icon-192.png">
 
  <style>  
   body{
-.hero-top-img{
-  width:100%;
-  height:80px; /* ajusta aquí */
-  object-fit:cover;
-  display:block;
-}
+
    margin:0;
 font-family:Arial,Helvetica,sans-serif;
 background:#07070b;
@@ -81,7 +72,12 @@ color:white;
 padding-top: env(safe-area-inset-top);
 padding-bottom: calc(140px + env(safe-area-inset-bottom));
 }   
-
+.hero-top-img{
+  width:100%;
+  height:80px; /* ajusta aquí */
+  object-fit:cover;
+  display:block;
+}
  .nav{
 background:
 linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.40)),
@@ -1229,20 +1225,7 @@ display:block;
 </head>
  <body>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const slides = document.querySelectorAll(".banner-slider img");
-  let index = 0;
 
-  if (slides.length > 0) {
-    slides[0].classList.add("active");
-
-    setInterval(() => {
-      slides[index].classList.remove("active");
-      index = (index + 1) % slides.length;
-      slides[index].classList.add("active");
-    }, 3000);
-  }
-});
 </script>
 <div id="installOverlay" class="install-overlay" aria-hidden="true">
   <div class="install-modal">
@@ -1264,7 +1247,7 @@ document.addEventListener("DOMContentLoaded", function () {
  <button class="lang-btn" onclick="setLanguage('es')">ES</button>
  </div>
  <div class="menu-icon" onclick="toggleMenu()">≡</div>
-</div>
+
 <div style="text-align:center; color:#FFD700; font-weight:900; font-size:20px; letter-spacing:3px; text-shadow:0 0 10px gold;">
 ⭐ 10 YEARS OF VIP EXPERIENCE IN LAS VEGAS ⭐
 </div>
@@ -1362,7 +1345,7 @@ data-es="Obtener acceso VIP en Las Vegas es muy fácil. Contáctanos por teléfo
 
 <p
 data-en="Experience Las Vegas nightlife the VIP way. Melendi VIP Promotion connects you directly with the best gentlemen’s clubs and nightlife experiences in Las Vegas. Enjoy complimentary limo pick-up, VIP host service, and fast entry to top venues without waiting in long lines."
-data-es="Vive la vida nocturna de Las Vegas como un verdadero VIP. Melendi VIP Promotion te conecta directamente con los mejores clubes y experiencias nocturnas de Las Vegas. Disfruta transporte gratuito en limosina, servicio de host VIP y entrada rápida a los mejores lugares sin hacer largas filas."
+data-es="Vive la vida nocturna de Las Vegas como un verdadero VIP. Melendi VIP Promotion te conecta directamente con los mejores clubes y experiencias nocturnas de Las Vegas. Disfruta transporte gratuito en limosina, servicio de host VIP y entrada rápida a los mejores lugares sin hacer largas filas.">
 Experience Las Vegas nightlife the VIP way. Melendi VIP Promotion connects you directly with the best gentlemen’s clubs and nightlife experiences in Las Vegas. Enjoy complimentary limo pick-up, VIP host service, and fast entry to top venues without waiting in long lines.
 </p>
 
