@@ -1,1 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIP Reservation</title>
+
+<style>
+body{
+  background:#07070b;
+  font-family:Arial, sans-serif;
+  color:white;
+  margin:0;
+  padding:40px;
+}
+
+.reservation-box{
+  max-width:600px;
+  margin:auto;
+  background:#0f0f15;
+  padding:30px;
+  border-radius:15px;
+  border:2px solid #d4af37;
+}
+
+h1{
+  text-align:center;
+  color:#d4af37;
+}
+
+input, select, textarea{
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:8px;
+  border:1px solid #444;
+  background:#1a1a1f;
+  color:white;
+  box-sizing:border-box;
+}
+
+button{
+  width:100%;
+  padding:16px;
+  background:linear-gradient(135deg,#d4af37,#b8962e);
+  border:none;
+  border-radius:14px;
+  font-weight:bold;
+  font-size:17px;
+  cursor:pointer;
+  color:#111;
+  box-shadow:0 0 12px rgba(212,175,55,.5);
+  animation:vipGlow 2s infinite;
+}
+
+@keyframes vipGlow{
+  0%{
+    transform:scale(1);
+    box-shadow:0 0 10px rgba(212,175,55,.5);
+  }
+  50%{
+    transform:scale(1.05);
+    box-shadow:0 0 25px rgba(255,215,0,.9);
+  }
+  100%{
+    transform:scale(1);
+    box-shadow:0 0 10px rgba(212,175,55,.5);
+  }
+}
+
+.reservation-success{
+  display:none;
+  margin-top:20px;
+  padding:16px;
+  border-radius:12px;
+  background:rgba(212,175,55,.15);
+  border:1px solid rgba(212,175,55,.6);
+  color:white;
+  text-align:center;
+  box-shadow:0 0 12px rgba(212,175,55,.3);
+}
+
+.reservation-success.show{
+  display:block;
+  animation:fadeIn .4s ease;
+}
+
+@keyframes fadeIn{
+  0%{opacity:0; transform:translateY(10px);}
+  100%{opacity:1; transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="reservation-box">
+
+  <h1>VIP Reservation</h1>
+
+  <form id="reservationForm">
+
+    <input type="text" name="name" placeholder="Full Name" required>
+
+    <input type="tel" name="phone" placeholder="Phone / WhatsApp" required>
+
+    <select name="club" required>
+      <option value="">Select Club</option>
+      <option value="Sapphire">Sapphire</option>
+      <option value="Crazy Horse 3">Crazy Horse 3</option>
+      <option value="Peppermint Hippo">Peppermint Hippo</option>
+      <option value="Spearmint Rhino">Spearmint Rhino</option>
+      <option value="Hustler Club">Hustler Club</option>
+      <option value="Treasures">Treasures</option>
+      <option value="Little Darlings">Little Darlings</option>
+      <option value="Deja Vu">Deja Vu</option>
+      <option value="Scores">Scores</option>
+      <option value="Diamond Cabaret">Diamond Cabaret</option>
+    </select>
+
+    <input type="date" name="date" required>
+
+    <input type="time" name="time" required>
+
+    <input type="number" name="guests" placeholder="Number of Guests" min="1" required>
+
+    <input type="text" name="pickup" placeholder="Pickup Hotel / Location">
+
+    <textarea name="notes" placeholder="Notes"></textarea>
+
+    <button type="submit">Reserve</button>
+
+  </form>
+
+  <div id="reservation-success" class="reservation-success">
+    <strong>Reservation sent / Reserva enviada</strong><br>
+    Your VIP host will contact you shortly.<br>
+    Tu host se pondrá en contacto contigo en breve.
+  </div>
+
+</div>
+
+<script>
+document.getElementById("reservationForm").addEventListener("submit", async function(e){
+  e.preventDefault();
+
+  const params = new URLSearchParams();
+  params.append("name", document.querySelector('input[name="name"]').value);
+  params.append("phone", document.querySelector('input[name="phone"]').value);
+  params.append("date", document.querySelector('input[name="date"]').value);
+  params.append("time", document.querySelector('input[name="time"]').value);
+  params.append("guests", document.querySelector('input[name="guests"]').value);
+  params.append("pickup", document.querySelector('input[name="pickup"]').value);
+  params.append("club", document.querySelector('select[name="club"]').value);
+  params.append("notes", document.querySelector('textarea[name="notes"]').value);
+
+  try {
+    await fetch("https://hook.us2.make.com/iy3l4sthq0wggcrpby9rntfbgflc9tt", {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+      },
+      body: params.toString()
+    });
+  } catch (error) {
+    console.log("Reservation send error:", error);
+  }
+
+  document.getElementById("reservation-success").classList.add("show");
+  document.getElementById("reservationForm").reset();
+});
+</script>
+
+</body>
+</html>
