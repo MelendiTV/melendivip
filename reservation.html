@@ -202,9 +202,26 @@
         });
 
         if (response.ok) {
-          formMessage.textContent = "Reservation sent successfully.";
-          formMessage.style.color = "#d4af37";
-          form.reset();
+  formMessage.textContent = "Reservation sent successfully.";
+  formMessage.style.color = "#d4af37";
+
+  const cleanPhone = data.phone.replace(/\D/g, "");
+  const whatsappPhone = cleanPhone.length === 10 ? "1" + cleanPhone : cleanPhone;
+
+  const whatsappMessage =
+    `Your VIP reservation is confirmed at ${data.club} for ${data.guests} guests on ${data.date} at ${data.time}. We will contact you shortly.`;
+
+  const whatsappURL =
+    `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(whatsappMessage)}`;
+
+  form.reset();
+
+  if (clubFromURL) {
+    document.getElementById("club").value = decodeURIComponent(clubFromURL);
+  }
+
+  window.location.href = whatsappURL;
+}
 
           if (clubFromURL) {
             document.getElementById("club").value = decodeURIComponent(clubFromURL);
