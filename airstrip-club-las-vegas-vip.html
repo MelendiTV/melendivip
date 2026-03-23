@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Airstrip Club Las Vegas | VIP Entry & Free Pickup</title>
+
+  <meta name="description" content="VIP entry, free pickup, and fast reservation for Airstrip Club Las Vegas." />
+  <meta name="keywords" content="Airstrip Club Las Vegas, VIP entry, free pickup, Las Vegas nightlife, reservations" />
+  <meta name="author" content="Melendi VIP" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://melendivip.com/airstrip-club.html" />
+
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:Arial,sans-serif;
+      background:#07070b;
+      color:#fff;
+      line-height:1.6;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    .lang-switch{
+      position:fixed;
+      top:18px;
+      right:18px;
+      z-index:9999;
+      display:flex;
+      background:rgba(0,0,0,.65);
+      border:1px solid rgba(255,255,255,.15);
+      border-radius:999px;
+      overflow:hidden;
+      backdrop-filter:blur(6px);
+    }
+
+    .lang-btn{
+      border:none;
+      background:transparent;
+      color:#fff;
+      padding:10px 16px;
+      cursor:pointer;
+      font-weight:bold;
+      font-size:14px;
+      transition:.25s ease;
+    }
+
+    .lang-btn.active{
+      background:linear-gradient(135deg,#d4af37,#b8962e);
+      color:#000;
+    }
+
+    .hero{
+      min-height:100vh;
+      background:
+        linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.80)),
+        url('airstrip-hero.jpg') center/cover no-repeat;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:40px 20px;
+    }
+
+    .hero-content{
+      max-width:900px;
+      width:100%;
+    }
+
+    .logo{
+      color:#d4af37;
+      letter-spacing:3px;
+      text-transform:uppercase;
+      font-size:16px;
+      margin-bottom:18px;
+    }
+
+    h1{
+      font-size:50px;
+      line-height:1.12;
+      margin-bottom:18px;
+    }
+
+    .hero p{
+      max-width:780px;
+      margin:0 auto 30px;
+      font-size:20px;
+      color:#e3e3e3;
+    }
+
+    .btn-group{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:14px;
+      margin-top:20px;
+    }
+
+    .btn-group.column{
+      flex-direction:column;
+      align-items:center;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 26px;
+      border-radius:12px;
+      font-weight:bold;
+      font-size:16px;
+      transition:.25s ease;
+      border:1px solid transparent;
+      text-align:center;
+      min-width:240px;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .btn-gold{
+      background:linear-gradient(135deg,#d4af37,#b8962e);
+      color:#000;
+    }
+
+    .btn-white{
+      background:#fff;
+      color:#000;
+    }
+
+    .btn-dark{
+      background:#121218;
+      color:#fff;
+      border:1px solid #d4af37;
+    }
+
+    .section{
+      padding:75px 20px;
+    }
+
+    .container{
+      max-width:1150px;
+      margin:auto;
+    }
+
+    .section-title{
+      text-align:center;
+      font-size:34px;
+      color:#d4af37;
+      margin-bottom:15px;
+    }
+
+    .section-text{
+      max-width:830px;
+      margin:0 auto 45px;
+      text-align:center;
+      color:#dadada;
+      font-size:18px;
+    }
+
+    .features{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:20px;
+    }
+
+    .feature-card{
+      background:#0f0f15;
+      border:1px solid #232323;
+      border-radius:18px;
+      padding:28px 22px;
+      text-align:center;
+      transition:.25s ease;
+    }
+
+    .feature-card:hover{
+      transform:translateY(-4px);
+      border-color:#d4af37;
+    }
+
+    .feature-card h3{
+      color:#d4af37;
+      margin-bottom:10px;
+      font-size:22px;
+    }
+
+    .feature-card p{
+      color:#d4d4d4;
+      font-size:16px;
+    }
+
+    .vip-box{
+      background:linear-gradient(180deg,#111117,#0a0a0f);
+      border:1px solid #292929;
+      border-radius:22px;
+      padding:38px 26px;
+      text-align:center;
+    }
+
+    .vip-box h2{
+      color:#d4af37;
+      font-size:32px;
+      margin-bottom:14px;
+    }
+
+    .vip-box p{
+      max-width:820px;
+      margin:0 auto 25px;
+      color:#e3e3e3;
+      font-size:18px;
+    }
+
+    .reservation{
+      background:#0b0b10;
+      border-top:1px solid #1b1b1b;
+      border-bottom:1px solid #1b1b1b;
+    }
+
+    .reservation-box{
+      max-width:760px;
+      margin:auto;
+      background:#111119;
+      border:1px solid #2a2a2a;
+      border-radius:20px;
+      padding:34px 24px;
+    }
+
+    .reservation-box h2{
+      text-align:center;
+      color:#d4af37;
+      margin-bottom:22px;
+      font-size:30px;
+    }
+
+    .form-group{
+      margin-bottom:16px;
+    }
+
+    .form-group label{
+      display:block;
+      margin-bottom:8px;
+      color:#ddd;
+      font-size:15px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea{
+      width:100%;
+      padding:14px;
+      border-radius:12px;
+      border:1px solid #333;
+      background:#1a1a22;
+      color:#fff;
+      font-size:16px;
+      outline:none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus{
+      border-color:#d4af37;
+    }
+
+    textarea{
+      min-height:110px;
+      resize:vertical;
+    }
+
+    .submit-btn{
+      width:100%;
+      border:none;
+      cursor:pointer;
+      padding:16px;
+      border-radius:14px;
+      font-size:17px;
+      font-weight:bold;
+      background:linear-gradient(135deg,#d4af37,#b8962e);
+      color:#000;
+      transition:.25s ease;
+    }
+
+    .submit-btn:hover{
+      transform:translateY(-2px);
+    }
+
+    .final-cta{
+      padding:65px 20px;
+      text-align:center;
+      background:#08080c;
+    }
+
+    .final-cta h2{
+      font-size:32px;
+      color:#d4af37;
+      margin-bottom:14px;
+    }
+
+    .final-cta p{
+      max-width:760px;
+      margin:0 auto 28px;
+      color:#d8d8d8;
+      font-size:18px;
+    }
+
+    footer{
+      text-align:center;
+      padding:26px 20px;
+      color:#8f8f8f;
+      font-size:14px;
+      background:#050507;
+    }
+
+    .lang{
+      display:none;
+    }
+
+    .lang.active{
+      display:block;
+    }
+
+    @media (max-width:768px){
+      h1{
+        font-size:36px;
+      }
+
+      .hero p{
+        font-size:17px;
+      }
+
+      .section-title,
+      .vip-box h2,
+      .reservation-box h2,
+      .final-cta h2{
+        font-size:27px;
+      }
+
+      .btn{
+        width:100%;
+        max-width:320px;
+      }
+
+      .lang-switch{
+        top:12px;
+        right:12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="lang-switch">
+    <button class="lang-btn active" onclick="setLanguage('en', this)">EN</button>
+    <button class="lang-btn" onclick="setLanguage('es', this)">ES</button>
+  </div>
+
+  <section class="hero">
+    <div class="hero-content">
+
+      <div class="lang active" id="en">
+        <div class="logo">Melendi VIP Presents</div>
+        <h1>Airstrip Club Las Vegas</h1>
+        <p>
+          VIP entry, free pickup, premium nightlife service, and a fast reservation experience for your group in Las Vegas.
+        </p>
+
+        <div class="btn-group">
+          <a href="tel:+17025551234" class="btn btn-gold">Call Now</a>
+          <a href="https://wa.me/17025551234" class="btn btn-dark">WhatsApp</a>
+          <a href="#reservation" class="btn btn-white">Reserve Now</a>
+        </div>
+      </div>
+
+      <div class="lang" id="es">
+        <div class="logo">Melendi VIP Presenta</div>
+        <h1>Airstrip Club Las Vegas</h1>
+        <p>
+          Entrada VIP, recogida gratis, servicio premium de nightlife y una experiencia rápida de reservación para tu grupo en Las Vegas.
+        </p>
+
+        <div class="btn-group">
+          <a href="tel:+17025551234" class="btn btn-gold">Llamar Ahora</a>
+          <a href="https://wa.me/17025551234" class="btn btn-dark">WhatsApp</a>
+          <a href="#reservation" class="btn btn-white">Reservar Ahora</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="lang active" id="en-features">
+        <h2 class="section-title">Why Book Airstrip Club?</h2>
+        <p class="section-text">
+          Experience one of the hottest adult nightlife destinations in Las Vegas with VIP treatment, smooth booking, and pickup options.
+        </p>
+
+        <div class="features">
+          <div class="feature-card">
+            <h3>VIP Entry</h3>
+            <p>Fast access and smooth entry for a better night from the start.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Free Pickup</h3>
+            <p>Available for qualifying groups in Las Vegas depending on schedule and availability.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Birthday & Party Groups</h3>
+            <p>Great for birthdays, bachelor parties, and unforgettable nights out.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Easy Reservations</h3>
+            <p>Quick reservation process with direct contact and fast confirmation.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lang" id="es-features">
+        <h2 class="section-title">¿Por Qué Reservar Airstrip Club?</h2>
+        <p class="section-text">
+          Disfruta uno de los destinos de nightlife para adultos más populares de Las Vegas con trato VIP, reserva sencilla y opciones de recogida.
+        </p>
+
+        <div class="features">
+          <div class="feature-card">
+            <h3>Entrada VIP</h3>
+            <p>Acceso rápido y entrada fluida para comenzar la noche mejor.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Recogida Gratis</h3>
+            <p>Disponible para ciertos grupos en Las Vegas según horario y disponibilidad.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Cumpleaños y Grupos</h3>
+            <p>Ideal para cumpleaños, despedidas de soltero y noches inolvidables.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Reserva Fácil</h3>
+            <p>Proceso rápido de reserva con contacto directo y confirmación veloz.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+
+      <div class="lang active" id="en-vip">
+        <div class="vip-box">
+          <h2>Exclusive VIP Experience</h2>
+          <p>
+            Reserve in advance and enjoy a premium nightlife experience with direct assistance, smooth entry, and fast coordination for your group.
+          </p>
+
+          <div class="btn-group">
+            <a href="tel:+17025551234" class="btn btn-gold">Book by Phone</a>
+            <a href="https://wa.me/17025551234" class="btn btn-dark">Book on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="lang" id="es-vip">
+        <div class="vip-box">
+          <h2>Experiencia VIP Exclusiva</h2>
+          <p>
+            Reserva con anticipación y disfruta una experiencia premium de nightlife con asistencia directa, entrada fluida y coordinación rápida para tu grupo.
+          </p>
+
+          <div class="btn-group">
+            <a href="tel:+17025551234" class="btn btn-gold">Reservar por Teléfono</a>
+            <a href="https://wa.me/17025551234" class="btn btn-dark">Reservar por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section reservation" id="reservation">
+    <div class="container">
+
+      <div class="lang active" id="en-form">
+        <div class="reservation-box">
+          <h2>Reserve Your Spot</h2>
+
+          <form action="#" method="post">
+            <div class="form-group">
+              <label for="name-en">Full Name</label>
+              <input type="text" id="name-en" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone-en">Phone / WhatsApp</label>
+              <input type="tel" id="phone-en" name="phone" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="form-group">
+              <label for="guests-en">Number of Guests</label>
+              <select id="guests-en" name="guests" required>
+                <option value="">Select group size</option>
+                <option>1-2 Guests</option>
+                <option>3-5 Guests</option>
+                <option>6-10 Guests</option>
+                <option>10+ Guests</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="date-en">Preferred Date</label>
+              <input type="date" id="date-en" name="date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="notes-en">Special Request</label>
+              <textarea id="notes-en" name="notes" placeholder="Birthday, bachelor party, pickup request, arrival time..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Reservation</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="lang" id="es-form">
+        <div class="reservation-box">
+          <h2>Reserva Tu Lugar</h2>
+
+          <form action="#" method="post">
+            <div class="form-group">
+              <label for="name-es">Nombre Completo</label>
+              <input type="text" id="name-es" name="name" placeholder="Escribe tu nombre completo" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone-es">Teléfono / WhatsApp</label>
+              <input type="tel" id="phone-es" name="phone" placeholder="Escribe tu número de teléfono" required>
+            </div>
+
+            <div class="form-group">
+              <label for="guests-es">Número de Personas</label>
+              <select id="guests-es" name="guests" required>
+                <option value="">Selecciona el tamaño del grupo</option>
+                <option>1-2 Personas</option>
+                <option>3-5 Personas</option>
+                <option>6-10 Personas</option>
+                <option>10+ Personas</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="date-es">Fecha Preferida</label>
+              <input type="date" id="date-es" name="date" required>
+            </div>
+
+            <div class="form-group">
+              <label for="notes-es">Solicitud Especial</label>
+              <textarea id="notes-es" name="notes" placeholder="Cumpleaños, despedida, recogida gratis, hora de llegada..."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Enviar Reservación</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="final-cta">
+
+    <div class="lang active" id="en-final">
+      <h2>Ready for Your VIP Night?</h2>
+      <p>Call now and secure your free pickup and VIP access.</p>
+
+      <div class="btn-group column">
+        <a href="tel:+17025551234" class="btn btn-gold">Call for Free Pickup</a>
+        <a href="index.html" class="btn btn-white">Return to Main Menu</a>
+      </div>
+    </div>
+
+    <div class="lang" id="es-final">
+      <h2>¿Listo Para Tu Noche VIP?</h2>
+      <p>Llama ahora y asegura tu recogida gratis y acceso VIP.</p>
+
+      <div class="btn-group column">
+        <a href="tel:+17025551234" class="btn btn-gold">Llamar para Recogida Gratis</a>
+        <a href="index.html" class="btn btn-white">Volver al Menú Principal</a>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    © 2026 Melendi VIP. All rights reserved.
+  </footer>
+
+  <script>
+    function setLanguage(lang, button){
+      document.querySelectorAll('.lang').forEach(el => {
+        el.classList.remove('active');
+      });
+
+      if(lang === 'en'){
+        document.getElementById('en').classList.add('active');
+        document.getElementById('en-features').classList.add('active');
+        document.getElementById('en-vip').classList.add('active');
+        document.getElementById('en-form').classList.add('active');
+        document.getElementById('en-final').classList.add('active');
+      } else {
+        document.getElementById('es').classList.add('active');
+        document.getElementById('es-features').classList.add('active');
+        document.getElementById('es-vip').classList.add('active');
+        document.getElementById('es-form').classList.add('active');
+        document.getElementById('es-final').classList.add('active');
+      }
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      button.classList.add('active');
+      document.documentElement.lang = lang;
+    }
+  </script>
+
+</body>
+</html>
