@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VIP Reservation Confirmed</title>
+
+<style>
+body{
+  margin:0;
+  background:#07070b;
+  font-family:Arial,sans-serif;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+  text-align:center;
+  overflow:hidden;
+}
+
+/* CONTENEDOR */
+.box{
+  max-width:600px;
+  padding:40px;
+}
+
+/* CHECK ICON */
+.check{
+  font-size:60px;
+  color:#00e676;
+  animation:pop 0.6s ease;
+}
+
+@keyframes pop{
+  0%{transform:scale(0);}
+  100%{transform:scale(1);}
+}
+
+/* TITULO */
+h1{
+  color:#d4af37;
+  margin-top:20px;
+  margin-bottom:10px;
+  animation:fadeUp 1s ease;
+}
+
+/* TEXTO */
+p{
+  color:#ccc;
+  line-height:1.6;
+  animation:fadeUp 1.5s ease;
+}
+
+/* EFECTO FADE */
+@keyframes fadeUp{
+  0%{opacity:0; transform:translateY(20px);}
+  100%{opacity:1; transform:translateY(0);}
+}
+
+/* BRILLO */
+.glow{
+  color:#ffd700;
+  text-shadow:0 0 10px rgba(255,215,0,0.7);
+}
+
+/* CONFETTI SUAVE */
+.sparkle{
+  position:absolute;
+  width:5px;
+  height:5px;
+  background:#ffd700;
+  border-radius:50%;
+  animation:float 6s infinite linear;
+}
+
+@keyframes float{
+  0%{transform:translateY(100vh); opacity:0;}
+  50%{opacity:1;}
+  100%{transform:translateY(-10vh); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<div class="check">✔</div>
+
+<h1>Reservation Confirmed</h1>
+
+<p>
+<span class="glow">Thank you for choosing Melendi VIP ✨</span><br><br>
+
+Your deposit has been received successfully.<br>
+Your night in Las Vegas starts now 🌃<br><br>
+
+<strong>Your driver will contact you shortly 🚘</strong><br><br>
+
+Enjoy the experience.
+</p>
+
+</div>
+
+<!-- PARTÍCULAS -->
+<script>
+for(let i=0;i<25;i++){
+  let s=document.createElement("div");
+  s.className="sparkle";
+  s.style.left=Math.random()*100+"%";
+  s.style.animationDuration=(3+Math.random()*3)+"s";
+  document.body.appendChild(s);
+}
+</script>
+
+</body>
+</html>
