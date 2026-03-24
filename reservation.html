@@ -439,28 +439,7 @@
 
       const result = await res.json();
 
-      if (!result.clientSecret) {
-        formMessage.textContent = translations[currentLang].paymentError;
-        formMessage.style.color = "#ff4d4d";
-        submitBtn.disabled = false;
-        submitBtn.textContent = translations[currentLang].submitBtn;
-        return;
-      }
-
-      checkoutWrapper.style.display = "block";
-
-      if (embeddedCheckout) {
-        try {
-          embeddedCheckout.destroy();
-        } catch (e) {}
-      }
-
-      embeddedCheckout = await stripe.initEmbeddedCheckout({
-        clientSecret: result.clientSecret
-      });
-
-      embeddedCheckout.mount('#checkout');
-    }
+      
 
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
