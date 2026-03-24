@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>VIP Reservation Confirmed</title>
-
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&display=swap" rel="stylesheet">
 <style>
 body{
   margin:0;
@@ -80,6 +80,40 @@ p{
   50%{opacity:1;}
   100%{transform:translateY(-10vh); opacity:0;}
 }
+.vip-title{
+  font-family:'Cinzel', serif;
+  font-size:42px;
+  font-weight:900;
+  text-align:center;
+  color:#d4af37;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  text-shadow:
+    0 0 10px rgba(212,175,55,0.6),
+    0 0 20px rgba(212,175,55,0.4);
+  margin-bottom:20px;
+}
+.vip-sub{
+  text-align:center;
+  font-size:18px;
+  color:#ffd700;
+  font-weight:bold;
+  margin-bottom:20px;
+}
+.vip-message{
+  text-align:center;
+  font-size:17px;
+  color:#eaeaea;
+  line-height:1.6;
+  margin-bottom:25px;
+}
+.vip-driver{
+  text-align:center;
+  font-size:18px;
+  color:#ffffff;
+  font-weight:bold;
+  margin-top:20px;
+}
 </style>
 </head>
 
@@ -89,15 +123,17 @@ p{
 
 <div class="check">✔</div>
 
-<h1>Reservation Confirmed</h1>
+<h1 class="vip-title">Reservation Confirmed</h1>
 
 <p>
-<span class="glow">Thank you for choosing Melendi VIP ✨</span><br><br>
+<p class="vip-sub">Thank you for choosing Melendi VIP ✨</p>
 
+<p class="vip-message">
 Your deposit has been received successfully.<br>
-Your night in Las Vegas starts now 🌃<br><br>
+Your night in Las Vegas starts now 🌆
+</p>
 
-<strong>Your driver will contact you shortly 🚘</strong><br><br>
+<p class="vip-driver">Your driver will contact you shortly 🚗</p>
 
 Enjoy the experience.
 </p>
