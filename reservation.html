@@ -428,6 +428,47 @@
       clubField.value = decodeURIComponent(clubFromURL);
     }
 
+    async function pagarVIP(data) {
+  try {
+    const res = await fetch('/api/create-checkout-session', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    const result = await res.json();
+
+    if (!result.clientSecret) {
+      formMessage.textContent = translations[currentLang].paymentError;
+      formMessage.style.color = "#ff4d4d";
+      submitBtn.disabled = false;
+      submitBtn.textContent = translations[currentLang].submitBtn;
+      return;
+    }
+
+    if (embeddedCheckout) {
+      try {
+        embeddedCheckout.destroy();
+      } catch (e) {}
+    }
+
+    checkoutWrapper.style.display = "block";
+
+    embeddedCheckout = await stripe.initEmbeddedCheckout({
+      clientSecret: result.clientSecret
+    });
+
+    embeddedCheckout.mount('#checkout');
+
+  } catch (error) {
+    formMessage.textContent = translations[currentLang].paymentError;
+    formMessage.style.color = "#ff4d4d";
+    submitBtn.disabled = false;
+    submitBtn.textContent = translations[currentLang].submitBtn;
+  }
+}
     
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
