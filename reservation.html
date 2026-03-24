@@ -532,6 +532,25 @@
         if (response.ok) {
           formMessage.textContent = t.successMessage;
           formMessage.style.color = "#d4af37";
+          const mensaje = `
+🔥 NUEVA RESERVA VIP 🔥
+
+Nombre: ${data.name}
+Teléfono: ${data.phone}
+Hotel: ${data.hotel}
+Club: ${data.club}
+Fecha: ${data.date}
+Hora: ${data.time}
+Hombres: ${data.men}
+Mujeres: ${data.women}
+Depósito: $${data.deposit}
+
+Notas: ${data.notes}
+`;
+
+const url = `https://api.callmebot.com/whatsapp.php?phone=17025424935&text=${encodeURIComponent(mensaje)}&apikey=4613267`;
+
+fetch(url);
           await pagarVIP(data);
           submitBtn.textContent = "Complete Deposit ↓";
           submitBtn.classList.add("btn-attention");
