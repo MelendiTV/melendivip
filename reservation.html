@@ -439,7 +439,15 @@
 
       const result = await res.json();
 
-      
+      if (!result.url) {
+  formMessage.textContent = translations[currentLang].paymentError;
+  formMessage.style.color = "#ff4d4d";
+  submitBtn.disabled = false;
+  submitBtn.textContent = translations[currentLang].submitBtn;
+  return;
+}
+
+window.location.href = result.url;
 
     form.addEventListener("submit", async function (e) {
       e.preventDefault();
@@ -458,7 +466,7 @@
       submitBtn.disabled = true;
       submitBtn.textContent = t.submitSending;
       formMessage.textContent = "";
-      checkoutWrapper.style.display = "none";
+      
 
       const totalGuests = men + women;
       const deposit = men * 20;
