@@ -186,6 +186,17 @@
         grid-template-columns:1fr;
       }
     }
+   @keyframes pulseBtn {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212,175,55,0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(212,175,55,0); }
+  100% { transform: scale(1); }
+}
+
+.btn-attention{
+  background: linear-gradient(135deg,#00c853,#69f0ae) !important;
+  animation: pulseBtn 1.5s infinite;
+  color:#000 !important;
+}
   </style>
 </head>
 <body>
@@ -519,8 +530,10 @@
           formMessage.textContent = t.successMessage;
           formMessage.style.color = "#d4af37";
           await pagarVIP(data);
+          submitBtn.textContent = "Complete Deposit ↓";
+          submitBtn.classList.add("btn-attention");
           submitBtn.disabled = false;
-          submitBtn.textContent = t.submitBtn;
+      
         } else {
           formMessage.textContent = t.errorMessage;
           formMessage.style.color = "#ff4d4d";
