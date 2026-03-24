@@ -466,7 +466,10 @@
     }
 
     checkoutWrapper.style.display = "block";
-
+    window.scrollTo({
+  top: document.body.scrollHeight,
+  behavior: "smooth"
+});
     embeddedCheckout = await stripe.initEmbeddedCheckout({
       clientSecret: result.clientSecret
     });
