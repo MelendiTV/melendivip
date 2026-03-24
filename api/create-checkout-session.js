@@ -12,7 +12,7 @@ export default async function handler(req, res) {
 
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
-      ui_mode: 'embedded',
+      
       return_url: 'https://melendivip.vercel.app/reservation-success.html?session_id={CHECKOUT_SESSION_ID}',
       line_items: [
         {
