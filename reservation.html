@@ -405,7 +405,7 @@
     }
 
     function updateDeposit() {
-      const men = parseInt(menInput.value, 10) || 0;
+      const men = parseInt(menInput.value) || 0;
       const totalDeposit = men * 20;
       depositAmount.textContent = "$" + totalDeposit;
     }
