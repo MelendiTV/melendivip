@@ -149,25 +149,32 @@ for(let i=0;i<25;i++){
   s.style.animationDuration=(3+Math.random()*3)+"s";
   document.body.appendChild(s);
 }
-const mensaje = `
-🔥 NUEVA RESERVA VIP 🔥
+<script>
+const data = JSON.parse(localStorage.getItem("vip_reservation"));
+
+if (data) {
+  const mensaje = `
+🔥 VIP PAYMENT CONFIRMED 🔥
 
 Nombre: ${data.name}
-Teléfono: ${data.phone}
-Hotel: ${data.hotel}
 Club: ${data.club}
+Hotel: ${data.hotel}
 Fecha: ${data.date}
 Hora: ${data.time}
 Hombres: ${data.men}
 Mujeres: ${data.women}
 Depósito: $${data.deposit}
 
-Notas: ${data.notes}
+✅ Pago completado correctamente
 `;
 
-const url = `https://api.callmebot.com/whatsapp.php?phone=17025424935&text=${encodeURIComponent(mensaje)}&apikey=4613267`;
+  const url = `https://api.callmebot.com/whatsapp.php?phone=17025424935&text=${encodeURIComponent(mensaje)}&apikey=4613267`;
 
-fetch(url);
+  setTimeout(() => {
+    const img = new Image();
+    img.src = url;
+  }, 1200);
+}
 
 </script>
 
