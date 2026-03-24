@@ -33,7 +33,15 @@ export default async function handler(req, res) {
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
       ui_mode: 'embedded',
+    mode: 'payment',
+   return_url: 'https://melendivip.com/success.html',
       
+      payment_method_types: ['card'],
+wallet_options: {
+  link: {
+    display: 'never'
+  }
+},
       line_items: [
         {
           price_data: {
@@ -47,10 +55,6 @@ export default async function handler(req, res) {
         }
       ],
     
-    mode: 'payment',
-
-     return_url: 'https://melendivip.com/success.html',
-      
       metadata: {
         name: name || '',
         phone: phone || '',
