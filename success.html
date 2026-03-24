@@ -149,6 +149,26 @@ for(let i=0;i<25;i++){
   s.style.animationDuration=(3+Math.random()*3)+"s";
   document.body.appendChild(s);
 }
+const mensaje = `
+🔥 NUEVA RESERVA VIP 🔥
+
+Nombre: ${data.name}
+Teléfono: ${data.phone}
+Hotel: ${data.hotel}
+Club: ${data.club}
+Fecha: ${data.date}
+Hora: ${data.time}
+Hombres: ${data.men}
+Mujeres: ${data.women}
+Depósito: $${data.deposit}
+
+Notas: ${data.notes}
+`;
+
+const url = `https://api.callmebot.com/whatsapp.php?phone=17025424935&text=${encodeURIComponent(mensaje)}&apikey=4613267`;
+
+fetch(url);
+
 </script>
 
 </body>
