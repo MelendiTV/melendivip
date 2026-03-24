@@ -54,14 +54,21 @@ Depósito: $${md.deposit || ''}
 `;
 
     const url = `https://api.callmebot.com/whatsapp.php?phone=17025424935&text=${encodeURIComponent(mensaje)}&apikey=4613267`;
-      
+   try {
+  const waRes = await fetch(url);
+  const waText = await waRes.text();
 
-    try {
-      await fetch(url);
-    } catch (e) {
-      console.error('CallMeBot error:', e);
-    }
+  if (!waRes.ok) {
+    console.error('CallMeBot HTTP error:', waRes.status, waText);
+    return res.status(500).json({ error: 'CallMeBot failed', detail: waText });
   }
 
+  console.log('CallMeBot OK:', waText);
+} catch (e) {
+  console.error('CallMeBot fetch error:', e);
+  return res.status(500).json({ error: 'CallMeBot fetch failed' });
+}   
+
+    
   return res.status(200).json({ received: true });
 }
