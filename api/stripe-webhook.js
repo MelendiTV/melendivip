@@ -53,8 +53,8 @@ Depósito: $${md.deposit || ''}
 ✅ Pago completado correctamente
 `;
 
-    const url =
-      `https://api.callmebot.com/whatsapp.php?phone=17025424935&text=${encodeURIComponent(mensaje)}&apikey=4613267`;
+    const url = `https://api.callmebot.com/whatsapp.php?phone=17025424935&text=${encodeURIComponent(mensaje)}&apikey=4613267`;
+      
 
     try {
       await fetch(url);
