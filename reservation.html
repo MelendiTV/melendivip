@@ -265,7 +265,9 @@
         <textarea id="notes" name="notes" placeholder="Pickup details, special requests, etc."></textarea>
       </div>
 
-      <button type="submit" id="submitBtn">Reserve</button>
+      <button type="button" onclick="pagarVIP()" id="submitBtn">
+  Reserve
+</button>
       <div class="message" id="formMessage"></div>
     </form>
 
@@ -487,7 +489,17 @@ updateDeposit();
     });
 
     applyLanguage("en");
-  </script>
+<script>
+async function pagarVIP() {
+  const res = await fetch('/api/create-checkout-session', {
+    method: 'POST'
+  });
+
+  const data = await res.json();
+
+  window.location.href = data.url;
+}
+</script>
 
 </body>
 </html>
