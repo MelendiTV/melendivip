@@ -1,4 +1,4 @@
-Melendi VIP PromotionsMelendi VIP PromotionsMelendi VIP PromotionsMelendi VIP Promotionsdocument.write(`
+Melendi VIP PromotionsMelendi VIP PromotionsMelendi VIP PromotionsMelendi VIP PromotionsMelendi VIP PromotionsMelendi VIP PromotionsMelendi VIP PromotionsMelendi VIP Promotionsdocument.write(`
 <footer style="background:#000;border-top:1px solid #222;padding:30px 20px;margin-top:40px;text-align:center;font-size:14px;">
 
   <div class="lang en active">
