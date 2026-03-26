@@ -1,4 +1,4 @@
-import Stripe from 'stripe';
+Melendi VIP PromotionsMelendi VIP Promotionsimport Stripe from 'stripe';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
