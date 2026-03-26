@@ -1,11 +1,11 @@
-Melendi VIP PromotionsMelendi VIP PromotionsMelendi VIP PromotionsMelendi VIP PromotionsMelendi VIP PromotionsMelendi VIP PromotionsMelendi VIP PromotionsMelendi VIP Promotionsdocument.write(`
+document.write(`
 <footer style="background:#000;border-top:1px solid #222;padding:30px 20px;margin-top:40px;text-align:center;font-size:14px;">
 
   <div class="lang en active">
-    <p>© 2026 Melendi VIP Promotion. All rights reserved.</p>
+    <p>© 2026 Melendi VIP Promotions. All rights reserved.</p>
 
     <p>
-      This website provides VIP promotion and concierge services for adult entertainment venues in Las Vegas.
+      This website provides VIP promotions and concierge services for adult entertainment venues in Las Vegas.
       We are not affiliated with, endorsed by, or owned by any listed venue.
     </p>
 
@@ -20,10 +20,10 @@ Melendi VIP PromotionsMelendi VIP PromotionsMelendi VIP PromotionsMelendi VIP Pr
   </div>
 
   <div class="lang es">
-    <p>© 2026 Melendi VIP Promotion. Todos los derechos reservados.</p>
+    <p>© 2026 Melendi VIP Promotiones. Todos los derechos reservados.</p>
 
     <p>
-      Este sitio web proporciona servicios de promoción VIP y concierge para lugares de entretenimiento para adultos en Las Vegas.
+      Este sitio web proporciona servicios de promociónes VIP y concierge para lugares de entretenimiento para adultos en Las Vegas.
       No estamos afiliados, respaldados ni somos propietarios de ninguno de los locales mencionados.
     </p>
 
