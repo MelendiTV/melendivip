@@ -1,1 +1,27 @@
-
+{
+  "name": "Melendi VIP Promotions",
+  "short_name": "Melendi VIP",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#07070b",
+  "theme_color": "#07070b",
+  "orientation": "portrait",
+  "description": "VIP entry and free limo pickup to the best strip clubs in Las Vegas with Melendi VIP Promotions.",
+  "categories": ["entertainment", "travel", "lifestyle"],
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
