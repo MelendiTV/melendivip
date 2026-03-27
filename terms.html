@@ -1,1 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Terms & Conditions | Melendi VIP Promotions</title>
+<link rel="canonical" href="https://melendivip.com/terms.html" />
+
+<meta name="description" content="Terms and conditions for Melendi VIP Promotions services in Las Vegas.">
+<meta name="robots" content="index, follow">
+<meta name="language" content="English, Spanish">
+
+<style>
+body{
+background-color:black;
+color:white;
+font-family:Arial, sans-serif;
+line-height:1.7;
+padding:40px;
+max-width:900px;
+margin:auto;
+}
+
+h1{
+color:gold;
+text-align:center;
+margin-bottom:40px;
+}
+
+h2{
+color:gold;
+margin-top:30px;
+}
+
+a{
+color:#FFD700;
+text-decoration:none;
+}
+
+.lang-buttons{
+position:fixed;
+top:20px;
+right:20px;
+display:flex;
+gap:8px;
+}
+
+.lang-buttons button{
+background:#333;
+color:white;
+border:none;
+padding:10px 14px;
+font-weight:bold;
+cursor:pointer;
+border-radius:8px;
+}
+
+.lang-buttons button.active{
+background:#FFD700;
+color:black;
+}
+
+.rights{
+text-align:center;
+color:#bdbdbd;
+font-size:14px;
+margin-top:40px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="lang-buttons">
+<button id="btn-en" onclick="setLang('en')">EN</button>
+<button id="btn-es" onclick="setLang('es')">ES</button>
+</div>
+
+<h1>Terms & Conditions / Términos y Condiciones</h1>
+
+<!-- ENGLISH -->
+<div class="en">
+
+<h2>General Information</h2>
+<p>
+By accessing this website, you agree to comply with these terms. This platform provides promotional and coordination services for nightlife experiences in Las Vegas. Learn more about our <a href="services.html">VIP services</a>.
+</p>
+
+<h2>Age Requirement</h2>
+<p>
+All guests must be 21 years of age or older unless a venue clearly states otherwise.
+</p>
+
+<h2>Promotional & Coordination Services</h2>
+<p>
+Melendi VIP Promotions acts as a coordination and promotional service. We assist guests with reservations, access to venues, and transportation options such as <a href="free-limo-las-vegas.html">free limo pickup</a>.
+</p>
+
+<h2>Transportation Disclaimer</h2>
+<p>
+Complimentary transportation is not guaranteed and depends on availability, location, number of guests, and venue conditions.
+</p>
+
+<h2>Reservations & Entry</h2>
+<p>
+Reservations and guest list access are subject to venue approval. Entry may be denied if dress code, identification, capacity, or behavior requirements are not met. Use our <a href="reservation.html">reservation page</a> for requests.
+</p>
+
+<h2>Deposits</h2>
+<p>
+When applicable, deposits are used to secure coordination services. Deposit conditions, including refund policies, are explained during booking.
+</p>
+
+<h2>Third-Party Venues</h2>
+<p>
+All venues operate independently and may change pricing, policies, or promotions at any time without notice.
+</p>
+
+<h2>Limitation of Liability</h2>
+<p>
+Melendi VIP Promotions is not responsible for incidents, injuries, losses, denied entry, delays, or damages occurring at third-party venues or during transportation services.
+</p>
+
+<h2>User Responsibility</h2>
+<p>
+Users agree to provide accurate information, follow venue rules, and behave appropriately during all interactions and experiences.
+</p>
+
+<h2>Updates</h2>
+<p>
+These terms may be updated at any time without prior notice. Continued use of this website implies acceptance of the latest version.
+</p>
+
+</div>
+
+<!-- ESPAÑOL -->
+<div class="es">
+
+<h2>Información General</h2>
+<p>
+Al acceder a este sitio web, aceptas cumplir con estos términos. Esta plataforma ofrece servicios de promoción y coordinación para experiencias nocturnas en Las Vegas. Puedes conocer más en nuestros <a href="services.html">servicios VIP</a>.
+</p>
+
+<h2>Edad</h2>
+<p>
+Todos los clientes deben tener 21 años o más, salvo que el establecimiento indique lo contrario.
+</p>
+
+<h2>Servicios Promocionales y de Coordinación</h2>
+<p>
+Melendi VIP Promotions actúa como servicio de coordinación y promoción. Ayudamos con reservaciones, acceso a clubes y opciones de transporte como el <a href="free-limo-las-vegas.html">limo gratis</a>.
+</p>
+
+<h2>Transporte</h2>
+<p>
+El transporte gratuito no está garantizado y depende de disponibilidad, ubicación, número de personas y condiciones del establecimiento.
+</p>
+
+<h2>Reservaciones y Entrada</h2>
+<p>
+Las reservaciones están sujetas a aprobación del club. La entrada puede ser denegada si no se cumplen requisitos de vestimenta, identificación, capacidad o comportamiento. Puedes usar nuestra <a href="reservation.html">página de reservación</a>.
+</p>
+
+<h2>Depósitos</h2>
+<p>
+Cuando aplique, los depósitos aseguran la coordinación del servicio. Las condiciones del depósito se explican durante la reserva.
+</p>
+
+<h2>Establecimientos de Terceros</h2>
+<p>
+Los clubes operan de manera independiente y pueden cambiar precios, políticas o promociones en cualquier momento.
+</p>
+
+<h2>Limitación de Responsabilidad</h2>
+<p>
+Melendi VIP Promotions no es responsable por incidentes, lesiones, pérdidas, retrasos o daños en establecimientos de terceros o durante el transporte.
+</p>
+
+<h2>Responsabilidad del Usuario</h2>
+<p>
+El usuario acepta proporcionar información correcta, seguir las reglas del establecimiento y comportarse adecuadamente.
+</p>
+
+<h2>Actualizaciones</h2>
+<p>
+Estos términos pueden cambiar en cualquier momento sin previo aviso. El uso continuo del sitio implica aceptación de la versión actual.
+</p>
+
+</div>
+
+<div class="rights">
+© 2026 Melendi VIP Promotions. All rights reserved.
+</div>
+
+<script>
+function setLang(lang){
+localStorage.setItem("lang", lang);
+
+document.querySelector('.en').style.display = (lang === 'en') ? 'block' : 'none';
+document.querySelector('.es').style.display = (lang === 'es') ? 'block' : 'none';
+
+document.getElementById("btn-en").classList.remove("active");
+document.getElementById("btn-es").classList.remove("active");
+
+document.getElementById("btn-" + lang).classList.add("active");
+}
+
+const saved = localStorage.getItem("lang") || "en";
+setLang(saved);
+</script>
+
+</body>
+</html>
