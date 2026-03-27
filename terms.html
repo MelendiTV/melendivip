@@ -209,15 +209,23 @@ Estos términos pueden cambiar en cualquier momento sin previo aviso. El uso con
 function setLang(lang){
 localStorage.setItem("lang", lang);
 
-document.querySelector('.en').style.display = (lang === 'en') ? 'block' : 'none';
-document.querySelector('.es').style.display = (lang === 'es') ? 'block' : 'none';
+// 🔥 CAMBIA TODO EL CONTENIDO (no solo uno)
+document.querySelectorAll('.en').forEach(el => {
+el.style.display = (lang === 'en') ? '' : 'none';
+});
 
+document.querySelectorAll('.es').forEach(el => {
+el.style.display = (lang === 'es') ? '' : 'none';
+});
+
+// botones
 document.getElementById("btn-en").classList.remove("active");
 document.getElementById("btn-es").classList.remove("active");
 
 document.getElementById("btn-" + lang).classList.add("active");
 }
 
+// idioma guardado
 const saved = localStorage.getItem("lang") || "en";
 setLang(saved);
 </script>
