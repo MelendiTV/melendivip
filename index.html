@@ -785,6 +785,24 @@
         -webkit-backdrop-filter:blur(10px);
       }
     }
+  .social-footer {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 25px 0;
+  background: #07070b;
+}
+
+.social-footer img {
+  width: 38px;
+  height: 38px;
+  transition: 0.3s;
+}
+
+.social-footer img:hover {
+  transform: scale(1.2);
+}
+  
   </style>
 </head>
 <body>
@@ -1247,7 +1265,19 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
+<div class="social-footer">
+  <a href="/TUUSUARIO" target="_blank">
+    <img src="https://www.instagram.com/melendi_vip_prmontios?igsh=bnV4ZXprMzE0YXd1&utm_source=qr/cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+  </a>
 
+  <a href="https://www.tiktok.com/@melendi.vip.prom?_r=1&_t=ZT-951wSTtwJNl/@TUUSUARIO" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
+  </a>
+
+  <a href="https://wa.me/17025424935" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  </a>
+</div>
 <script src="/footer.js"></script>
 </body>
 </html>
