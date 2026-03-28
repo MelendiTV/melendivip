@@ -3,7 +3,6 @@ const CACHE_NAME = "melendi-cache-v4";
 const urlsToCache = [
   "/",
   "/index.html",
-  "/styles.css",
   "/reservation.html",
   "/contact.html",
   "/privacy.html",
