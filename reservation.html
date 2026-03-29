@@ -774,7 +774,30 @@
 
     applyLanguage("en");
     updateDeposit();
-  </script>
+  
+   // todo tu código largo aquí
 
+   async function pagarVIP(data) {
+     try {
+       const configRes = await fetch('/api/square-config');
+       const config = await configRes.json();
+
+       const payments = window.Square.payments(
+         config.applicationId,
+         config.locationId
+       );
+
+       const card = await payments.card();
+       await card.attach('#checkout');
+
+       document.getElementById("checkout-wrapper").style.display = "block";
+
+     } catch (err) {
+       console.error(err);
+       document.getElementById("formMessage").textContent = "❌ Payment failed to load.";
+     }
+   }
+
+</script>
 </body>
 </html>
