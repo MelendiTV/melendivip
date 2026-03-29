@@ -1,1 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservation | Melendi VIP Promotions</title>
+  <link rel="canonical" href="https://melendivip.com/reservation.html" />
+  <meta name="description" content="Reserve your VIP experience with Melendi VIP Promotions. Request limo pickup, choose your club, and complete your required deposit online." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Melendi VIP Promotions" />
+  <script src="https://js.stripe.com/v3/"></script>
 
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      background:#07070b;
+      font-family:Arial,sans-serif;
+      color:#fff;
+      padding:40px 20px;
+      line-height:1.6;
+    }
+
+    .reservation-box{
+      max-width:900px;
+      margin:auto;
+      background:#0f0f15;
+      padding:30px;
+      border-radius:20px;
+      border:1px solid rgba(212,175,55,0.22);
+      box-shadow:0 0 18px rgba(212,175,55,0.08);
+    }
+
+    .lang-switch{
+      display:flex;
+      justify-content:flex-end;
+      gap:10px;
+      margin-bottom:20px;
+    }
+
+    .lang-btn{
+      background:#1a1a1f;
+      color:#d4af37;
+      border:1px solid #444;
+      border-radius:8px;
+      padding:8px 14px;
+      font-size:14px;
+      font-weight:bold;
+      cursor:pointer;
+      width:auto;
+      margin-top:0;
+      transition:0.25s ease;
+    }
+
+    .lang-btn.active{
+      background:#d4af37;
+      color:#000;
+      border-color:#d4af37;
+    }
+
+    .lang-btn:hover{
+      transform:scale(1.03);
+    }
+
+    h1{
+      text-align:center;
+      color:#d4af37;
+      margin-top:0;
+      margin-bottom:10px;
+      font-size:34px;
+      text-shadow:0 0 10px rgba(212,175,55,0.18);
+    }
+
+    .intro{
+      text-align:center;
+      color:#ddd;
+      max-width:760px;
+      margin:0 auto 26px;
+      font-size:16px;
+    }
+
+    .form-group{
+      margin-bottom:16px;
+    }
+
+    .two-cols{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .phone-row{
+      display:grid;
+      grid-template-columns:220px 1fr;
+      gap:12px;
+    }
+
+    label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:bold;
+      color:#d4af37;
+    }
+
+    input, select, textarea{
+      width:100%;
+      padding:12px;
+      border-radius:10px;
+      border:1px solid #444;
+      background:#1a1a1f;
+      color:white;
+      box-sizing:border-box;
+      font-size:16px;
+    }
+
+    input:focus, select:focus, textarea:focus{
+      outline:none;
+      border-color:#d4af37;
+      box-shadow:0 0 0 2px rgba(212,175,55,0.15);
+    }
+
+    textarea{
+      min-height:110px;
+      resize:vertical;
+    }
+
+    button{
+      width:100%;
+      padding:16px;
+      background:linear-gradient(135deg,#d4af37,#b8962e);
+      border:none;
+      border-radius:12px;
+      color:#000;
+      font-size:17px;
+      font-weight:bold;
+      cursor:pointer;
+      margin-top:10px;
+      transition:0.25s ease;
+    }
+
+    button:hover{
+      transform:scale(1.01);
+      box-shadow:0 0 16px rgba(212,175,55,0.18);
+    }
+
+    button:disabled{
+      opacity:.7;
+      cursor:not-allowed;
+      transform:none;
+      box-shadow:none;
+    }
+
+    .message{
+      margin-top:18px;
+      text-align:center;
+      font-weight:bold;
+    }
+
+    .deposit-box{
+      margin-top:8px;
+      margin-bottom:18px;
+      padding:16px;
+      border-radius:14px;
+      background:#15151c;
+      border:1px solid #2f2f38;
+    }
+
+    .deposit-line{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      font-size:16px;
+      margin-bottom:10px;
+    }
+
+    .deposit-amount{
+      color:#d4af37;
+      font-weight:bold;
+      font-size:20px;
+    }
+
+    .deposit-note{
+      color:#cfcfcf;
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    .deposit-note .highlight{
+      color:#ffd700;
+      font-weight:bold;
+    }
+
+    .helper-box{
+      margin-top:18px;
+      padding:14px 16px;
+      border-radius:12px;
+      background:#131319;
+      border:1px solid rgba(212,175,55,0.15);
+      color:#ddd;
+      font-size:14px;
+    }
+
+    .helper-box strong{
+      color:#ffd700;
+    }
+
+    .back-home{
+      display:inline-block;
+      margin-top:20px;
+      background:linear-gradient(135deg,#d4af37,#b8962e);
+      color:#000;
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:bold;
+      text-decoration:none;
+      transition:0.25s ease;
+    }
+
+    .back-home:hover{
+      transform:scale(1.03);
+      box-shadow:0 0 14px rgba(212,175,55,0.2);
+    }
+
+    #checkout-wrapper{
+      display:none;
+      margin-top:24px;
+      padding:18px;
+      border-radius:12px;
+      background:#15151c;
+      border:1px solid #2f2f38;
+    }
+
+    #checkout-title{
+      color:#d4af37;
+      text-align:center;
+      margin-top:0;
+      margin-bottom:16px;
+    }
+
+    #checkout{
+      min-height:420px;
+    }
+
+    .footer-rights{
+      text-align:center;
+      margin-top:28px;
+      color:#888;
+      font-size:13px;
+    }
+
+    @media (max-width:640px){
+      .two-cols{
+        grid-template-columns:1fr;
+      }
+
+      .phone-row{
+        grid-template-columns:1fr;
+      }
+
+      body{
+        padding:24px 14px;
+      }
+
+      .reservation-box{
+        padding:22px 18px;
+      }
+
+      h1{
+        font-size:28px;
+      }
+    }
+
+    @keyframes pulseBtn {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(212,175,55,0.7); }
+      70% { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(212,175,55,0); }
+      100% { transform: scale(1); }
+    }
+
+    .btn-attention{
+      background:linear-gradient(135deg,#00c853,#69f0ae) !important;
+      animation:pulseBtn 1.5s infinite;
+      color:#000 !important;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="reservation-box">
+
+    <div class="lang-switch">
+      <button type="button" class="lang-btn active" id="btnEN">EN</button>
+      <button type="button" class="lang-btn" id="btnES">ES</button>
+    </div>
+
+    <h1 id="pageTitle">VIP Reservation</h1>
+    <p class="intro" id="pageIntro">
+      Reserve your VIP nightlife experience, choose your club, and complete your required deposit to confirm your request.
+    </p>
+
+    <form id="reservationForm">
+      <div class="form-group">
+        <label for="name" id="labelName">Full Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone" id="labelPhone">Phone / WhatsApp</label>
+        <div class="phone-row">
+          <select id="countryCode" name="countryCode" required>
+            <option value="+1" selected>USA / Canada (+1)</option>
+            <option value="+52">Mexico (+52)</option>
+            <option value="+34">Spain (+34)</option>
+            <option value="+44">United Kingdom (+44)</option>
+            <option value="+49">Germany (+49)</option>
+            <option value="+33">France (+33)</option>
+            <option value="+39">Italy (+39)</option>
+            <option value="+55">Brazil (+55)</option>
+            <option value="+54">Argentina (+54)</option>
+            <option value="+57">Colombia (+57)</option>
+            <option value="+58">Venezuela (+58)</option>
+            <option value="+51">Peru (+51)</option>
+            <option value="+56">Chile (+56)</option>
+            <option value="+593">Ecuador (+593)</option>
+            <option value="+507">Panama (+507)</option>
+            <option value="+506">Costa Rica (+506)</option>
+            <option value="+53">Cuba (+53)</option>
+            <option value="+351">Portugal (+351)</option>
+            <option value="+31">Netherlands (+31)</option>
+            <option value="+32">Belgium (+32)</option>
+            <option value="+41">Switzerland (+41)</option>
+            <option value="+43">Austria (+43)</option>
+            <option value="+46">Sweden (+46)</option>
+            <option value="+47">Norway (+47)</option>
+            <option value="+45">Denmark (+45)</option>
+            <option value="+48">Poland (+48)</option>
+            <option value="+420">Czech Republic (+420)</option>
+            <option value="+353">Ireland (+353)</option>
+            <option value="+30">Greece (+30)</option>
+            <option value="+90">Turkey (+90)</option>
+            <option value="+971">UAE (+971)</option>
+            <option value="+966">Saudi Arabia (+966)</option>
+            <option value="+972">Israel (+972)</option>
+            <option value="+91">India (+91)</option>
+            <option value="+92">Pakistan (+92)</option>
+            <option value="+86">China (+86)</option>
+            <option value="+81">Japan (+81)</option>
+            <option value="+82">South Korea (+82)</option>
+            <option value="+65">Singapore (+65)</option>
+            <option value="+60">Malaysia (+60)</option>
+            <option value="+66">Thailand (+66)</option>
+            <option value="+63">Philippines (+63)</option>
+            <option value="+84">Vietnam (+84)</option>
+            <option value="+62">Indonesia (+62)</option>
+            <option value="+61">Australia (+61)</option>
+            <option value="+64">New Zealand (+64)</option>
+            <option value="+27">South Africa (+27)</option>
+            <option value="+20">Egypt (+20)</option>
+            <option value="+234">Nigeria (+234)</option>
+            <option value="+254">Kenya (+254)</option>
+          </select>
+
+          <input type="tel" id="phone" name="phone" required placeholder="7025551234" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="hotel" id="labelHotel">Hotel</label>
+        <input type="text" id="hotel" name="hotel" required />
+      </div>
+
+      <div class="form-group">
+        <label for="club" id="labelClub">Club</label>
+        <select id="club" name="club" required>
+          <option value="" id="clubDefault">Select a club</option>
+          <option value="Sapphire">Sapphire</option>
+          <option value="Crazy Horse III">Crazy Horse III</option>
+          <option value="Peppermint Hippo">Peppermint Hippo</option>
+          <option value="Spearmint Rhino">Spearmint Rhino</option>
+          <option value="Treasures">Treasures</option>
+          <option value="Hustler Club">Hustler Club</option>
+          <option value="Scores">Scores</option>
+          <option value="Little Darlings">Little Darlings</option>
+          <option value="LVSC">LVSC</option>
+          <option value="Deja Vu">Deja Vu</option>
+          <option value="Palomino">Palomino</option>
+          <option value="Airstrip Club">Airstrip Club</option>
+        </select>
+      </div>
+
+      <div class="two-cols">
+        <div class="form-group">
+          <label for="date" id="labelDate">Reservation Date</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+
+        <div class="form-group">
+          <label for="time" id="labelTime">Reservation Time</label>
+          <input type="time" id="time" name="time" required />
+        </div>
+      </div>
+
+      <div class="two-cols">
+        <div class="form-group">
+          <label for="men" id="labelMen">Men</label>
+          <input type="number" id="men" name="men" min="1" value="1" required />
+        </div>
+
+        <div class="form-group">
+          <label for="women" id="labelWomen">Women</label>
+          <input type="number" id="women" name="women" min="0" value="0" required />
+        </div>
+      </div>
+
+      <div class="deposit-box">
+        <div class="deposit-line">
+          <span id="depositTitle">Required Deposit</span>
+          <span class="deposit-amount" id="depositAmount">$20</span>
+        </div>
+
+        <div class="deposit-note">
+          <span class="highlight" id="depositLine1">
+            $20 deposit per male guest. Female guests are not charged. Minimum 1 male guest required.
+          </span>
+          <br><br>
+
+          <span class="highlight" id="depositLine2">
+            The $20 deposit is NON-REFUNDABLE if you cancel or do not show up at the agreed pickup location.
+          </span>
+          <br><br>
+
+          <span class="highlight" id="depositLine3">
+            If you arrive at the club, the deposit will be credited toward your promotion at the entrance.
+          </span>
+        </div>
+      </div>
+
+      <div class="helper-box" id="helperText">
+        <strong>Important:</strong> VIP entry, transportation, and promotions may vary depending on the club, date, group size, and availability.
+      </div>
+
+      <div class="form-group" style="margin-top:18px;">
+        <label for="notes" id="labelNotes">Extra Notes</label>
+        <textarea id="notes" name="notes" placeholder="Pickup details, special requests, etc."></textarea>
+      </div>
+
+      <button type="submit" id="submitBtn">Reserve</button>
+      <div class="message" id="formMessage"></div>
+
+      <div id="checkout-wrapper">
+        <h2 id="checkout-title">Complete Your Deposit</h2>
+        <div id="checkout"></div>
+      </div>
+    </form>
+
+    <a href="index.html" class="back-home" id="backHome">← Home</a>
+
+    <div class="footer-rights">
+      © 2026 Melendi VIP Promotions. All rights reserved.
+    </div>
+  </div>
+
+  <script>
+    const stripe = Stripe("pk_test_51TEOMzCIZy2PbDmuW3BHyJzvc7pzruIgWDCrdlV9z1X4hgitnrV4csBlopHrsCe73YqkuGVBYrEMFOqeRbb4nypA00T6WklNND");
+    const webhookURL = "https://hook.us2.make.com/iy3l4sthq0wggcrpby9rntfbglfc9ttq";
+
+    const form = document.getElementById("reservationForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const formMessage = document.getElementById("formMessage");
+    const menInput = document.getElementById("men");
+    const womenInput = document.getElementById("women");
+    const depositAmount = document.getElementById("depositAmount");
+    const btnEN = document.getElementById("btnEN");
+    const btnES = document.getElementById("btnES");
+    const checkoutWrapper = document.getElementById("checkout-wrapper");
+
+    const params = new URLSearchParams(window.location.search);
+    const clubFromURL = params.get("club");
+
+    let currentLang = "en";
+    let embeddedCheckout = null;
+
+    const translations = {
+      en: {
+        pageTitle: "VIP Reservation",
+        pageIntro: "Reserve your VIP nightlife experience, choose your club, and complete your required deposit to confirm your request.",
+        labelName: "Full Name",
+        labelPhone: "Phone / WhatsApp",
+        labelHotel: "Hotel",
+        labelClub: "Club",
+        clubDefault: "Select a club",
+        labelDate: "Reservation Date",
+        labelTime: "Reservation Time",
+        labelMen: "Men",
+        labelWomen: "Women",
+        depositTitle: "Required Deposit",
+        depositLine1: "$20 deposit per male guest. Female guests are not charged. Minimum 1 male guest required.",
+        depositLine2: "The $20 deposit is NON-REFUNDABLE if you cancel or do not show up at the agreed pickup location.",
+        depositLine3: "If you arrive at the club, the deposit will be credited toward your promotion at the entrance.",
+        helperText: "Important: VIP entry, transportation, and promotions may vary depending on the club, date, group size, and availability.",
+        labelNotes: "Extra Notes",
+        notesPlaceholder: "Pickup details, special requests, etc.",
+        submitBtn: "Reserve",
+        submitSending: "Sending...",
+        successMessage: "Reservation saved. Complete your deposit below.",
+        errorMessage: "There was an error sending the reservation.",
+        connectionError: "Connection error. Please try again.",
+        minMenError: "Minimum 1 male guest is required to complete the reservation.",
+        phoneError: "Please enter a valid phone number.",
+        paymentError: "Could not start payment.",
+        checkoutTitle: "Complete Your Deposit",
+        backHome: "← Home",
+        completeDeposit: "Complete Deposit ↓"
+      },
+      es: {
+        pageTitle: "Reservación VIP",
+        pageIntro: "Reserva tu experiencia VIP nocturna, elige tu club y completa el depósito requerido para confirmar tu solicitud.",
+        labelName: "Nombre Completo",
+        labelPhone: "Teléfono / WhatsApp",
+        labelHotel: "Hotel",
+        labelClub: "Club",
+        clubDefault: "Selecciona un club",
+        labelDate: "Fecha de Reservación",
+        labelTime: "Hora de Reservación",
+        labelMen: "Hombres",
+        labelWomen: "Mujeres",
+        depositTitle: "Depósito Requerido",
+        depositLine1: "Depósito de $20 por cada hombre. Las mujeres no pagan depósito. Se requiere mínimo 1 hombre.",
+        depositLine2: "El depósito de $20 NO ES REEMBOLSABLE si cancelas o no te presentas al punto de recogida acordado.",
+        depositLine3: "Si llegas al club, el depósito se acredita a tu promoción en la entrada.",
+        helperText: "Importante: la entrada VIP, el transporte y las promociones pueden variar según el club, la fecha, el tamaño del grupo y la disponibilidad.",
+        labelNotes: "Notas Extras",
+        notesPlaceholder: "Detalles de recogida, solicitudes especiales, etc.",
+        submitBtn: "Reservar",
+        submitSending: "Enviando...",
+        successMessage: "Reservación guardada. Completa tu depósito abajo.",
+        errorMessage: "Hubo un error al enviar la reservación.",
+        connectionError: "Error de conexión. Inténtalo otra vez.",
+        minMenError: "Se requiere mínimo 1 hombre para completar la reservación.",
+        phoneError: "Por favor ingresa un número de teléfono válido.",
+        paymentError: "No se pudo iniciar el pago.",
+        checkoutTitle: "Completa tu depósito",
+        backHome: "← Inicio",
+        completeDeposit: "Completar depósito ↓"
+      }
+    };
+
+    function applyLanguage(lang) {
+      currentLang = lang;
+      const t = translations[lang];
+
+      document.documentElement.lang = lang;
+      document.getElementById("pageTitle").textContent = t.pageTitle;
+      document.getElementById("pageIntro").textContent = t.pageIntro;
+      document.getElementById("labelName").textContent = t.labelName;
+      document.getElementById("labelPhone").textContent = t.labelPhone;
+      document.getElementById("labelHotel").textContent = t.labelHotel;
+      document.getElementById("labelClub").textContent = t.labelClub;
+      document.getElementById("clubDefault").textContent = t.clubDefault;
+      document.getElementById("labelDate").textContent = t.labelDate;
+      document.getElementById("labelTime").textContent = t.labelTime;
+      document.getElementById("labelMen").textContent = t.labelMen;
+      document.getElementById("labelWomen").textContent = t.labelWomen;
+      document.getElementById("depositTitle").textContent = t.depositTitle;
+      document.getElementById("depositLine1").textContent = t.depositLine1;
+      document.getElementById("depositLine2").textContent = t.depositLine2;
+      document.getElementById("depositLine3").textContent = t.depositLine3;
+      document.getElementById("helperText").innerHTML = "<strong>" + (lang === "en" ? "Important:" : "Importante:") + "</strong> " + t.helperText.replace(/^Important:\s|^Importante:\s/, "");
+      document.getElementById("labelNotes").textContent = t.labelNotes;
+      document.getElementById("notes").placeholder = t.notesPlaceholder;
+      document.getElementById("submitBtn").textContent = submitBtn.classList.contains("btn-attention") ? t.completeDeposit : t.submitBtn;
+      document.getElementById("checkout-title").textContent = t.checkoutTitle;
+      document.getElementById("backHome").textContent = t.backHome;
+
+      btnEN.classList.toggle("active", lang === "en");
+      btnES.classList.toggle("active", lang === "es");
+    }
+
+    function updateDeposit() {
+      const men = parseInt(menInput.value) || 0;
+      const totalDeposit = men * 20;
+      depositAmount.textContent = "$" + totalDeposit;
+    }
+
+    function buildFullPhone() {
+      const countryCode = document.getElementById("countryCode").value;
+      const rawPhone = document.getElementById("phone").value.trim();
+      const cleanPhone = rawPhone.replace(/\D/g, "");
+      return countryCode + cleanPhone;
+    }
+
+    menInput.addEventListener("input", updateDeposit);
+    menInput.addEventListener("change", updateDeposit);
+    womenInput.addEventListener("input", updateDeposit);
+    womenInput.addEventListener("change", updateDeposit);
+
+    btnEN.addEventListener("click", function () {
+      applyLanguage("en");
+    });
+
+    btnES.addEventListener("click", function () {
+      applyLanguage("es");
+    });
+
+    if (clubFromURL) {
+      const clubField = document.getElementById("club");
+      clubField.value = decodeURIComponent(clubFromURL);
+    }
+
+    async function pagarVIP(data) {
+      try {
+        const res = await fetch('/api/create-checkout-session', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        const result = await res.json();
+
+        if (!result.clientSecret) {
+          formMessage.textContent = translations[currentLang].paymentError;
+          formMessage.style.color = "#ff4d4d";
+          submitBtn.disabled = false;
+          submitBtn.textContent = translations[currentLang].submitBtn;
+          return;
+        }
+
+        if (embeddedCheckout) {
+          try {
+            embeddedCheckout.destroy();
+          } catch (e) {}
+        }
+
+        checkoutWrapper.style.display = "block";
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth"
+        });
+
+        embeddedCheckout = await stripe.initEmbeddedCheckout({
+          clientSecret: result.clientSecret
+        });
+
+        embeddedCheckout.mount('#checkout');
+
+      } catch (error) {
+        formMessage.textContent = translations[currentLang].paymentError;
+        formMessage.style.color = "#ff4d4d";
+        submitBtn.disabled = false;
+        submitBtn.textContent = translations[currentLang].submitBtn;
+      }
+    }
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const men = parseInt(menInput.value, 10) || 0;
+      const women = parseInt(womenInput.value, 10) || 0;
+      const t = translations[currentLang];
+      const fullPhone = buildFullPhone();
+
+      if (men < 1) {
+        formMessage.textContent = t.minMenError;
+        formMessage.style.color = "#ff4d4d";
+        menInput.focus();
+        return;
+      }
+
+      if (!fullPhone || fullPhone.length < 8) {
+        formMessage.textContent = t.phoneError;
+        formMessage.style.color = "#ff4d4d";
+        document.getElementById("phone").focus();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = t.submitSending;
+      formMessage.textContent = "";
+      checkoutWrapper.style.display = "none";
+
+      const totalGuests = men + women;
+      const deposit = men * 20;
+
+      const data = {
+        name: document.getElementById("name").value.trim(),
+        phone: fullPhone,
+        hotel: document.getElementById("hotel").value.trim(),
+        club: document.getElementById("club").value,
+        date: document.getElementById("date").value,
+        time: document.getElementById("time").value,
+        men: men,
+        women: women,
+        guests: totalGuests,
+        deposit: deposit,
+        notes: document.getElementById("notes").value.trim()
+      };
+
+      try {
+        const response = await fetch(webhookURL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          formMessage.textContent = t.successMessage;
+          formMessage.style.color = "#d4af37";
+
+          await pagarVIP(data);
+          submitBtn.textContent = t.completeDeposit;
+          submitBtn.classList.add("btn-attention");
+          submitBtn.disabled = false;
+
+        } else {
+          formMessage.textContent = t.errorMessage;
+          formMessage.style.color = "#ff4d4d";
+          submitBtn.disabled = false;
+          submitBtn.textContent = t.submitBtn;
+        }
+      } catch (error) {
+        formMessage.textContent = t.connectionError;
+        formMessage.style.color = "#ff4d4d";
+        submitBtn.disabled = false;
+        submitBtn.textContent = t.submitBtn;
+      }
+    });
+
+    applyLanguage("en");
+    updateDeposit();
+  </script>
+
+</body>
+</html>
