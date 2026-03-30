@@ -1,1 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refund Policy | Melendi VIP Promotions</title>
+  <link rel="canonical" href="https://melendivip.com/refund.html" />
+  <meta name="description" content="Read the Refund Policy for reservation deposits and VIP concierge services offered by Melendi VIP Promotions." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Melendi VIP Promotions" />
 
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:#07070b;color:#fff;font-family:Arial,sans-serif;line-height:1.7;padding:40px 20px;}
+    .legal-box{max-width:950px;margin:0 auto;background:#0f0f15;border:1px solid rgba(212,175,55,0.22);border-radius:22px;padding:30px 24px;box-shadow:0 0 18px rgba(212,175,55,0.08);}
+    .lang-switch{display:flex;justify-content:flex-end;gap:10px;margin-bottom:20px;}
+    .lang-btn{background:#1a1a1f;color:#d4af37;border:1px solid #444;border-radius:8px;padding:8px 14px;font-size:14px;font-weight:bold;cursor:pointer;transition:.25s ease;}
+    .lang-btn.active{background:#d4af37;color:#000;border-color:#d4af37;}
+    .lang-btn:hover{transform:scale(1.03);}
+    h1{text-align:center;color:#d4af37;font-size:34px;margin-bottom:10px;text-shadow:0 0 10px rgba(212,175,55,0.18);}
+    .intro{text-align:center;color:#ddd;max-width:780px;margin:0 auto 26px;font-size:16px;}
+    h2{color:#ffd700;font-size:22px;margin-top:28px;margin-bottom:10px;}
+    p{color:#ddd;margin-bottom:14px;font-size:16px;}
+    .highlight{color:#ffd700;font-weight:bold;}
+    .back-home{display:inline-block;margin-top:28px;background:linear-gradient(135deg,#d4af37,#b8962e);color:#000;padding:10px 16px;border-radius:999px;font-weight:bold;text-decoration:none;transition:.25s ease;}
+    .back-home:hover{transform:scale(1.03);box-shadow:0 0 14px rgba(212,175,55,0.2);}
+    .footer-rights{text-align:center;margin-top:26px;color:#888;font-size:13px;}
+    @media (max-width:640px){
+      body{padding:24px 14px;}
+      .legal-box{padding:22px 18px;}
+      h1{font-size:28px;}
+      h2{font-size:20px;}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="legal-box">
+    <div class="lang-switch">
+      <button type="button" class="lang-btn active" id="btnEN">EN</button>
+      <button type="button" class="lang-btn" id="btnES">ES</button>
+    </div>
+
+    <h1 id="pageTitle">Refund Policy</h1>
+    <p class="intro" id="pageIntro">
+      Please review our refund policy before submitting a reservation request or completing a deposit payment.
+    </p>
+
+    <h2 id="sec1Title">1. Reservation Deposits</h2>
+    <p id="sec1Text">
+      Reservation deposits collected by Melendi VIP Promotions are paid in exchange for booking coordination, transportation assistance, and concierge handling related to the requested reservation.
+    </p>
+
+    <h2 id="sec2Title">2. Non-Refundable Policy</h2>
+    <p id="sec2Text">
+      <span class="highlight">All reservation deposits are strictly non-refundable.</span> This applies if the customer cancels, changes plans after confirmation, fails to arrive at the agreed pickup location, or otherwise does not complete the confirmed reservation process.
+    </p>
+
+    <h2 id="sec3Title">3. Deposit Application</h2>
+    <p id="sec3Text">
+      If the reservation is completed as scheduled and the customer attends the venue, the deposit may be applied toward the guest experience depending on the venue’s internal policy and promotion terms.
+    </p>
+
+    <h2 id="sec4Title">4. Third-Party Venue Conditions</h2>
+    <p id="sec4Text">
+      Melendi VIP Promotions does not control venue-specific refund rules, entry decisions, or promotion details. Any venue-specific credits or applications remain subject to the venue’s conditions.
+    </p>
+
+    <h2 id="sec5Title">5. Customer Agreement</h2>
+    <p id="sec5Text">
+      By submitting payment, the customer acknowledges that they have read, understood, and accepted this refund policy in full.
+    </p>
+
+    <a href="index.html" class="back-home" id="backHome">← Home</a>
+
+    <div class="footer-rights">
+      © 2026 Melendi VIP Promotions. All rights reserved.
+    </div>
+  </div>
+
+  <script>
+    const btnEN = document.getElementById("btnEN");
+    const btnES = document.getElementById("btnES");
+
+    const translations = {
+      en: {
+        pageTitle: "Refund Policy",
+        pageIntro: "Please review our refund policy before submitting a reservation request or completing a deposit payment.",
+        sec1Title: "1. Reservation Deposits",
+        sec1Text: "Reservation deposits collected by Melendi VIP Promotions are paid in exchange for booking coordination, transportation assistance, and concierge handling related to the requested reservation.",
+        sec2Title: "2. Non-Refundable Policy",
+        sec2Text: "All reservation deposits are strictly non-refundable. This applies if the customer cancels, changes plans after confirmation, fails to arrive at the agreed pickup location, or otherwise does not complete the confirmed reservation process.",
+        sec3Title: "3. Deposit Application",
+        sec3Text: "If the reservation is completed as scheduled and the customer attends the venue, the deposit may be applied toward the guest experience depending on the venue’s internal policy and promotion terms.",
+        sec4Title: "4. Third-Party Venue Conditions",
+        sec4Text: "Melendi VIP Promotions does not control venue-specific refund rules, entry decisions, or promotion details. Any venue-specific credits or applications remain subject to the venue’s conditions.",
+        sec5Title: "5. Customer Agreement",
+        sec5Text: "By submitting payment, the customer acknowledges that they have read, understood, and accepted this refund policy in full.",
+        backHome: "← Home"
+      },
+      es: {
+        pageTitle: "Política de Reembolso",
+        pageIntro: "Por favor revisa nuestra política de reembolso antes de enviar una solicitud de reservación o completar un pago de depósito.",
+        sec1Title: "1. Depósitos de Reservación",
+        sec1Text: "Los depósitos de reservación cobrados por Melendi VIP Promotions se pagan a cambio de la coordinación de la reserva, asistencia de transporte y manejo concierge relacionado con la reservación solicitada.",
+        sec2Title: "2. Política de No Reembolso",
+        sec2Text: "Todos los depósitos de reservación son estrictamente no reembolsables. Esto aplica si el cliente cancela, cambia sus planes después de la confirmación, no llega al punto de recogida acordado o no completa el proceso confirmado de la reservación.",
+        sec3Title: "3. Aplicación del Depósito",
+        sec3Text: "Si la reservación se completa según lo programado y el cliente asiste al establecimiento, el depósito puede aplicarse a la experiencia del cliente dependiendo de la política interna y de los términos de promoción del lugar.",
+        sec4Title: "4. Condiciones de Establecimientos de Terceros",
+        sec4Text: "Melendi VIP Promotions no controla las reglas de reembolso específicas del establecimiento, las decisiones de entrada ni los detalles de la promoción. Cualquier crédito o aplicación específica del lugar queda sujeto a sus propias condiciones.",
+        sec5Title: "5. Aceptación del Cliente",
+        sec5Text: "Al enviar el pago, el cliente reconoce que ha leído, entendido y aceptado por completo esta política de reembolso.",
+        backHome: "← Inicio"
+      }
+    };
+
+    function applyLanguage(lang){
+      const t = translations[lang];
+      document.documentElement.lang = lang;
+      document.getElementById("pageTitle").textContent = t.pageTitle;
+      document.getElementById("pageIntro").textContent = t.pageIntro;
+      document.getElementById("sec1Title").textContent = t.sec1Title;
+      document.getElementById("sec1Text").textContent = t.sec1Text;
+      document.getElementById("sec2Title").textContent = t.sec2Title;
+      document.getElementById("sec2Text").textContent = t.sec2Text;
+      document.getElementById("sec3Title").textContent = t.sec3Title;
+      document.getElementById("sec3Text").textContent = t.sec3Text;
+      document.getElementById("sec4Title").textContent = t.sec4Title;
+      document.getElementById("sec4Text").textContent = t.sec4Text;
+      document.getElementById("sec5Title").textContent = t.sec5Title;
+      document.getElementById("sec5Text").textContent = t.sec5Text;
+      document.getElementById("backHome").textContent = t.backHome;
+      btnEN.classList.toggle("active", lang === "en");
+      btnES.classList.toggle("active", lang === "es");
+    }
+
+    btnEN.addEventListener("click", () => applyLanguage("en"));
+    btnES.addEventListener("click", () => applyLanguage("es"));
+
+    applyLanguage("en");
+  </script>
+</body>
+</html>
