@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disclaimer | Melendi VIP Promotions</title>
+  <link rel="canonical" href="https://melendivip.com/disclaimer.html" />
+  <meta name="description" content="Read the legal disclaimer for Melendi VIP Promotions concierge, reservation coordination, and transportation assistance services." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Melendi VIP Promotions" />
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{background:#07070b;color:#fff;font-family:Arial,sans-serif;line-height:1.7;padding:40px 20px;}
+    .legal-box{max-width:950px;margin:0 auto;background:#0f0f15;border:1px solid rgba(212,175,55,0.22);border-radius:22px;padding:30px 24px;box-shadow:0 0 18px rgba(212,175,55,0.08);}
+    .lang-switch{display:flex;justify-content:flex-end;gap:10px;margin-bottom:20px;}
+    .lang-btn{background:#1a1a1f;color:#d4af37;border:1px solid #444;border-radius:8px;padding:8px 14px;font-size:14px;font-weight:bold;cursor:pointer;transition:.25s ease;}
+    .lang-btn.active{background:#d4af37;color:#000;border-color:#d4af37;}
+    .lang-btn:hover{transform:scale(1.03);}
+    h1{text-align:center;color:#d4af37;font-size:34px;margin-bottom:10px;text-shadow:0 0 10px rgba(212,175,55,0.18);}
+    .intro{text-align:center;color:#ddd;max-width:780px;margin:0 auto 26px;font-size:16px;}
+    h2{color:#ffd700;font-size:22px;margin-top:28px;margin-bottom:10px;}
+    p{color:#ddd;margin-bottom:14px;font-size:16px;}
+    .back-home{display:inline-block;margin-top:28px;background:linear-gradient(135deg,#d4af37,#b8962e);color:#000;padding:10px 16px;border-radius:999px;font-weight:bold;text-decoration:none;transition:.25s ease;}
+    .back-home:hover{transform:scale(1.03);box-shadow:0 0 14px rgba(212,175,55,0.2);}
+    .footer-rights{text-align:center;margin-top:26px;color:#888;font-size:13px;}
+    @media (max-width:640px){
+      body{padding:24px 14px;}
+      .legal-box{padding:22px 18px;}
+      h1{font-size:28px;}
+      h2{font-size:20px;}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="legal-box">
+    <div class="lang-switch">
+      <button type="button" class="lang-btn active" id="btnEN">EN</button>
+      <button type="button" class="lang-btn" id="btnES">ES</button>
+    </div>
+
+    <h1 id="pageTitle">Disclaimer</h1>
+    <p class="intro" id="pageIntro">
+      Please review this disclaimer regarding the nature and scope of the services offered by Melendi VIP Promotions.
+    </p>
+
+    <h2 id="sec1Title">1. Independent Service</h2>
+    <p id="sec1Text">
+      Melendi VIP Promotions is an independent concierge and promotional service. We are not owned by, operated by, or officially representing any nightlife venue listed on this website unless specifically stated otherwise.
+    </p>
+
+    <h2 id="sec2Title">2. Reservation and Transportation Coordination Only</h2>
+    <p id="sec2Text">
+      Our services are limited to reservation coordination, guest assistance, and transportation support. We do not provide adult services, direct entertainment services, or venue operations.
+    </p>
+
+    <h2 id="sec3Title">3. Venue Policies Apply</h2>
+    <p id="sec3Text">
+      Entry rules, pricing, dress codes, age requirements, promotions, and all venue-related conditions are determined solely by each venue and may change without notice.
+    </p>
+
+    <h2 id="sec4Title">4. Availability Not Guaranteed</h2>
+    <p id="sec4Text">
+      Reservation requests are subject to availability, venue approval, operational limits, and timing. Submitting a request does not automatically guarantee final acceptance by the venue.
+    </p>
+
+    <h2 id="sec5Title">5. Website Information</h2>
+    <p id="sec5Text">
+      We make reasonable efforts to keep website information accurate and current, but we do not guarantee that all details, schedules, promotions, or venue information will always remain unchanged.
+    </p>
+
+    <a href="index.html" class="back-home" id="backHome">← Home</a>
+
+    <div class="footer-rights">
+      © 2026 Melendi VIP Promotions. All rights reserved.
+    </div>
+  </div>
+
+  <script>
+    const btnEN = document.getElementById("btnEN");
+    const btnES = document.getElementById("btnES");
+
+    const translations = {
+      en: {
+        pageTitle: "Disclaimer",
+        pageIntro: "Please review this disclaimer regarding the nature and scope of the services offered by Melendi VIP Promotions.",
+        sec1Title: "1. Independent Service",
+        sec1Text: "Melendi VIP Promotions is an independent concierge and promotional service. We are not owned by, operated by, or officially representing any nightlife venue listed on this website unless specifically stated otherwise.",
+        sec2Title: "2. Reservation and Transportation Coordination Only",
+        sec2Text: "Our services are limited to reservation coordination, guest assistance, and transportation support. We do not provide adult services, direct entertainment services, or venue operations.",
+        sec3Title: "3. Venue Policies Apply",
+        sec3Text: "Entry rules, pricing, dress codes, age requirements, promotions, and all venue-related conditions are determined solely by each venue and may change without notice.",
+        sec4Title: "4. Availability Not Guaranteed",
+        sec4Text: "Reservation requests are subject to availability, venue approval, operational limits, and timing. Submitting a request does not automatically guarantee final acceptance by the venue.",
+        sec5Title: "5. Website Information",
+        sec5Text: "We make reasonable efforts to keep website information accurate and current, but we do not guarantee that all details, schedules, promotions, or venue information will always remain unchanged.",
+        backHome: "← Home"
+      },
+      es: {
+        pageTitle: "Aviso Legal",
+        pageIntro: "Por favor revisa este aviso legal sobre la naturaleza y el alcance de los servicios ofrecidos por Melendi VIP Promotions.",
+        sec1Title: "1. Servicio Independiente",
+        sec1Text: "Melendi VIP Promotions es un servicio independiente de concierge y promoción. No somos propiedad de, operados por, ni representantes oficiales de ningún establecimiento de entretenimiento nocturno listado en esta web, a menos que se indique expresamente lo contrario.",
+        sec2Title: "2. Solo Coordinación de Reservas y Transporte",
+        sec2Text: "Nuestros servicios se limitan a la coordinación de reservaciones, asistencia a invitados y apoyo de transporte. No ofrecemos servicios para adultos, servicios directos de entretenimiento ni operaciones del establecimiento.",
+        sec3Title: "3. Aplican las Reglas del Establecimiento",
+        sec3Text: "Las reglas de entrada, precios, códigos de vestimenta, requisitos de edad, promociones y todas las condiciones relacionadas con el establecimiento son determinadas únicamente por cada lugar y pueden cambiar sin previo aviso.",
+        sec4Title: "4. Disponibilidad No Garantizada",
+        sec4Text: "Las solicitudes de reservación están sujetas a disponibilidad, aprobación del establecimiento, límites operativos y horarios. Enviar una solicitud no garantiza automáticamente la aceptación final por parte del lugar.",
+        sec5Title: "5. Información del Sitio Web",
+        sec5Text: "Hacemos esfuerzos razonables para mantener la información de la web precisa y actualizada, pero no garantizamos que todos los detalles, horarios, promociones o información del establecimiento permanezcan siempre sin cambios.",
+        backHome: "← Inicio"
+      }
+    };
+
+    function applyLanguage(lang){
+      const t = translations[lang];
+      document.documentElement.lang = lang;
+      document.getElementById("pageTitle").textContent = t.pageTitle;
+      document.getElementById("pageIntro").textContent = t.pageIntro;
+      document.getElementById("sec1Title").textContent = t.sec1Title;
+      document.getElementById("sec1Text").textContent = t.sec1Text;
+      document.getElementById("sec2Title").textContent = t.sec2Title;
+      document.getElementById("sec2Text").textContent = t.sec2Text;
+      document.getElementById("sec3Title").textContent = t.sec3Title;
+      document.getElementById("sec3Text").textContent = t.sec3Text;
+      document.getElementById("sec4Title").textContent = t.sec4Title;
+      document.getElementById("sec4Text").textContent = t.sec4Text;
+      document.getElementById("sec5Title").textContent = t.sec5Title;
+      document.getElementById("sec5Text").textContent = t.sec5Text;
+      document.getElementById("backHome").textContent = t.backHome;
+      btnEN.classList.toggle("active", lang === "en");
+      btnES.classList.toggle("active", lang === "es");
+    }
+
+    btnEN.addEventListener("click", () => applyLanguage("en"));
+    btnES.addEventListener("click", () => applyLanguage("es"));
+
+    applyLanguage("en");
+  </script>
+</body>
+</html>
