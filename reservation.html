@@ -633,19 +633,27 @@
     }
 
     async function sendReservationToWebhook(data) {
-      const response = await fetch(webhookURL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
+  console.log("Sending to webhook:", data);
 
-      if (!response.ok) {
-        throw new Error("Webhook failed");
-      }
-    }
+  const formData = new FormData();
 
+  Object.entries(data).forEach(([key, value]) => {
+    formData.append(key, value);
+  });
+
+  const response = await fetch(webhookURL, {
+    method: "POST",
+    body: formData
+  });
+
+  console.log("Webhook response status:", response.status);
+
+  if (!response.ok) {
+    throw new Error("Webhook failed with status " + response.status);
+  }
+
+  return response;
+}
     menInput.addEventListener("input", updateDeposit);
     menInput.addEventListener("change", updateDeposit);
     womenInput.addEventListener("input", updateDeposit);
