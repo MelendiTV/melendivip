@@ -1,1 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>VIP Reservation Request | Melendi VIP Promotions LLC</title>
+  <link rel="canonical" href="https://melendivip.com/reservation.html" />
+  <meta name="description" content="Submit your VIP reservation request with Melendi VIP Promotions LLC. Request transportation coordination and send your reservation directly online." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Melendi VIP Promotions LLC" />
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+
+    body{
+      background:#07070b;
+      font-family:Arial,sans-serif;
+      color:#fff;
+      padding:40px 20px;
+      line-height:1.6;
+    }
+
+    .reservation-box{
+      max-width:900px;
+      margin:auto;
+      background:#0f0f15;
+      padding:30px;
+      border-radius:20px;
+      border:1px solid rgba(212,175,55,0.22);
+      box-shadow:0 0 18px rgba(212,175,55,0.08);
+    }
+
+    .lang-switch{
+      display:flex;
+      justify-content:flex-end;
+      gap:10px;
+      margin-bottom:20px;
+    }
+
+    .lang-btn{
+      background:#1a1a1f;
+      color:#d4af37;
+      border:1px solid #444;
+      border-radius:8px;
+      padding:8px 14px;
+      font-size:14px;
+      font-weight:bold;
+      cursor:pointer;
+      width:auto;
+      margin-top:0;
+      transition:0.25s ease;
+    }
+
+    .lang-btn.active{
+      background:#d4af37;
+      color:#000;
+      border-color:#d4af37;
+    }
+
+    .lang-btn:hover{transform:scale(1.03);}
+
+    h1{
+      text-align:center;
+      color:#d4af37;
+      margin-top:0;
+      margin-bottom:10px;
+      font-size:34px;
+      text-shadow:0 0 10px rgba(212,175,55,0.18);
+    }
+
+    .intro{
+      text-align:center;
+      color:#ddd;
+      max-width:760px;
+      margin:0 auto 26px;
+      font-size:16px;
+    }
+
+    .form-group{margin-bottom:16px;}
+
+    .two-cols{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .phone-row{
+      display:grid;
+      grid-template-columns:220px 1fr;
+      gap:12px;
+    }
+
+    label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:bold;
+      color:#d4af37;
+    }
+
+    input,select,textarea{
+      width:100%;
+      padding:12px;
+      border-radius:10px;
+      border:1px solid #444;
+      background:#1a1a1f;
+      color:white;
+      box-sizing:border-box;
+      font-size:16px;
+    }
+
+    input:focus,select:focus,textarea:focus{
+      outline:none;
+      border-color:#d4af37;
+      box-shadow:0 0 0 2px rgba(212,175,55,0.15);
+    }
+
+    textarea{
+      min-height:110px;
+      resize:vertical;
+    }
+
+    button{
+      width:100%;
+      padding:16px;
+      background:linear-gradient(135deg,#d4af37,#b8962e);
+      border:none;
+      border-radius:12px;
+      color:#000;
+      font-size:17px;
+      font-weight:bold;
+      cursor:pointer;
+      margin-top:10px;
+      transition:0.25s ease;
+    }
+
+    button:hover{
+      transform:scale(1.01);
+      box-shadow:0 0 16px rgba(212,175,55,0.18);
+    }
+
+    button:disabled{
+      opacity:.7;
+      cursor:not-allowed;
+      transform:none;
+      box-shadow:none;
+    }
+
+    .message{
+      margin-top:18px;
+      text-align:center;
+      font-weight:bold;
+      white-space:pre-wrap;
+      word-break:break-word;
+    }
+
+    .deposit-box{
+      margin-top:8px;
+      margin-bottom:18px;
+      padding:16px;
+      border-radius:14px;
+      background:#15151c;
+      border:1px solid #2f2f38;
+    }
+
+    .deposit-line{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      font-size:16px;
+      margin-bottom:10px;
+    }
+
+    .deposit-amount{
+      color:#d4af37;
+      font-weight:bold;
+      font-size:20px;
+    }
+
+    .deposit-note{
+      color:#cfcfcf;
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    .deposit-note .highlight{
+      color:#ffd700;
+      font-weight:bold;
+    }
+
+    .helper-box{
+      margin-top:18px;
+      padding:14px 16px;
+      border-radius:12px;
+      background:#131319;
+      border:1px solid rgba(212,175,55,0.15);
+      color:#ddd;
+      font-size:14px;
+    }
+
+    .helper-box strong{color:#ffd700;}
+
+    .payment-box{
+      margin-top:22px;
+      padding:22px;
+      border-radius:18px;
+      background:
+        radial-gradient(circle at top right, rgba(212,175,55,0.13), transparent 34%),
+        linear-gradient(180deg,#12121b 0%, #0d0d13 100%);
+      border:1px solid rgba(212,175,55,0.48);
+      box-shadow:
+        0 0 22px rgba(212,175,55,0.08),
+        inset 0 0 0 1px rgba(255,255,255,0.02);
+    }
+
+    .payment-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      margin-bottom:16px;
+      flex-wrap:wrap;
+    }
+
+    .payment-title-wrap{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .payment-icon{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,#d4af37,#8f6f17);
+      color:#000;
+      font-size:22px;
+      box-shadow:0 0 14px rgba(212,175,55,0.22);
+    }
+
+    .payment-title{
+      color:#ffd700;
+      font-weight:bold;
+      font-size:21px;
+      line-height:1.1;
+      margin-bottom:3px;
+    }
+
+    .payment-subtitle{
+      color:#bdbdbd;
+      font-size:13px;
+    }
+
+    .payment-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(0,230,118,0.08);
+      border:1px solid rgba(0,230,118,0.22);
+      color:#00e676;
+      font-size:13px;
+      font-weight:bold;
+      white-space:nowrap;
+    }
+
+    .amount-due-box{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 16px;
+      border-radius:14px;
+      background:rgba(212,175,55,0.10);
+      border:1px solid rgba(212,175,55,0.34);
+      margin-bottom:18px;
+    }
+
+    .amount-label{
+      color:#ddd;
+      font-size:14px;
+      font-weight:bold;
+    }
+
+    .amount-value{
+      color:#ffd700;
+      font-size:26px;
+      font-weight:900;
+      letter-spacing:.3px;
+    }
+
+    .payment-grid{
+      display:grid;
+      grid-template-columns:1.4fr .8fr;
+      gap:14px;
+      margin-top:8px;
+    }
+
+    .payment-field{
+      margin-bottom:0;
+    }
+
+    .payment-field label{
+      color:#ffd700;
+      font-size:14px;
+      margin-bottom:8px;
+    }
+
+    .payment-input-wrap{
+      position:relative;
+    }
+
+    .payment-input-wrap input{
+      padding:15px 14px 15px 46px;
+      border-radius:14px;
+      background:#191920;
+      border:1px solid rgba(255,255,255,0.16);
+      font-size:16px;
+      transition:.2s ease;
+    }
+
+    .payment-input-wrap input:focus{
+      border-color:#ffd700;
+      box-shadow:0 0 0 3px rgba(212,175,55,0.14);
+      background:#1d1d25;
+    }
+
+    .field-icon{
+      position:absolute;
+      left:15px;
+      top:50%;
+      transform:translateY(-50%);
+      color:#d4af37;
+      font-size:17px;
+      opacity:.95;
+      pointer-events:none;
+    }
+
+    .payment-note{
+      color:#cfcfcf;
+      font-size:13px;
+      margin-top:16px;
+      padding-top:14px;
+      border-top:1px solid rgba(255,255,255,0.08);
+      display:flex;
+      align-items:flex-start;
+      gap:8px;
+    }
+
+    .payment-note strong{
+      color:#ffd700;
+    }
+
+    .consent-box{
+      margin-top:18px;
+      padding:16px;
+      border-radius:12px;
+      background:#131319;
+      border:1px solid rgba(212,175,55,0.35);
+      color:#ddd;
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .consent-box label{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      color:#ddd;
+      font-weight:normal;
+      margin-bottom:0;
+      cursor:pointer;
+    }
+
+    .consent-box input[type="checkbox"]{
+      width:18px;
+      height:18px;
+      margin-top:2px;
+      accent-color:#d4af37;
+      flex:0 0 auto;
+    }
+
+    .consent-box strong{color:#d4af37;}
+
+    .consent-box a{
+      color:#d4af37;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    .consent-box a:hover{text-decoration:underline;}
+
+    .back-home{
+      display:inline-block;
+      margin-top:20px;
+      background:linear-gradient(135deg,#d4af37,#b8962e);
+      color:#000;
+      padding:10px 16px;
+      border-radius:999px;
+      font-weight:bold;
+      text-decoration:none;
+      transition:0.25s ease;
+    }
+
+    .back-home:hover{
+      transform:scale(1.03);
+      box-shadow:0 0 14px rgba(212,175,55,0.2);
+    }
+
+    .footer-rights{
+      text-align:center;
+      margin-top:28px;
+      color:#888;
+      font-size:13px;
+    }
+
+    @media (max-width:640px){
+      .two-cols{grid-template-columns:1fr;}
+      .phone-row{grid-template-columns:1fr;}
+      .payment-grid{grid-template-columns:1fr;}
+      .payment-header{align-items:flex-start;}
+      .amount-due-box{align-items:flex-start;flex-direction:column;}
+      .amount-value{font-size:30px;}
+      body{padding:24px 14px;}
+      .reservation-box{padding:22px 18px;}
+      h1{font-size:28px;}
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="reservation-box">
+
+  <div class="lang-switch">
+    <button type="button" class="lang-btn active" id="btnEN">EN</button>
+    <button type="button" class="lang-btn" id="btnES">ES</button>
+  </div>
+
+  <h1 id="pageTitle">VIP Reservation Request</h1>
+
+  <p class="intro" id="pageIntro">
+    Submit your VIP reservation request with Melendi VIP Promotions LLC. We provide transportation coordination and reservation assistance for premium Las Vegas experiences.
+  </p>
+
+  <form id="reservationForm" novalidate>
+
+    <div class="form-group">
+      <label for="name" id="labelName">Full Name</label>
+      <input type="text" id="name" name="name" required autocomplete="name" />
+    </div>
+
+    <div class="form-group">
+      <label for="phone" id="labelPhone">Phone / SMS</label>
+
+      <div class="phone-row">
+        <select id="countryCode" name="countryCode" required>
+          <option value="+1" selected>USA / Canada (+1)</option>
+          <option value="+52">Mexico (+52)</option>
+          <option value="+34">Spain (+34)</option>
+          <option value="+44">United Kingdom (+44)</option>
+          <option value="+49">Germany (+49)</option>
+          <option value="+33">France (+33)</option>
+          <option value="+39">Italy (+39)</option>
+          <option value="+55">Brazil (+55)</option>
+          <option value="+54">Argentina (+54)</option>
+          <option value="+57">Colombia (+57)</option>
+          <option value="+58">Venezuela (+58)</option>
+          <option value="+51">Peru (+51)</option>
+          <option value="+56">Chile (+56)</option>
+          <option value="+593">Ecuador (+593)</option>
+          <option value="+507">Panama (+507)</option>
+          <option value="+506">Costa Rica (+506)</option>
+          <option value="+53">Cuba (+53)</option>
+          <option value="+351">Portugal (+351)</option>
+          <option value="+31">Netherlands (+31)</option>
+          <option value="+32">Belgium (+32)</option>
+          <option value="+41">Switzerland (+41)</option>
+          <option value="+43">Austria (+43)</option>
+          <option value="+46">Sweden (+46)</option>
+          <option value="+47">Norway (+47)</option>
+          <option value="+45">Denmark (+45)</option>
+          <option value="+48">Poland (+48)</option>
+          <option value="+420">Czech Republic (+420)</option>
+          <option value="+353">Ireland (+353)</option>
+          <option value="+30">Greece (+30)</option>
+          <option value="+90">Turkey (+90)</option>
+          <option value="+971">UAE (+971)</option>
+          <option value="+966">Saudi Arabia (+966)</option>
+          <option value="+972">Israel (+972)</option>
+          <option value="+91">India (+91)</option>
+          <option value="+92">Pakistan (+92)</option>
+          <option value="+86">China (+86)</option>
+          <option value="+81">Japan (+81)</option>
+          <option value="+82">South Korea (+82)</option>
+          <option value="+65">Singapore (+65)</option>
+          <option value="+60">Malaysia (+60)</option>
+          <option value="+66">Thailand (+66)</option>
+          <option value="+63">Philippines (+63)</option>
+          <option value="+84">Vietnam (+84)</option>
+          <option value="+62">Indonesia (+62)</option>
+          <option value="+61">Australia (+61)</option>
+          <option value="+64">New Zealand (+64)</option>
+          <option value="+27">South Africa (+27)</option>
+          <option value="+20">Egypt (+20)</option>
+          <option value="+234">Nigeria (+234)</option>
+          <option value="+254">Kenya (+254)</option>
+        </select>
+
+        <input type="tel" id="phone" name="phone" required autocomplete="tel" placeholder="7025551234" inputmode="tel" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="hotel" id="labelHotel">Hotel</label>
+      <input type="text" id="hotel" name="hotel" required autocomplete="off" />
+    </div>
+
+    <div class="form-group">
+      <label for="club" id="labelClub">Venue</label>
+
+      <select id="club" name="club" required>
+        <option value="" id="clubDefault">Select a venue</option>
+        <option value="Sapphire">Sapphire</option>
+        <option value="Crazy Horse III">Crazy Horse III</option>
+        <option value="Peppermint Hippo">Peppermint Hippo</option>
+        <option value="Spearmint Rhino">Spearmint Rhino</option>
+        <option value="Treasures">Treasures</option>
+        <option value="Hustler Club">Hustler Club</option>
+        <option value="Scores">Scores</option>
+        <option value="Little Darlings">Little Darlings</option>
+        <option value="LVSC">LVSC</option>
+        <option value="Deja Vu">Deja Vu</option>
+        <option value="Palomino">Palomino</option>
+        <option value="Airstrip Club">Airstrip Club</option>
+      </select>
+    </div>
+
+    <div class="two-cols">
+      <div class="form-group">
+        <label for="date" id="labelDate">Reservation Date</label>
+        <input type="date" id="date" name="date" required />
+      </div>
+
+      <div class="form-group">
+        <label for="time" id="labelTime">Reservation Time</label>
+        <input type="time" id="time" name="time" required />
+      </div>
+    </div>
+
+    <div class="two-cols">
+      <div class="form-group">
+        <label for="men" id="labelMen">Adults</label>
+        <input type="number" id="men" name="men" min="1" value="1" required />
+      </div>
+
+      <div class="form-group">
+        <label for="women" id="labelWomen">Additional Guests</label>
+        <input type="number" id="women" name="women" min="0" value="0" required />
+      </div>
+    </div>
+
+    <div class="deposit-box">
+      <div class="deposit-line">
+        <span id="depositTitle">Reservation Fee</span>
+        <span class="deposit-amount" id="depositAmount">$20</span>
+      </div>
+
+      <div class="deposit-note">
+        <span class="highlight" id="depositLine1">
+          A $20 reservation fee is required per adult booking. A minimum of 1 adult booking is required.
+        </span>
+
+        <br><br>
+
+        <span class="highlight" id="depositLine2">
+          This reservation fee is NON-REFUNDABLE if the reservation is canceled or if the guest does not arrive at the agreed pickup location.
+        </span>
+
+        <br><br>
+
+        <span class="highlight" id="depositLine3">
+          If the reservation is completed as scheduled, the fee will be applied toward the guest experience.
+        </span>
+      </div>
+    </div>
+
+    <div class="helper-box" id="helperText">
+      <strong>Important:</strong> transportation coordination, reservation assistance, and guest arrangements may vary depending on the venue, date, group size, and availability.
+    </div>
+
+    <div class="form-group" style="margin-top:18px;">
+      <label for="notes" id="labelNotes">Extra Notes</label>
+      <textarea id="notes" name="notes" placeholder="Pickup details, special requests, etc."></textarea>
+    </div>
+
+    <div class="payment-box">
+      <div class="payment-header">
+        <div class="payment-title-wrap">
+          <div class="payment-icon">💳</div>
+          <div>
+            <div class="payment-title" id="paymentTitle">Secure Card Payment</div>
+            <div class="payment-subtitle" id="paymentSubtitle">Complete your reservation fee securely online.</div>
+          </div>
+        </div>
+
+        <div class="payment-badge" id="paymentBadge">🔒 Secure Checkout</div>
+      </div>
+
+      <div class="amount-due-box">
+        <div class="amount-label" id="amountDueLabel">Amount Due Today</div>
+        <div class="amount-value" id="paymentAmountDue">$20.00</div>
+      </div>
+
+      <div class="payment-grid">
+        <div class="payment-field">
+          <label for="cardNumber" id="labelCardNumber">Card Number</label>
+          <div class="payment-input-wrap">
+            <span class="field-icon">💳</span>
+            <input type="text" id="cardNumber" name="cardNumber" placeholder="Card number" inputmode="numeric" autocomplete="cc-number" required />
+          </div>
+        </div>
+
+        <div class="payment-field">
+          <label for="expirationDate" id="labelExpirationDate">Expiration Date</label>
+          <div class="payment-input-wrap">
+            <span class="field-icon">📅</span>
+            <input type="text" id="expirationDate" name="expirationDate" placeholder="YYYY-MM" autocomplete="cc-exp" required />
+          </div>
+        </div>
+      </div>
+
+      <div class="payment-note" id="paymentNote">
+        <span>🔐</span>
+        <span>Your reservation fee will be processed securely before your reservation request is submitted. Powered by <strong>Authorize.Net</strong>.</span>
+      </div>
+    </div>
+
+    <div class="consent-box">
+      <label for="smsConsent">
+        <input type="checkbox" id="smsConsent" name="smsConsent" required />
+
+        <span id="smsConsentText">
+          <strong>SMS Consent:</strong>
+          By submitting this form, you agree to receive SMS notifications related to your reservation. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out. By continuing, you also agree to our
+          <a href="terms.html">Terms</a>,
+          <a href="reembolso.html">Refund Policy</a>,
+          <a href="privacy.html">Privacy Policy</a>,
+          and <a href="disclaimer.html">Disclaimer</a>.
+        </span>
+      </label>
+    </div>
+
+    <button type="submit" id="submitBtn">Pay & Send Reservation Request</button>
+
+    <div class="message" id="formMessage"></div>
+
+  </form>
+
+  <a href="index.html" class="back-home" id="backHome">← Home</a>
+
+  <div class="footer-rights">
+    © 2026 Melendi VIP Promotions LLC. All rights reserved.
+  </div>
+
+</div>
+
+<script>
+  const webhookURL = "https://hook.us2.make.com/iy3l4sthq0wggcrpby9rntfbglfc9ttq";
+
+  const form = document.getElementById("reservationForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const formMessage = document.getElementById("formMessage");
+  const menInput = document.getElementById("men");
+  const womenInput = document.getElementById("women");
+  const depositAmount = document.getElementById("depositAmount");
+  const paymentAmountDue = document.getElementById("paymentAmountDue");
+  const btnEN = document.getElementById("btnEN");
+  const btnES = document.getElementById("btnES");
+  const dateInput = document.getElementById("date");
+  const timeInput = document.getElementById("time");
+  const smsConsent = document.getElementById("smsConsent");
+
+  const params = new URLSearchParams(window.location.search);
+  const clubFromURL = params.get("club");
+
+  let currentLang = "en";
+
+  const translations = {
+    en: {
+      pageTitle: "VIP Reservation Request",
+      pageIntro: "Submit your VIP reservation request with Melendi VIP Promotions LLC. We provide transportation coordination and reservation assistance for premium Las Vegas experiences.",
+      labelName: "Full Name",
+      labelPhone: "Phone / SMS",
+      labelHotel: "Hotel",
+      labelClub: "Venue",
+      clubDefault: "Select a venue",
+      labelDate: "Reservation Date",
+      labelTime: "Reservation Time",
+      labelMen: "Adults",
+      labelWomen: "Additional Guests",
+      depositTitle: "Reservation Fee",
+      depositLine1: "A $20 reservation fee is required per adult booking. A minimum of 1 adult booking is required.",
+      depositLine2: "This reservation fee is NON-REFUNDABLE if the reservation is canceled or if the guest does not arrive at the agreed pickup location.",
+      depositLine3: "If the reservation is completed as scheduled, the fee will be applied toward the guest experience.",
+      helperText: "Important: transportation coordination, reservation assistance, and guest arrangements may vary depending on the venue, date, group size, and availability.",
+      labelNotes: "Extra Notes",
+      notesPlaceholder: "Pickup details, special requests, etc.",
+      paymentTitle: "Secure Card Payment",
+      paymentSubtitle: "Complete your reservation fee securely online.",
+      paymentBadge: "🔒 Secure Checkout",
+      amountDueLabel: "Amount Due Today",
+      labelCardNumber: "Card Number",
+      labelExpirationDate: "Expiration Date",
+      paymentNote: '<span>🔐</span><span>Your reservation fee will be processed securely before your reservation request is submitted. Powered by <strong>Authorize.Net</strong>.</span>',
+      submitBtn: "Pay & Send Reservation Request",
+      submitSending: "Processing payment and sending reservation...",
+      successMessage: "Payment approved. Reservation sent successfully. Your VIP host will contact you shortly.",
+      errorMessage: "There was an error processing your payment or sending your reservation. Please try again.",
+      paymentError: "Payment was not approved. Please check your card information and try again.",
+      cardError: "Please enter a valid card number.",
+      expError: "Please enter expiration date in YYYY-MM format.",
+      minMenError: "Minimum 1 adult booking is required to complete the reservation.",
+      phoneError: "Please enter a valid phone number.",
+      clubError: "Please select a venue.",
+      dateError: "Please select a valid reservation date.",
+      timeError: "Please select a reservation time.",
+      hotelError: "Please enter your hotel.",
+      nameError: "Please enter your full name.",
+      consentError: "You must agree to receive reservation SMS notifications before submitting.",
+      backHome: "← Home",
+      smsConsentText: '<strong>SMS Consent:</strong> By submitting this form, you agree to receive SMS notifications related to your reservation. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out. By continuing, you also agree to our <a href="terms.html">Terms</a>, <a href="reembolso.html">Refund Policy</a>, <a href="privacy.html">Privacy Policy</a>, and <a href="disclaimer.html">Disclaimer</a>.'
+    },
+
+    es: {
+      pageTitle: "Solicitud de Reservación VIP",
+      pageIntro: "Envía tu solicitud de reservación con Melendi VIP Promotions LLC. Ofrecemos coordinación de transporte y asistencia de reservación para experiencias premium en Las Vegas.",
+      labelName: "Nombre Completo",
+      labelPhone: "Teléfono / SMS",
+      labelHotel: "Hotel",
+      labelClub: "Lugar",
+      clubDefault: "Selecciona un lugar",
+      labelDate: "Fecha de Reservación",
+      labelTime: "Hora de Reservación",
+      labelMen: "Adultos",
+      labelWomen: "Invitados Adicionales",
+      depositTitle: "Cargo de Reservación",
+      depositLine1: "Se requiere un cargo de reservación de $20 por cada reserva de adulto. Se requiere mínimo 1 reserva de adulto.",
+      depositLine2: "Este cargo de reservación NO ES REEMBOLSABLE si la reservación se cancela o si el invitado no llega al punto de recogida acordado.",
+      depositLine3: "Si la reservación se completa según lo programado, el cargo se aplicará a la experiencia del invitado.",
+      helperText: "Importante: la coordinación de transporte, la asistencia de reservación y los arreglos para invitados pueden variar según el lugar, la fecha, el tamaño del grupo y la disponibilidad.",
+      labelNotes: "Notas Extras",
+      notesPlaceholder: "Detalles de recogida, solicitudes especiales, etc.",
+      paymentTitle: "Pago Seguro con Tarjeta",
+      paymentSubtitle: "Completa tu cargo de reservación de forma segura en línea.",
+      paymentBadge: "🔒 Pago Seguro",
+      amountDueLabel: "Total a Pagar Hoy",
+      labelCardNumber: "Número de Tarjeta",
+      labelExpirationDate: "Fecha de Expiración",
+      paymentNote: '<span>🔐</span><span>El cargo de reservación será procesado de forma segura antes de enviar tu solicitud. Procesado por <strong>Authorize.Net</strong>.</span>',
+      submitBtn: "Pagar y Enviar Reservación",
+      submitSending: "Procesando pago y enviando reservación...",
+      successMessage: "Pago aprobado. Reservación enviada con éxito. Tu host VIP te contactará pronto.",
+      errorMessage: "Hubo un error procesando el pago o enviando tu reservación. Inténtalo otra vez.",
+      paymentError: "El pago no fue aprobado. Verifica la información de la tarjeta e inténtalo otra vez.",
+      cardError: "Por favor ingresa un número de tarjeta válido.",
+      expError: "Por favor ingresa la fecha de expiración en formato YYYY-MM.",
+      minMenError: "Se requiere mínimo 1 reserva de adulto para completar la reservación.",
+      phoneError: "Por favor ingresa un número de teléfono válido.",
+      clubError: "Por favor selecciona un lugar.",
+      dateError: "Por favor selecciona una fecha válida.",
+      timeError: "Por favor selecciona una hora de reservación.",
+      hotelError: "Por favor ingresa tu hotel.",
+      nameError: "Por favor ingresa tu nombre completo.",
+      consentError: "Debes aceptar recibir notificaciones SMS relacionadas con tu reservación antes de enviar.",
+      backHome: "← Inicio",
+      smsConsentText: '<strong>Consentimiento SMS:</strong> Al enviar este formulario, aceptas recibir notificaciones SMS relacionadas con tu reservación. La frecuencia de mensajes puede variar. Pueden aplicarse cargos por mensajes y datos. Responde STOP para cancelar. Al continuar, también aceptas nuestros <a href="terms.html">Términos</a>, <a href="reembolso.html">Política de Reembolso</a>, <a href="privacy.html">Política de Privacidad</a> y <a href="disclaimer.html">Descargo de Responsabilidad</a>.'
+    }
+  };
+
+  function getTodayLocalDate(){
+    const now = new Date();
+    const offset = now.getTimezoneOffset();
+    const local = new Date(now.getTime() - offset * 60000);
+    return local.toISOString().split("T")[0];
+  }
+
+  function setMinimumDate(){
+    dateInput.min = getTodayLocalDate();
+  }
+
+  function showMessage(text, color){
+    formMessage.textContent = text || "";
+    formMessage.style.color = color || "#fff";
+  }
+
+  function applyLanguage(lang){
+    currentLang = lang;
+    const t = translations[lang];
+
+    document.documentElement.lang = lang;
+
+    document.getElementById("pageTitle").textContent = t.pageTitle;
+    document.getElementById("pageIntro").textContent = t.pageIntro;
+    document.getElementById("labelName").textContent = t.labelName;
+    document.getElementById("labelPhone").textContent = t.labelPhone;
+    document.getElementById("labelHotel").textContent = t.labelHotel;
+    document.getElementById("labelClub").textContent = t.labelClub;
+    document.getElementById("clubDefault").textContent = t.clubDefault;
+    document.getElementById("labelDate").textContent = t.labelDate;
+    document.getElementById("labelTime").textContent = t.labelTime;
+    document.getElementById("labelMen").textContent = t.labelMen;
+    document.getElementById("labelWomen").textContent = t.labelWomen;
+    document.getElementById("depositTitle").textContent = t.depositTitle;
+    document.getElementById("depositLine1").textContent = t.depositLine1;
+    document.getElementById("depositLine2").textContent = t.depositLine2;
+    document.getElementById("depositLine3").textContent = t.depositLine3;
+
+    document.getElementById("helperText").innerHTML =
+      "<strong>" + (lang === "en" ? "Important:" : "Importante:") + "</strong> " +
+      t.helperText.replace(/^Important:\s|^Importante:\s/, "");
+
+    document.getElementById("labelNotes").textContent = t.labelNotes;
+    document.getElementById("notes").placeholder = t.notesPlaceholder;
+
+    document.getElementById("paymentTitle").textContent = t.paymentTitle;
+    document.getElementById("paymentSubtitle").textContent = t.paymentSubtitle;
+    document.getElementById("paymentBadge").textContent = t.paymentBadge;
+    document.getElementById("amountDueLabel").textContent = t.amountDueLabel;
+    document.getElementById("labelCardNumber").textContent = t.labelCardNumber;
+    document.getElementById("labelExpirationDate").textContent = t.labelExpirationDate;
+    document.getElementById("paymentNote").innerHTML = t.paymentNote;
+
+    document.getElementById("submitBtn").textContent = t.submitBtn;
+    document.getElementById("backHome").textContent = t.backHome;
+    document.getElementById("smsConsentText").innerHTML = t.smsConsentText;
+
+    btnEN.classList.toggle("active", lang === "en");
+    btnES.classList.toggle("active", lang === "es");
+
+    updateDeposit();
+  }
+
+  function updateDeposit(){
+    const men = Math.max(parseInt(menInput.value, 10) || 0, 0);
+    const totalDeposit = men * 20;
+    depositAmount.textContent = "$" + totalDeposit;
+    paymentAmountDue.textContent = "$" + totalDeposit.toFixed(2);
+  }
+
+  function buildFullPhone(){
+    const countryCode = document.getElementById("countryCode").value;
+    const rawPhone = document.getElementById("phone").value.trim();
+    const cleanPhone = rawPhone.replace(/\D/g, "");
+    return countryCode + cleanPhone;
+  }
+
+  function cleanCardNumber(){
+    return document.getElementById("cardNumber").value.trim().replace(/\D/g, "");
+  }
+
+  function getExpirationDate(){
+    return document.getElementById("expirationDate").value.trim();
+  }
+
+  async function processAuthorizePayment(amount){
+    const cardNumber = cleanCardNumber();
+    const expirationDate = getExpirationDate();
+
+    const response = await fetch("/api/pay", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        cardNumber: cardNumber,
+        expirationDate: expirationDate,
+        amount: amount.toFixed(2)
+      })
+    });
+
+    const data = await response.json();
+
+    console.log("Authorize.Net response:", data);
+
+    if (data.messages && data.messages.resultCode === "Ok") {
+      return data;
+    }
+
+    throw new Error("Payment failed");
+  }
+
+  async function sendReservationToWebhook(data){
+    console.log("Sending to webhook:", data);
+
+    const formData = new FormData();
+
+    Object.entries(data).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
+
+    const response = await fetch(webhookURL, {
+      method: "POST",
+      body: formData
+    });
+
+    console.log("Webhook response status:", response.status);
+
+    if (!response.ok) {
+      throw new Error("Webhook failed with status " + response.status);
+    }
+
+    return response;
+  }
+
+  menInput.addEventListener("input", updateDeposit);
+  menInput.addEventListener("change", updateDeposit);
+
+  womenInput.addEventListener("input", updateDeposit);
+  womenInput.addEventListener("change", updateDeposit);
+
+  btnEN.addEventListener("click", function(){
+    applyLanguage("en");
+  });
+
+  btnES.addEventListener("click", function(){
+    applyLanguage("es");
+  });
+
+  if (clubFromURL) {
+    const clubField = document.getElementById("club");
+    clubField.value = decodeURIComponent(clubFromURL);
+  }
+
+  form.addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    const t = translations[currentLang];
+
+    const name = document.getElementById("name").value.trim();
+    const hotel = document.getElementById("hotel").value.trim();
+    const men = parseInt(menInput.value, 10) || 0;
+    const women = parseInt(womenInput.value, 10) || 0;
+    const fullPhone = buildFullPhone();
+    const club = document.getElementById("club").value;
+    const date = dateInput.value;
+    const time = timeInput.value;
+    const cardNumber = cleanCardNumber();
+    const expirationDate = getExpirationDate();
+
+    if (!name) {
+      showMessage(t.nameError, "#ff4d4d");
+      document.getElementById("name").focus();
+      return;
+    }
+
+    if (!fullPhone || fullPhone.replace(/\D/g, "").length < 8) {
+      showMessage(t.phoneError, "#ff4d4d");
+      document.getElementById("phone").focus();
+      return;
+    }
+
+    if (!hotel) {
+      showMessage(t.hotelError, "#ff4d4d");
+      document.getElementById("hotel").focus();
+      return;
+    }
+
+    if (!club) {
+      showMessage(t.clubError, "#ff4d4d");
+      document.getElementById("club").focus();
+      return;
+    }
+
+    if (!date || date < getTodayLocalDate()) {
+      showMessage(t.dateError, "#ff4d4d");
+      dateInput.focus();
+      return;
+    }
+
+    if (!time) {
+      showMessage(t.timeError, "#ff4d4d");
+      timeInput.focus();
+      return;
+    }
+
+    if (men < 1) {
+      showMessage(t.minMenError, "#ff4d4d");
+      menInput.focus();
+      return;
+    }
+
+    if (!cardNumber || cardNumber.length < 13) {
+      showMessage(t.cardError, "#ff4d4d");
+      document.getElementById("cardNumber").focus();
+      return;
+    }
+
+    if (!/^\d{4}-\d{2}$/.test(expirationDate)) {
+      showMessage(t.expError, "#ff4d4d");
+      document.getElementById("expirationDate").focus();
+      return;
+    }
+
+    if (!smsConsent.checked) {
+      showMessage(t.consentError, "#ff4d4d");
+      smsConsent.focus();
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = t.submitSending;
+    showMessage("", "");
+
+    const reservationData = {
+      name: name,
+      phone: fullPhone,
+      hotel: hotel,
+      club: club,
+      date: date,
+      time: time,
+      men: men,
+      women: women,
+      guests: men + women,
+      deposit: men * 20,
+      notes: document.getElementById("notes").value.trim(),
+      smsConsent: true,
+      smsConsentDisclosure: "By submitting this form, the customer agreed to receive SMS notifications related to their reservation. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out.",
+      source: "reservation-form",
+      paymentStatus: "PENDING"
+    };
+
+    try {
+      const paymentResponse = await processAuthorizePayment(reservationData.deposit);
+
+      reservationData.paymentStatus = "PAID";
+      reservationData.paymentGateway = "Authorize.Net";
+      reservationData.transactionId =
+        paymentResponse.transactionResponse?.transId ||
+        paymentResponse.transactionResponse?.networkTransId ||
+        "NO_TRANSACTION_ID";
+
+      await sendReservationToWebhook(reservationData);
+
+      showMessage(t.successMessage, "#00e676");
+
+      form.reset();
+      menInput.value = 1;
+      womenInput.value = 0;
+
+      setMinimumDate();
+      updateDeposit();
+      applyLanguage(currentLang);
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    } catch (error) {
+      console.error(error);
+      showMessage(t.paymentError || t.errorMessage, "#ff4d4d");
+
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = t.submitBtn;
+    }
+  });
+
+  setMinimumDate();
+  applyLanguage("en");
+  updateDeposit();
+</script>
+
+</body>
+</html>
