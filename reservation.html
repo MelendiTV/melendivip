@@ -842,7 +842,7 @@
 
   function updateDeposit(){
     const men = Math.max(parseInt(menInput.value, 10) || 0, 0);
-    const totalDeposit = men * 20;
+    const totalDeposit = men * 1;
     depositAmount.textContent = "$" + totalDeposit;
     paymentAmountDue.textContent = "$" + totalDeposit.toFixed(2);
   }
@@ -1014,7 +1014,7 @@
       men: men,
       women: women,
       guests: men + women,
-      deposit: men * 20,
+      deposit: men * 1,
       notes: document.getElementById("notes").value.trim(),
       smsConsent: smsOptIn ? "YES" : "NO",
       smsConsentDisclosure: smsOptIn
